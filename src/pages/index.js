@@ -1,36 +1,49 @@
 import React from "react"
 //import { Link } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
 export default function HomePage({ data }) { 
   let home = data.contentfulHomePage
-  let image = data.contentfulHomePage.homeImageSlider[0].file.url
+  let image = data.contentfulHomePage.homeImageSlider[0].fluid
+  console.log(image)
 
   return (
   <Layout>
     <SEO title="Rescue Vessel" />
-      <h1>{home.title}</h1>
-      <p>{home.subtitle}</p>
+      <div className='centered'>
+        <h1>{home.title}</h1>
+        <p>{home.subtitle}</p>
+      </div>
 
-      <img src={image} alt='' />
+      <div className='home-hero'>
+        <Img fluid={image} alt='' />
+      </div> 
 
-      <h1>{home.section01Title}</h1>
-      <p>{home.section01Desc.section01Desc}</p>
-      <button>About us</button>
+      <div className='centered'>
+        <section>
+          <h1>{home.section01Title}</h1>
+          <p>{home.section01Desc.section01Desc}</p>
+          <button>About us</button>
+        </section>
+        
+        <section>
+          <h1>{home.section02Title}</h1>
+          <p>{home.section02Desc.section02Desc}</p>
+          <button>See our work</button>
+        </section>
 
-      <h1>{home.section02Title}</h1>
-      <p>{home.section02Desc.section02Desc}</p>
-      <button>See our work</button>
-      
-      <h1>{home.section03Title}</h1>
-      <p>{home.section03Desc.section03Desc}</p>
-
-      <div className='client-logos'>
-        {home.clientLogos.map((logo, index) => {
-          return <img src={logo.file.url} alt='' key={logo.id}  />
-        })}
+        <section>
+          <h1>{home.section03Title}</h1>
+          <p>{home.section03Desc.section03Desc}</p>
+          <div className='client-logos'>
+            {home.clientLogos.map((logo, index) => {
+              return <img src={logo.file.url} alt='' key={logo.id}  />
+            })}
+          </div>
+        </section>
       </div>
 
   </Layout>
@@ -47,9 +60,9 @@ query MyQuery {
     }
     section01Title
     homeImageSlider {
-      file {
-        url
-      }
+      fluid {
+        ...GatsbyContentfulFluid
+     } 
     }
     section02Title
     section03Title

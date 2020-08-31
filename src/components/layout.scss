@@ -21,29 +21,26 @@
        url("../fonts/pitch-web-medium.woff2") format("woff2");
 }
 
-
-main { padding: 50px 0; }
-
-.site-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  padding: 6vh 12vw;
-}
+* { margin: 0; }
+body { width: 100%; }
 
 .header-logo img { max-width: 60px; }
 
 h1 { font-family: SharpSans; }
 
-p { font-family: PitchMedium, monospace; }
+p { font-family: PitchMedium, monospace; margin: 8px 0; }
+
+.home-hero { width: 100%; }
+
+.centered { max-width: 1200px; padding: 2vh 12vw; }
+
+section { padding-top: 30px; }
 
 .nav-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
 }
 
 .nav-menu {
@@ -62,8 +59,6 @@ p { font-family: PitchMedium, monospace; }
 }
 
 .navbar { position: relative; }
-
-img { width: 100%; }
 
 .client-logos {
   display: grid;

@@ -6,7 +6,7 @@ import logo from '../images/rv_icon.png'
 
 const Header = ({ siteTitle }) => (
   <nav>
-    <div className="nav-wrap">
+    <div className="nav-wrap centered">
         <div className="navbar-brand">
           <Link to="/" title="Logo">
             <img className={`logo`} src={logo} alt="Rescue Vessel Logo" style={{width: '88px'}}/>
