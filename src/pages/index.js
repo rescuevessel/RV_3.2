@@ -1,22 +1,65 @@
 import React from "react"
-import { Link } from "gatsby"
-
+//import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
+import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+export default function HomePage({ data }) { 
+  let home = data.contentfulHomePage
+  let image = data.contentfulHomePage.homeImageSlider[0].file.url
+  console.log(home.clientLogos)
+  return (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+    <h1>{home.title}</h1>
+    <p>{home.subtitle}</p>
+    <img src={image} alt='' />
+    <h1>{home.section01Title}</h1>
+    <p>{home.section01Desc.section01Desc}</p>
+    <button>About us</button>
+    <h1>{home.section02Title}</h1>
+    <p>{home.section02Desc.section02Desc}</p>
+    <button>See our work</button>
+    <h1>{home.section03Title}</h1>
+    <p>{home.section03Desc.section03Desc}</p>
 
-export default IndexPage
+    <div className='client-logos'>
+    {home.clientLogos.map((logo, index) => {
+      return <img src={logo.file.url} alt='' />
+    })}
+    </div>
+
+  </Layout>
+)}
+
+
+export const query = graphql`
+query MyQuery {
+  contentfulHomePage {
+    subtitle
+    title
+    section01Desc {
+      section01Desc
+    }
+    section01Title
+    homeImageSlider {
+      file {
+        url
+      }
+    }
+    section02Title
+    section03Title
+    section02Desc {
+      section02Desc
+    }
+    section03Desc {
+      section03Desc
+    }
+    clientLogos {
+      file {
+        url
+      }
+    }
+  }
+}
+`
