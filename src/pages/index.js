@@ -10,24 +10,28 @@ export default function HomePage({ data }) {
   console.log(home.clientLogos)
   return (
   <Layout>
-    <SEO title="Home" />
-    <h1>{home.title}</h1>
-    <p>{home.subtitle}</p>
-    <img src={image} alt='' />
-    <h1>{home.section01Title}</h1>
-    <p>{home.section01Desc.section01Desc}</p>
-    <button>About us</button>
-    <h1>{home.section02Title}</h1>
-    <p>{home.section02Desc.section02Desc}</p>
-    <button>See our work</button>
-    <h1>{home.section03Title}</h1>
-    <p>{home.section03Desc.section03Desc}</p>
+    <SEO title="Rescue Vessel" />
+      <h1>{home.title}</h1>
+      <p>{home.subtitle}</p>
 
-    <div className='client-logos'>
-    {home.clientLogos.map((logo, index) => {
-      return <img src={logo.file.url} alt='' />
-    })}
-    </div>
+      <img src={image} alt='' />
+
+      <h1>{home.section01Title}</h1>
+      <p>{home.section01Desc.section01Desc}</p>
+      <button>About us</button>
+
+      <h1>{home.section02Title}</h1>
+      <p>{home.section02Desc.section02Desc}</p>
+      <button>See our work</button>
+      
+      <h1>{home.section03Title}</h1>
+      <p>{home.section03Desc.section03Desc}</p>
+
+      <div className='client-logos'>
+        {home.clientLogos.map((logo, index) => {
+          return <img src={logo.file.url} alt='' />
+        })}
+      </div>
 
   </Layout>
 )}
