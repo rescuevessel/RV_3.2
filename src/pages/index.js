@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 export default function HomePage({ data }) { 
   let home = data.contentfulHomePage
   let image = data.contentfulHomePage.homeImageSlider[0].file.url
-  console.log(home.clientLogos)
+
   return (
   <Layout>
     <SEO title="Rescue Vessel" />
@@ -29,7 +29,7 @@ export default function HomePage({ data }) {
 
       <div className='client-logos'>
         {home.clientLogos.map((logo, index) => {
-          return <img src={logo.file.url} alt='' />
+          return <img src={logo.file.url} alt='' key={logo.id}  />
         })}
       </div>
 
@@ -60,6 +60,7 @@ query MyQuery {
       section03Desc
     }
     clientLogos {
+      id
       file {
         url
       }

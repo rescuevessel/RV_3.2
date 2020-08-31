@@ -22,9 +22,8 @@
 }
 
 
-main {
-  padding: 50px 0;
-}
+main { padding: 50px 0; }
+
 .site-wrap {
   width: 100%;
   display: flex;
@@ -33,18 +32,11 @@ main {
   padding: 6vh 12vw;
 }
 
-.header-logo img {
-  max-width: 60px;
-}
+.header-logo img { max-width: 60px; }
 
-h1 {
-  font-family: SharpSans;
-}
+h1 { font-family: SharpSans; }
 
-p { font-family: PitchMedium, monospace;
-}
-
-
+p { font-family: PitchMedium, monospace; }
 
 .nav-wrap {
   display: flex;
@@ -69,18 +61,16 @@ p { font-family: PitchMedium, monospace;
   margin: 0 12px;
 }
 
-.navbar {
-  position: relative;
-}
+.navbar { position: relative; }
 
-img {
-  width: 100%;
-}
+img { width: 100%; }
 
 .client-logos {
-  display: flex;
-}
-
-.client-logos img {
-  max-width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  img {
+    max-width: 250px;
+  }
 }

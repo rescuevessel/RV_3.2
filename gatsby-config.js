@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,7 +21,7 @@ module.exports = {
       options: {
         start_url: '/',
         display: 'standalone',
-        icon: 'src/images/rv_icon.png',
+        icon: 'src/images/favicon.png',
       },
     },  
     {
