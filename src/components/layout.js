@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Nav from "./nav"
+import Footer from './Footer'
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
             {children} 
           </main>
         </div>
-     
+        <Footer />
     </>
   )
 }

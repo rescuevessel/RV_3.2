@@ -13,7 +13,7 @@ export default function HomePage({ data }) {
   return (
   <Layout>
     <SEO title="Rescue Vessel" />
-      <div className='centered'>
+      <div className='centered grid-2'>
         <h1>{home.title}</h1>
         <p>{home.subtitle}</p>
       </div>
