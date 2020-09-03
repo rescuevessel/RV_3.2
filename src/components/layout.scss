@@ -30,9 +30,8 @@ h1 { font-family: SharpSans; }
 
 p { font-family: PitchMedium, monospace; margin: 8px 0; }
 
-.type-pitch {
-  font-family: PitchMedium, monospace;
-}
+.type-pitch { font-family: PitchMedium, monospace; }
+.type-ssno { font-family: SharpSans, monospace; }
 
 .home-hero { 
   //width: 100%;
@@ -75,8 +74,14 @@ p { font-family: PitchMedium, monospace; margin: 8px 0; }
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-gap: 30px;
 }
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
 
 section { padding-top: 30px; }
 
@@ -114,26 +119,3 @@ section { padding-top: 30px; }
   }
 }
 
-.menu-label {
-  font-size: 1em !important;
-  text-align: left;
-}
-
-.menu-list {
-  list-style: none !important;
-  text-align: left;
-}
-
-footer {
-  background: #f6f6f6;
-  padding: 8vh 0;
-  margin-top: 10vh;
-}
-
-.footer-columns {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 3fr;
-  img { 
-    //height: auto;
-    max-width: 88px; }
-}

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 //import moment from 'moment-timezone'
 import './layout.scss'
 import logo from '../images/rv_icon.png'
-import FooterStyles from './footer.module.scss'
+import './footer.scss'
 
 const Footer = class extends React.Component {
   render() {
@@ -14,7 +14,7 @@ const Footer = class extends React.Component {
             <img src={logo} alt="Rescue Vessel Logo" />
           </div>
           <div>
-                <section className="">
+                <div className='footer-wrapper'>
                   <ul className="menu-list">
                     <li>
                       <Link to="/about" className="navbar-item type-pitch">
@@ -47,11 +47,11 @@ const Footer = class extends React.Component {
                       </a>
                     </li>
                   </ul>
-                  <span className={`type-pitch copyright ${FooterStyles.copyright}`}>Copyright &copy; {new Date().getFullYear()} Rescue Vessel</span>
-                </section>
+                  <span className='type-pitch copyright'>Copyright &copy; {new Date().getFullYear()} Rescue Vessel</span>
+                </div>
               </div>
-          <div>
-            <section>
+          
+            <div>
               <ul className="menu-list">
                 <li>
                   <a className="navbar-item type-pitch" href="https://www.google.com/maps/place/Brooklyn,+NY/@40.6452228,-74.0150371,12z/data=!3m1!4b1!4m5!3m4!1s0x89c24416947c2109:0x82765c7404007886!8m2!3d40.6781784!4d-73.9441579">
@@ -64,16 +64,16 @@ const Footer = class extends React.Component {
                   </a>
                 </li>
               </ul>
-              <span className={`type-pitch ${FooterStyles.currentTime}`}>{/*moment().tz('America/New_York').format('hh:mm:ss A z')*/}</span>
-            </section>
-          </div>
+              <span className='type-pitch currentTime'>{/*moment().tz('America/New_York').format('hh:mm:ss A z')*/}</span>
+            </div>
+          
           <div>
-            <h2 className=''>Let's work together</h2>
-            <a href="mailto:hello@rescuevessel.com" className={`type-pitch ${FooterStyles.emailLink} ${FooterStyles.isFlex}`}>hello@rescuevessel.com</a>
-            <div className={`${FooterStyles.newsletterSignUpWrapper}`}>
-              <h2 className={`rv-ssno is-size-5 ${FooterStyles.isFlex}`}>Our quarterly newsletter</h2>
-              <div className={FooterStyles.isFlex}>
-              <input className={`input ${FooterStyles.emailInput}`} type="text" placeholder="Your Email" /> <button className={`button ${FooterStyles.emailSubmitBtn}`}>Submit</button>
+            <h2 className='type-ssno'>Let's work together</h2>
+            <a href="mailto:hello@rescuevessel.com" className='type-pitch emailLink isFlex'>hello@rescuevessel.com</a>
+            <div className='newsletterSignUpWrapper'>
+              <h2 className='type-ssno isFlex'>Our quarterly newsletter</h2>
+              <div className='isFlex'>
+              <input className='input emailInput' type="text" placeholder="Your Email" /> <button className='button emailSubmitBtn'>Submit</button>
               </div>
             </div>
           </div>
