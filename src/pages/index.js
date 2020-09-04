@@ -4,19 +4,19 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default function HomePage({ data }) { 
-  let home = data.contentfulHomePage
-  let image = data.contentfulHomePage.homeImageSlider[0].fluid
-  console.log(image)
+  const home = data.contentfulHomePage
+  const image = data.contentfulHomePage.homeImageSlider[0].fluid
 
   return (
   <Layout>
     <SEO title="Rescue Vessel" />
-      <div className='centered grid-2'>
+      <section className='centered grid-2'>
         <h1>{home.title}</h1>
-        <p>{home.subtitle}</p>
-      </div>
+        <h2>{home.subtitle}</h2>
+      </section>
 
       <div className='home-hero'>
         <Img fluid={image} alt='' />
@@ -24,27 +24,24 @@ export default function HomePage({ data }) {
 
       <div className='centered'>
         <section>
-          <h1>{home.section01Title}</h1>
-          <p>{home.section01Desc.section01Desc}</p>
+          {documentToReactComponents(home.section01.json)}
           <button>About us</button>
         </section>
         
         <section>
-          <h1>{home.section02Title}</h1>
-          <p>{home.section02Desc.section02Desc}</p>
+          {documentToReactComponents(home.section02.json)}
           <button>See our work</button>
         </section>
 
         <section>
-          <h1>{home.section03Title}</h1>
-          <p>{home.section03Desc.section03Desc}</p>
+          {documentToReactComponents(home.section03.json)}
           <div className='client-logos'>
             {home.clientLogos.map((logo, index) => {
               return <img src={logo.file.url} alt='' key={logo.id}  />
             })}
           </div>
         </section>
-      </div>
+    </div>
 
   </Layout>
 )}
@@ -53,24 +50,21 @@ export default function HomePage({ data }) {
 export const query = graphql`
 query MyQuery {
   contentfulHomePage {
-    subtitle
     title
-    section01Desc {
-      section01Desc
-    }
-    section01Title
+    subtitle
     homeImageSlider {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
-    section02Title
-    section03Title
-    section02Desc {
-      section02Desc
+    section01 {
+      json
     }
-    section03Desc {
-      section03Desc
+    section02 {
+      json
+    }
+    section03 {
+      json
     }
     clientLogos {
       id

@@ -7,6 +7,7 @@ $rescue-vessel-orange: #ff5812;
     text-align: left;
     padding: 0;
     a {
+        font-size: .7em;
         display: block;
         border-bottom: 1px solid black;
         padding-left: 0;
@@ -19,7 +20,7 @@ $rescue-vessel-orange: #ff5812;
 }
 
 .menu-label {
-    font-size: 1em !important;
+    font-size: .8em;
     text-align: left;
   }
   
@@ -45,7 +46,7 @@ footer {
   
 .footer-columns {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 2fr 3fr;
     grid-column-gap: 30px;
     img { 
         //height: auto;

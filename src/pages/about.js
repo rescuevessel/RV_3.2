@@ -1,72 +1,56 @@
-import React from "react"
+import React from 'react'
 //import { Link } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 
 export default function AboutPage({ data }) { 
-  let about = data.contentfulAboutPage
+  const about = data.contentfulAboutPage
   console.log(about)
 
   return (
   <Layout>
-      <div className='centered grid-2'>
+      <section className='centered grid-2'>
         <h1>{about.title}</h1>
-      </div>
-
+      </section>
       <div className='home-hero'>
         <Img fluid={about.heroImage.fluid} alt='' />
       </div> 
-
       <div className='centered'>
         <section>
-          <h1>{about.section01Title}</h1>
-          <p>{about.section01Desc.section01Desc}</p>
+          {documentToReactComponents(about.section01.json)}
         </section>
       </div>
-      <div className='centered grid-2'>
+      <section className='centered grid-2'>
         <Img fluid={about.aboutImage01.fluid} alt='' />
         <Img fluid={about.aboutImage02.fluid} alt='' />
-      </div>
-      <div className='centered grid-2'>
-        <div>
-          <h1>{about.section02Title}</h1>
-          <ul>{about.section02List}</ul>
-        </div>
-        <div>
-          <h1>{about.section02Subtitle}</h1>
-          <p>{about.section02Desc.section02Desc}</p>
-        </div>
-      </div>
-      <div className='centered'>
+      </section>
+      <section className='centered grid-2'>
+        <div>{documentToReactComponents(about.section02Left.json)}</div>
+        <div>{documentToReactComponents(about.section02Right.json)}</div>
+      </section>
+      <section className='centered'>
         <Img fluid={about.aboutImage03.fluid} alt='' />
-      </div> 
-      <div className='centered grid-2'>
-        <div>
-          <h1>{about.section03Title}</h1>
-        </div>
+      </section> 
+      <section className='centered grid-2'>
+        <div>{documentToReactComponents(about.section03Left.json)}</div>
         <Img fluid={about.aboutImage04.fluid} alt='' />
-      </div> 
+      </section> 
         <section className='centered grid-2'>
-          <div>
-            <h1>{about.section04Title}</h1>
-            <p>{about.section04Desc.section04Desc}</p>
-          </div>
-          <p>{about.collaborators}</p>
+          <div>{documentToReactComponents(about.section04Left.json)}</div>
+          <div>{documentToReactComponents(about.section04Right.json)}</div>
         </section>
         <section className='centered grid-3'>
-          <Img fluid={about.team01.fluid} alt='' />
-          <Img fluid={about.team02.fluid} alt='' />
-          <Img fluid={about.team03.fluid} alt='' />
-          <Img fluid={about.team04.fluid} alt='' />
-          <Img fluid={about.team05.fluid} alt='' />
+          <div><Img fluid={about.team01.fluid} alt='' /><h2>{about.team01Name}</h2></div>
+          <div><Img fluid={about.team02.fluid} alt='' /><h2>{about.team02Name}</h2></div>
+          <div><Img fluid={about.team03.fluid} alt='' /><h2>{about.team03Name}</h2></div>
+          <div><Img fluid={about.team04.fluid} alt='' /><h2>{about.team04Name}</h2></div>
+          <div><Img fluid={about.team05.fluid} alt='' /><h2>{about.team05Name}</h2></div>
         </section>
         <section className='centered grid-2'>
-          <div>
-            <h1>{about.section05Title}</h1>
-            <p>{about.section05Desc.section05Desc}</p>
-          </div>
+          <div>{documentToReactComponents(about.section05Left.json)}</div>
           <Img fluid={about.aboutImage04.fluid} alt='' />
         </section>
       
@@ -78,51 +62,58 @@ export default function AboutPage({ data }) {
 export const aboutquery = graphql`
 query AboutPageQuery {
   contentfulAboutPage {
+    title
     heroImage {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
-    title
-    section01Title
-    section01Desc {
-      section01Desc
+    section01 {
+      json
     }
-    section02Title
-    section02Subtitle
-    section02List
-    section02Desc {
-      section02Desc
+    section02Left {
+      json
     }
-    section03Title
-    section04Desc {
-      section04Desc
+    section02Right {
+      json
     }
-    section04Title
-    section05Title
-    section05Desc {
-      section05Desc
+    section03Left {
+      json
     }
+    section04Left {
+      json
+    }
+    section04Right {
+      json
+    }
+    section05Left {
+      json
+    }
+    team01Name
     team01 {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
+    team02Name
     team02 {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
+    team03Name
     team03 {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
+    team04Name
     team04 {
       fluid {
         ...GatsbyContentfulFluid
      } 
     }
+    team05Name
     team05 {
       fluid {
         ...GatsbyContentfulFluid
@@ -148,7 +139,6 @@ query AboutPageQuery {
         ...GatsbyContentfulFluid
      } 
     }
-    collaborators
   }
 }
 
