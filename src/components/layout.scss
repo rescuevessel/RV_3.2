@@ -30,9 +30,13 @@ $rescue-vessel-orange: #ff5812;
   text-rendering: optimizeLegibility;
 }
 
-body { width: 100%; font-size: 24px;
-  a { text-decoration: none; color: black;
-    &:hover { color: $rescue-vessel-orange;} }
+body { 
+  width: 100%;
+  font-size: 24px;
+  a { 
+    text-decoration: none; color: black;
+    &:hover { color: $rescue-vessel-orange; text-decoration: underline; } 
+  }
 }
 
 .header-logo img { max-width: 60px; }
@@ -57,12 +61,6 @@ p {
 
 .type-pitch { font-family: PitchMedium, monospace; }
 .type-ssno { font-family: SharpSans, monospace; }
-
-.home-hero { 
-  //width: 100%;
-  //padding: 1vw;
-  //min-height: 540px;
- }
 
 .vimeo-full {
   overflow: hidden;
@@ -107,6 +105,7 @@ section.home-hero { padding: 0;}
   .blue {background: blue;}
   .red {background: red;}
 }
+
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -115,6 +114,7 @@ section.home-hero { padding: 0;}
 
 .homeSections {
   h2 { padding: 8vh 0 4vh 0;}
+  p { padding-bottom: 20px;}
 }
 
 .nav-wrap {
@@ -159,3 +159,41 @@ section.home-hero { padding: 0;}
 
 //.slick-arrow {background-color: red !important; font-size: 0px !important; content: none;}
 .rvPrevArrow { right: 0; }
+
+button {
+  font-family: SharpSans, monospace;
+  background: black;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: .7em;
+  padding: 1.0rem;
+  border: 0;
+  transition: all 0.3s;
+  //border-radius: 10px;
+  width: auto;
+  position: relative;
+
+  &::after {
+      content: "\f054";
+      font-family: "FontAwesome";
+      font-weight: 400;
+      position: absolute;
+      left: 85%;
+      top: 31%;
+      right: 5%;
+      bottom: 0;
+      opacity: 0;
+  }
+
+  &:hover {
+      background: $rescue-vessel-orange;
+      transition: all 0.3s;
+      //border-radius: 10px;
+      //box-shadow: 0px 6px 15px #0000ff61;
+      padding: 1rem 3.5rem 1rem 1rem;
+      &::after {
+          opacity: 1;
+          transition: all 0.3s;
+      }
+  }
+}

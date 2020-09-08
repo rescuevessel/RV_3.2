@@ -11,7 +11,7 @@ export default function AboutPage({ data }) {
   const about = data.contentfulAboutPage
   const slider = data.contentfulAboutPage.aboutImageSlider
   
-  return (
+return (
   <Layout>
       <section className='centered'>
         <h1>{about.title}</h1>
@@ -54,11 +54,10 @@ export default function AboutPage({ data }) {
       </section>
 
       <section className='centered grid-3 team'>
-        <div><Img fluid={about.team01.fluid} alt='' /><h2>{about.team01Name}</h2></div>
-        <div><Img fluid={about.team02.fluid} alt='' /><h2>{about.team02Name}</h2></div>
-        <div><Img fluid={about.team03.fluid} alt='' /><h2>{about.team03Name}</h2></div>
-        <div><Img fluid={about.team04.fluid} alt='' /><h2>{about.team04Name}</h2></div>
-        <div><Img fluid={about.team05.fluid} alt='' /><h2>{about.team05Name}</h2></div>
+        {about.team.map((team, index) => 
+              <div><Img fluid={team.fluid} alt='' key={index} />
+              <h2>{team.title}</h2></div>
+        )}
       </section>
       
       <section className='centered grid-2'>
@@ -67,7 +66,6 @@ export default function AboutPage({ data }) {
       </section>
   </Layout>
 )}
-
 
 export const aboutquery = graphql`
 query AboutPageQuery {
@@ -104,55 +102,31 @@ query AboutPageQuery {
     section05Left {
       json
     }
-    team01Name
-    team01 {
+    team {
+      title
       fluid {
         ...GatsbyContentfulFluid
-     } 
-    }
-    team02Name
-    team02 {
-      fluid {
-        ...GatsbyContentfulFluid
-     } 
-    }
-    team03Name
-    team03 {
-      fluid {
-        ...GatsbyContentfulFluid
-     } 
-    }
-    team04Name
-    team04 {
-      fluid {
-        ...GatsbyContentfulFluid
-     } 
-    }
-    team05Name
-    team05 {
-      fluid {
-        ...GatsbyContentfulFluid
-     } 
+      }
     }
     aboutImage01 {
       fluid {
         ...GatsbyContentfulFluid
-     } 
+      } 
     }
     aboutImage02 {
       fluid {
         ...GatsbyContentfulFluid
-     } 
+      } 
     }
     aboutImage03 {
       fluid {
         ...GatsbyContentfulFluid
-     } 
+      } 
     }
     aboutImage04 {
       fluid {
         ...GatsbyContentfulFluid
-     } 
+      } 
     }
   }
 }

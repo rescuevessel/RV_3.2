@@ -1,5 +1,5 @@
 import React from "react"
-//import { Link } from "gatsby"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
@@ -25,21 +25,19 @@ export default function HomePage({ data }) {
       <div className='centered homeSections'>
         <section>
           {documentToReactComponents(home.section01.json)}
-          <button>About us</button>
+          <Link to="/about"><button>About us</button></Link>
         </section>
         
         <section>
           {documentToReactComponents(home.section02.json)}
-          <button>See our work</button>
+          <Link to="/work"><button>See our work</button></Link>
         </section>
 
         <section>
           {documentToReactComponents(home.section03.json)}
-          <section className='client-logos centered'>
-            {home.clientLogos.map((logo, index) => {
-              return <img src={logo.file.url} alt='' key={logo.id}  />
-            })}
-          </section>
+        <section className='client-logos centered'>
+        {home.clientLogos.map((logo, index) => <img src={logo.file.url} alt='' key={logo.id} />)}
+        </section>
         </section>
     </div>
 
