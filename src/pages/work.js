@@ -13,27 +13,27 @@ export default function WorkPage({ data }) {
       <div className='centered grid-2 work'>
         <Link to="/work/mountain-men"><div>
             <Img fluid={work.shermansShowcaseThumb.fluid} alt='' />
-            <h2><a>{work.shermansShowcaseTitle}</a></h2>
+            <h2>{work.shermansShowcaseTitle}</h2>
         </div></Link>
         <Link to="/work/mountain-men"><div>
             <Img fluid={work.dekalbMarketHallThumb.fluid} alt='' />
-            <h2><a>{work.dekalbMarketHallTitle}</a></h2>
+            <h2>{work.dekalbMarketHallTitle}</h2>
         </div></Link>
         <Link to="/work/mountain-men"><div>
             <Img fluid={work.marcoThumb.fluid} alt='' />
-            <h2><a>{work.marcoTitle}</a></h2>
+            <h2>{work.marcoTitle}</h2>
         </div></Link>
         <Link to="/work/mountain-men"><div>
             <Img fluid={work.ns8Thumb.fluid} alt='' />
-            <h2><a>{work.ns8Title}</a></h2>
+            <h2>{work.ns8Title}</h2>
         </div></Link>
         <Link to="/work/mountain-men">
             <Img fluid={work.mountainMenThumb.fluid} alt='' />
-            <h2><a>{work.mountainMenTitle}</a></h2></Link>
+            <h2>{work.mountainMenTitle}</h2></Link>
         
         <div>
             <Img fluid={work.aeThumb.fluid} alt='' />
-            <h2><a>{work.aeTitle}</a></h2>
+            <h2>{work.aeTitle}</h2>
         </div>
       </div>
 
