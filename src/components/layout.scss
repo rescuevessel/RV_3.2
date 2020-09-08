@@ -1,5 +1,6 @@
 @font-face {
   font-family: SharpSans;
+  font-weight: 300;
   src: url("../fonts/SharpSansNoOne-Medium.otf")
     format("opentype");
 }
@@ -21,23 +22,29 @@
        url("../fonts/pitch-web-medium.woff2") format("woff2");
 }
 
+$rescue-vessel-orange: #ff5812;
+
 * { 
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-body { width: 100%; font-size: 24px; }
+body { width: 100%; font-size: 24px;
+  a { text-decoration: none; color: black;
+    &:hover { color: $rescue-vessel-orange;} }
+}
 
 .header-logo img { max-width: 60px; }
 
-h1 { font-family: SharpSans; font-size: 3.2em; }
+h1 { font-family: SharpSans; font-size: 3.0em; }
 
 h2 { 
   font-family: SharpSans, monospace;
-  font-weight: 500;
-  //font-size: 2.5vw;
-  line-height: 1.1em;
+  font-weight: 300;
+  font-size: 1.4em;
+  //padding: 5vh 0vw;
+  line-height: 1.2em;
 }
 
 p { 
@@ -87,12 +94,18 @@ p {
   }
 }
 
-.centered { max-width: 1200px; margin: 0 auto; padding: 1vh 2vw; }
+
+
+.centered { max-width: 1200px; margin: 0 auto; padding: 4vh 2vw; }
+
+section.home-hero { padding: 0;}
 
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
   grid-gap: 30px;
+  .blue {background: blue;}
+  .red {background: red;}
 }
 .grid-3 {
   display: grid;
@@ -100,8 +113,9 @@ p {
   grid-gap: 30px;
 }
 
-
-section { padding-top: 30px; }
+.homeSections {
+  h2 { padding: 8vh 0 4vh 0;}
+}
 
 .nav-wrap {
   display: flex;
@@ -129,7 +143,7 @@ section { padding-top: 30px; }
 
 .client-logos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 250px);
   align-items: center;
   justify-items: center;
   img {
@@ -137,3 +151,11 @@ section { padding-top: 30px; }
   }
 }
 
+.team  {
+  h2 { padding: 1rem 0; }
+}
+
+.work h2 { padding-top: 10px; }
+
+//.slick-arrow {background-color: red !important; font-size: 0px !important; content: none;}
+.rvNextArrow { display: none !important; }

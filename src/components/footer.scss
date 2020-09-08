@@ -9,7 +9,7 @@ $rescue-vessel-orange: #ff5812;
     a {
         font-size: .7em;
         display: block;
-        border-bottom: 1px solid black;
+        border-bottom: 1px dotted black;
         padding-left: 0;
         text-decoration: none;
         line-height: 2.25rem;
@@ -46,11 +46,9 @@ footer {
   
 .footer-columns {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 3fr;
+    grid-template-columns: 100px 2fr 3fr;
     grid-column-gap: 30px;
-    img { 
-        //height: auto;
-        max-width: 88px; }
+    img { max-width: 66px; }
 }
   
 
@@ -63,7 +61,7 @@ footer {
     display: flex;
     margin-top: 4rem;
     text-align: left;
-    font-size: .8vw;
+    //font-size: .8vw;
 }
 
 .currentTime {
@@ -76,7 +74,8 @@ footer {
     margin-left: 0;
     display: inline-block;
     color: $rescue-vessel-orange;
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 .emailInput {
@@ -90,12 +89,3 @@ footer {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-
-
-
-.isFlex {
-    display: flex;
-}
-
-
-

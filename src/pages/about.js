@@ -1,23 +1,68 @@
 import React from 'react'
 //import { Link } from "gatsby"
 import Img from 'gatsby-image'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import "../components/layout.scss"
+
+
 
 
 export default function AboutPage({ data }) { 
   const about = data.contentfulAboutPage
-  console.log(about)
+  const slider = data.contentfulAboutPage.aboutImageSlider
+  //const aboutSlider = slider.map((image, index) => <img src={image.file.url} key={index} />)
+  //console.log(slider[2].file.url)
+  function RVnextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "red", width: '30px', height: '30px' }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function RVprevArrow(props) {
+    const { rvPrevArrow, style, onClick } = props;
+    return (
+      <div
+        className={rvPrevArrow}
+        style={{ ...style, display: "block", background: "green" }}
+        onClick={onClick}
+      />
+    );
+  }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <RVnextArrow />,
+    prevArrow: <RVprevArrow />
+  };
+  
   return (
   <Layout>
-      <section className='centered grid-2'>
+      <section className='centered'>
         <h1>{about.title}</h1>
       </section>
-      <div className='home-hero'>
-        <Img fluid={about.heroImage.fluid} alt='' />
-      </div> 
+      
+      <section className='centered'>
+     
+        <Slider {...settings}>
+          <Img fluid={slider[0].fluid} width='100%' />
+          <Img fluid={slider[1].fluid} width='100%' />
+          <Img fluid={slider[2].fluid} width='100%' />
+        </Slider>
+      </section> 
       <div className='centered'>
         <section>
           {documentToReactComponents(about.section01.json)}
@@ -42,7 +87,7 @@ export default function AboutPage({ data }) {
           <div>{documentToReactComponents(about.section04Left.json)}</div>
           <div>{documentToReactComponents(about.section04Right.json)}</div>
         </section>
-        <section className='centered grid-3'>
+        <section className='centered grid-3 team'>
           <div><Img fluid={about.team01.fluid} alt='' /><h2>{about.team01Name}</h2></div>
           <div><Img fluid={about.team02.fluid} alt='' /><h2>{about.team02Name}</h2></div>
           <div><Img fluid={about.team03.fluid} alt='' /><h2>{about.team03Name}</h2></div>
@@ -64,6 +109,11 @@ query AboutPageQuery {
   contentfulAboutPage {
     title
     heroImage {
+      fluid {
+        ...GatsbyContentfulFluid
+     } 
+    }
+    aboutImageSlider {
       fluid {
         ...GatsbyContentfulFluid
      } 

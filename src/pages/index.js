@@ -8,7 +8,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function HomePage({ data }) { 
   const home = data.contentfulHomePage
-  const image = data.contentfulHomePage.homeImageSlider[0].fluid
+  const image = data.contentfulHomePage.homeHeroImage.fluid
 
   return (
   <Layout>
@@ -18,11 +18,11 @@ export default function HomePage({ data }) {
         <h2>{home.subtitle}</h2>
       </section>
 
-      <div className='home-hero'>
+      <section className='home-hero'>
         <Img fluid={image} alt='' />
-      </div> 
+      </section> 
 
-      <div className='centered'>
+      <div className='centered homeSections'>
         <section>
           {documentToReactComponents(home.section01.json)}
           <button>About us</button>
@@ -35,11 +35,11 @@ export default function HomePage({ data }) {
 
         <section>
           {documentToReactComponents(home.section03.json)}
-          <div className='client-logos'>
+          <section className='client-logos centered'>
             {home.clientLogos.map((logo, index) => {
               return <img src={logo.file.url} alt='' key={logo.id}  />
             })}
-          </div>
+          </section>
         </section>
     </div>
 
@@ -52,7 +52,7 @@ query MyQuery {
   contentfulHomePage {
     title
     subtitle
-    homeImageSlider {
+    homeHeroImage {
       fluid {
         ...GatsbyContentfulFluid
      } 

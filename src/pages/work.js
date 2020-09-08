@@ -10,30 +10,30 @@ export default function WorkPage({ data }) {
   return (
   <Layout>
 
-      <div className='centered grid-2'>
-        <div>
+      <div className='centered grid-2 work'>
+        <Link to="/work/mountain-men"><div>
             <Img fluid={work.shermansShowcaseThumb.fluid} alt='' />
-            <h1>{work.shermansShowcaseTitle}</h1>
-        </div>
-        <div>
+            <h2><a>{work.shermansShowcaseTitle}</a></h2>
+        </div></Link>
+        <Link to="/work/mountain-men"><div>
             <Img fluid={work.dekalbMarketHallThumb.fluid} alt='' />
-            <h1>{work.dekalbMarketHallTitle}</h1>
-        </div>
-        <div>
+            <h2><a>{work.dekalbMarketHallTitle}</a></h2>
+        </div></Link>
+        <Link to="/work/mountain-men"><div>
             <Img fluid={work.marcoThumb.fluid} alt='' />
-            <h1>{work.marcoTitle}</h1>
-        </div>
-        <div>
+            <h2><a>{work.marcoTitle}</a></h2>
+        </div></Link>
+        <Link to="/work/mountain-men"><div>
             <Img fluid={work.ns8Thumb.fluid} alt='' />
-            <h1>{work.ns8Title}</h1>
-        </div>
+            <h2><a>{work.ns8Title}</a></h2>
+        </div></Link>
         <Link to="/work/mountain-men">
             <Img fluid={work.mountainMenThumb.fluid} alt='' />
-            <h1>{work.mountainMenTitle}</h1>
-        </Link>
+            <h2><a>{work.mountainMenTitle}</a></h2></Link>
+        
         <div>
             <Img fluid={work.aeThumb.fluid} alt='' />
-            <h1>{work.aeTitle}</h1>
+            <h2><a>{work.aeTitle}</a></h2>
         </div>
       </div>
 
