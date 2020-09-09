@@ -1,8 +1,8 @@
 {
-  "name": "Rescue Vessel",
+  "name": "gatsby-starter-default",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "3.2.0",
+  "version": "0.1.0",
   "author": "David O'Brien <dave@rescuevessel.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
@@ -14,7 +14,9 @@
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-source-contentful": "^2.3.39",
+    "gatsby-source-dropbox": "^0.2.3",
     "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-transformer-remark": "^2.8.34",
     "gatsby-transformer-sharp": "^2.5.13",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",

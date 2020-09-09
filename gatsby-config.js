@@ -32,6 +32,22 @@ module.exports = {
         accessToken: '1kR_mZyBhpsxpr769RRBkfTeYjsFf42ZjPyz334ZEkI',
       },
     },
+    {
+      resolve: `gatsby-source-dropbox`,
+      options: {
+        accessToken: `9OB_98L2OKEAAAAAAABqFmrGZRoQJVmxLYeuozKKEbf4pBK_jr0HtD5cAB8sIQPI`,
+        extensions: ['.pdf', '.jpg', '.png', '.gif', '.md'],
+        path: '',
+        recursive: false,
+        createFolderNodes: false,
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

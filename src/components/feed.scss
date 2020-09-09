@@ -1,0 +1,31 @@
+// index page styles
+$rescue-vessel-orange: #ff5812;
+
+li { list-style: none; }
+
+.headingsWrapper {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1920px;
+  padding: 50px 200px;
+}
+
+.feedContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  li {
+    padding: 30px 0;
+    //margin-left: random(300) + px;
+  }
+}
+.feed-item {
+  //margin-left: 0 !important;
+  border: none;
+  outline: none;
+  //padding-left: 50px;
+  img { max-width: 1000px;}
+}
+
