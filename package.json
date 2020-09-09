@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Rescue Vessel",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "3.2.0",
+  "author": "David O'Brien <dave@rescuevessel.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "gatsby": "^2.24.47",

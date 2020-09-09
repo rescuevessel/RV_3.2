@@ -25,19 +25,19 @@ export default function HomePage({ data }) {
       <div className='centered homeSections'>
         <section>
           {documentToReactComponents(home.section01.json)}
-          <Link to="/about"><button>About us</button></Link>
+          <Link to="/about"><button className='btn-1'>About us</button></Link>
         </section>
         
         <section>
           {documentToReactComponents(home.section02.json)}
-          <Link to="/work"><button>See our work</button></Link>
+          <Link to="/work"><button className='btn-1'>See our work</button></Link>
         </section>
 
         <section>
           {documentToReactComponents(home.section03.json)}
-        <section className='client-logos centered'>
-        {home.clientLogos.map((logo, index) => <img src={logo.file.url} alt='' key={logo.id} />)}
-        </section>
+          <section className='client-logos centered'>
+          {home.clientLogos.map((logo, index) => <img src={logo.file.url} alt='' key={logo.id} />)}
+          </section>
         </section>
     </div>
 

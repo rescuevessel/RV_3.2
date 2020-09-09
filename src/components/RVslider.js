@@ -3,28 +3,27 @@ import PropTypes from "prop-types"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import './RVslider.scss'
 
 const RVslider = ({ children }) => {
 
     function RVnextArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
-        <div
-        className={className}
-        style={{ ...style, display: "block", background: "red", width: '30px', height: '30px' }}
+        <button
+        className='rv-arrow rv-arrow-next'
         onClick={onClick}
-        />
+        >Next</button>
     );
     }
       
       function RVprevArrow(props) {
-        const { style, onClick } = props;
+        const { onClick } = props;
         return (
-          <div
-            className='rvPrevArrow'
-            style={{ ...style, display: "block", background: "green", width: '30px', height: '30px' }}
+          <button
+            className='rv-arrow rv-arrow-prev'
             onClick={onClick}
-          />
+          >Previous</button>
         );
       }
     
