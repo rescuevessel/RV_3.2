@@ -5,7 +5,6 @@ import "./layout.scss"
 import "./footer-new.scss"
 import logo from "../images/rv_icon.png"
 
-
 const Footer = class extends React.Component {
   render() {
     return (
