@@ -2,18 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 //import moment from 'moment-timezone'
 import "./layout.scss"
+import "./footer-new.scss"
 import logo from "../images/rv_icon.png"
-import "./footer.scss"
+
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <>
-        <div className="-columns centered">
+      <footer>
+        <div className="footer-columns centered">
           <div>
             <img src={logo} alt="Rescue Vessel Logo" />
           </div>
-          <div className="-wrapper">
+          <div className="footer-wrapper">
             <ul className="menu-list">
               <li>
                 <Link to="/about" className="navbar-item type-pitch">
@@ -68,7 +69,7 @@ const Footer = class extends React.Component {
               </li>
             </ul>
           </div>
-          <section className="Right">
+          <section className="footerRight">
             <div>
               <h2 className="type-ssno">Let's work together</h2>
               <a
@@ -91,7 +92,7 @@ const Footer = class extends React.Component {
             </div>
           </section>
         </div>
-      </>
+      </footer>
     )
   }
 }
