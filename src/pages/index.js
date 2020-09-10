@@ -1,75 +1,78 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-export default function HomePage({ data }) { 
+export default function HomePage({ data }) {
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
 
   return (
-  <Layout>
-    <SEO title="Rescue Vessel" />
-      <section className='centered grid-2'>
+    <Layout>
+      <section className="centered grid-2">
         <h1>{home.title}</h1>
         <h2>{home.subtitle}</h2>
       </section>
 
-      <section className='home-hero'>
-        <Img fluid={image} alt='' />
-      </section> 
+      <section className="home-hero">
+        <Img fluid={image} alt="" />
+      </section>
 
-      <div className='centered homeSections'>
+      <div className="centered grid-2 homeSections">
         <section>
           {documentToReactComponents(home.section01.json)}
-          <Link to="/about"><button className='btn-1'>About us</button></Link>
+          <Link to="/about">
+            <button className="btn-1">About us</button>
+          </Link>
         </section>
-        
+
         <section>
           {documentToReactComponents(home.section02.json)}
-          <Link to="/work"><button className='btn-1'>See our work</button></Link>
+          <Link to="/work">
+            <button className="btn-1">See our work</button>
+          </Link>
         </section>
+      </div>
 
-        <section>
-          {documentToReactComponents(home.section03.json)}
-          <section className='client-logos centered'>
-          {home.clientLogos.map((logo, index) => <img src={logo.file.url} alt='' key={logo.id} />)}
-          </section>
-        </section>
-    </div>
+      <section className="centered">
+        {documentToReactComponents(home.section03.json)}
+      </section>
 
-  </Layout>
-)}
+      <section className="client-logos centered">
+        {home.clientLogos.map(logo => (
+          <img src={logo.file.url} alt="" key={logo.id} />
+        ))}
+      </section>
+    </Layout>
+  )
+}
 
-
-export const query = graphql`
-query MyQuery {
-  contentfulHomePage {
-    title
-    subtitle
-    homeHeroImage {
-      fluid {
-        ...GatsbyContentfulFluid
-     } 
-    }
-    section01 {
-      json
-    }
-    section02 {
-      json
-    }
-    section03 {
-      json
-    }
-    clientLogos {
-      id
-      file {
-        url
+export const indexquery = graphql`
+  query indexquery {
+    contentfulHomePage {
+      title
+      subtitle
+      homeHeroImage {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      section01 {
+        json
+      }
+      section02 {
+        json
+      }
+      section03 {
+        json
+      }
+      clientLogos {
+        id
+        file {
+          url
+        }
       }
     }
   }
-}
 `
