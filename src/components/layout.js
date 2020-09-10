@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Nav from "./nav"
-import Footer1 from "./footer-new" 
-
+import Footer from "./footer"
 
 //
 
@@ -26,7 +25,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
       </div>
-      <Footer1 />
+      <Footer />
     </>
   )
 }

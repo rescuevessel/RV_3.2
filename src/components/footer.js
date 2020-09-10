@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 //import moment from 'moment-timezone'
 import "./layout.scss"
-import "./footer-new.scss"
+import "./footer.scss"
 import logo from "../images/rv_icon.png"
 
 const Footer = class extends React.Component {
