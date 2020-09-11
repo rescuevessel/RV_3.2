@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 import "../components/layout.scss"
 import "../components/feed.scss"
 
-export default function FeedPage({ data }) {
+const FeedPage = ({ data }) => {
   return (
     <Layout>
       <div>
@@ -18,7 +18,7 @@ export default function FeedPage({ data }) {
 
               if (node.localFile.extension === "md") {
                 const iframe = node.localFile.childMarkdownRemark.frontmatter
-                console.log(iframe)
+                //console.log(iframe)
                 return (
                   <li className="feed-item" style={{ marginLeft: num }}>
                     <iframe
@@ -50,12 +50,15 @@ export default function FeedPage({ data }) {
   )
 }
 
+export default FeedPage
+
 export const feedquery = graphql`
   query feedQuery {
     allDropboxNode {
       edges {
         node {
           localFile {
+            publicURL
             extension
             childMarkdownRemark {
               frontmatter {
@@ -63,7 +66,6 @@ export const feedquery = graphql`
                 templateKey
               }
             }
-            publicURL
           }
         }
       }

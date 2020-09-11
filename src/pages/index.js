@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-export default function HomePage({ data }) {
+const IndexPage = ({ data }) => {
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
 
@@ -47,6 +47,8 @@ export default function HomePage({ data }) {
     </Layout>
   )
 }
+
+export default IndexPage
 
 export const indexquery = graphql`
   query indexquery {
