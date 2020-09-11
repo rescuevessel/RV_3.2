@@ -145,32 +145,6 @@ section.home-hero {
   }
 }
 
-.nav-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6vh 2vw;
-}
-
-.nav-menu {
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-
-.navbar-li {
-  font-family: SharpSans, monospace;
-  font-weight: 700;
-  font-size: 26px;
-  color: #000;
-  text-align: right;
-  margin: 0 12px;
-}
-
-.navbar {
-  position: relative;
-}
-
 .client-logos {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
