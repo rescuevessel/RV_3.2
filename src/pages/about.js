@@ -6,7 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import "../components/layout.scss"
 import RVslider from "../components/RVslider"
 
-export default function AboutPage({ data }) {
+const AboutPage = ({ data }) => {
   const about = data.contentfulAboutPage
   const slider = data.contentfulAboutPage.aboutImageSlider
 
@@ -72,6 +72,8 @@ export default function AboutPage({ data }) {
     </Layout>
   )
 }
+
+export default AboutPage
 
 export const aboutquery = graphql`
   query AboutPageQuery {
