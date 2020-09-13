@@ -40,10 +40,6 @@ body {
   }
 }
 
-.header-logo img {
-  max-width: 60px;
-}
-
 h1 {
   font-family: SharpSans;
   font-size: 3em;
@@ -70,6 +66,10 @@ p {
 }
 .type-ssno {
   font-family: SharpSans, monospace;
+}
+
+.header-logo img {
+  max-width: 60px;
 }
 
 .vimeo-full {
@@ -104,8 +104,8 @@ p {
 
 .centered {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 4vh 2vw;
+  margin: 0 auto; // center in browser
+  padding: 6vh 4vw;
 }
 
 section.home-hero {
