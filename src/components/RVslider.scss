@@ -19,16 +19,16 @@ $rescue-vessel-orange: #ff5812;
 
 .rv-arrow-next {
   right: -60px;
-  z-index: 100;
+  z-index: 5;
 }
 
 .rv-arrow-prev {
   left: -60px;
-  z-index: 100;
+  z-index: 5;
 }
 
 .slick-dots li button::before {
-  font-family: "slick";
+  font-family: 'slick';
   font-size: 10px;
   line-height: 20px;
   position: absolute;
@@ -36,7 +36,7 @@ $rescue-vessel-orange: #ff5812;
   left: 0;
   width: 50px;
   height: 20px;
-  content: "\2022";
+  content: '\2022';
   text-align: center;
   opacity: 0.25;
   color: black;

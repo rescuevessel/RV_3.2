@@ -7,6 +7,10 @@ $rescue-vessel-orange: #ff5812;
   padding: 6vh 2vw;
 }
 
+.nav-logo {
+  z-index: 200;
+}
+
 .nav-menu {
   display: flex;
   height: 100%;
@@ -20,10 +24,6 @@ $rescue-vessel-orange: #ff5812;
   color: #000;
   text-align: right;
   margin: 0 12px;
-}
-
-.navbar {
-  position: relative;
 }
 
 // mobile
@@ -80,11 +80,9 @@ $rescue-vessel-orange: #ff5812;
   .nav-burger {
     z-index: 100;
     display: flex;
+    outline: none;
   }
 
-  .nav-wrap {
-    //position: fixed;
-  }
   .mobile-nav {
     opacity: 0;
     position: fixed;
@@ -97,10 +95,14 @@ $rescue-vessel-orange: #ff5812;
     height: 100vh;
     background-color: $rescue-vessel-orange;
     padding-top: 250px;
+    z-index: 90;
+    a {
+      padding-bottom: 1rem;
+    }
   }
   .mobile-nav-active {
     opacity: 100;
-    transition: opacity 500ms;
+    transition: opacity 300ms;
     display: flex;
   }
   img.logo-mobile {
@@ -110,15 +112,14 @@ $rescue-vessel-orange: #ff5812;
     .line1 {
       transform-origin: 25px;
       transform: translateY(10px) rotate(45deg) !important;
-      transition: all 500ms;
+      transition: all 600ms;
+      transition-delay: 200ms;
     }
     .line2 {
       transform-origin: 25px;
       transform: translateY(-10px) rotate(-45deg) !important;
-      transition: all 500ms;
-    }
-    div {
-      background-color: white;
+      transition: all 600ms;
+      transition-delay: 200ms;
     }
   }
 }

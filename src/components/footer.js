@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
       <div className='footer-columns centered'>
         <div>
-          <img src={logo} alt='Rescue Vessel Logo' />
+          <img src={logo} style={{ width: '70px' }} alt='Rescue Vessel Logo' />
         </div>
         <div className='footer-wrapper'>
           <ul className='menu-list'>

@@ -6,6 +6,11 @@ $rescue-vessel-orange: #ff5812;
   list-style: none;
   text-align: left;
   padding-right: 50px;
+  li {
+    &:first-child {
+      border-top: 1px dotted black;
+    }
+  }
   a {
     font-size: 0.7em;
     display: block;
@@ -57,11 +62,8 @@ footer {
 
 .footer-columns {
   display: grid;
-  grid-template-columns: 100px 2fr 2fr;
+  grid-template-columns: 80px 2fr 2fr;
   grid-column-gap: 30px;
-  img {
-    max-width: 66px;
-  }
 }
 
 .footer-wrapper {
