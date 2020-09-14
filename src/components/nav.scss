@@ -28,6 +28,10 @@ $rescue-vessel-orange: #ff5812;
 
 // mobile
 
+.mobile-nav {
+  display: none;
+}
+
 .m-navbar-li {
   font-family: SharpSans, monospace;
   font-weight: 700;
@@ -43,9 +47,6 @@ $rescue-vessel-orange: #ff5812;
   }
 }
 
-.mobile-nav {
-  display: none;
-}
 .nav-burger {
   padding: 0;
   background: transparent;
@@ -55,6 +56,8 @@ $rescue-vessel-orange: #ff5812;
   display: none;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 100;
+  outline: none;
   cursor: pointer;
   .line1 {
     transform-origin: 25px;
@@ -78,13 +81,10 @@ $rescue-vessel-orange: #ff5812;
     display: none;
   }
   .nav-burger {
-    z-index: 100;
     display: flex;
-    outline: none;
   }
 
   .mobile-nav {
-    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -96,6 +96,8 @@ $rescue-vessel-orange: #ff5812;
     background-color: $rescue-vessel-orange;
     padding-top: 250px;
     z-index: 90;
+    opacity: 0;
+    transition: opacity 300ms;
     a {
       padding-bottom: 1rem;
     }
