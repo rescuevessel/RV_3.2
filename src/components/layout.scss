@@ -1,22 +1,22 @@
 @font-face {
   font-family: SharpSans;
   font-weight: 300;
-  src: url("../fonts/SharpSansNoOne-Medium.otf") format("opentype");
+  src: url('../fonts/SharpSansNoOne-Medium.otf') format('opentype');
 }
 @font-face {
   font-family: SharpSans;
-  src: url("../fonts/Sharp Sans No1-SemiBold.otf") format("opentype");
+  src: url('../fonts/Sharp Sans No1-SemiBold.otf') format('opentype');
 }
 @font-face {
   font-family: SharpSans;
   font-weight: bold;
-  src: url("../fonts/SharpSansNoOne-Bold.otf") format("opentype");
+  src: url('../fonts/SharpSansNoOne-Bold.otf') format('opentype');
 }
 @font-face {
   font-family: PitchMedium;
-  src: url("../fonts/pitch-web-medium.woff") format("woff"),
-    url("../fonts/pitch-web-medium.eot") format("eot"),
-    url("../fonts/pitch-web-medium.woff2") format("woff2");
+  src: url('../fonts/pitch-web-medium.woff') format('woff'),
+    url('../fonts/pitch-web-medium.eot') format('eot'),
+    url('../fonts/pitch-web-medium.woff2') format('woff2');
 }
 
 $rescue-vessel-orange: #ff5812;
@@ -73,16 +73,16 @@ p {
 }
 
 .vimeo-full {
-  overflow: hidden;
+  //overflow: hidden;
   /* 16:9 aspect ratio */
-  padding-top: 56.25%;
-  position: relative;
+  //padding-top: 56.25%;
+  //position: relative;
   iframe {
     border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
+    max-width: 1200px;
+
+    //position: absolute;
+
     width: 100%;
   }
 }
@@ -179,8 +179,8 @@ section.home-hero {
   position: relative;
 
   &::after {
-    content: "\f054";
-    font-family: "FontAwesome";
+    content: '\f054';
+    font-family: 'FontAwesome';
     font-weight: 400;
     position: absolute;
     left: 80%;

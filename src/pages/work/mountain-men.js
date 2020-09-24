@@ -11,8 +11,10 @@ export default function MountainMen({ data }) {
 
   return (
     <Layout>
-      <div className='vimeo-full'>
-        <iframe src={mountain.hero} allowfullscreen title='temp' />
+      <div className='centered'>
+        <div className='vimeo-body-full'>
+          <iframe src={mountain.hero} allowfullscreen title='temp' />
+        </div>
       </div>
       <div className='grid-2 centered'>
         <h1>{mountain.title}</h1>
@@ -27,7 +29,12 @@ export default function MountainMen({ data }) {
       </div>
       <div className='centered'>
         <div className='vimeo-body-full'>
-          <iframe src={mountain.mmEmbed01} allowfullscreen title='temp' />
+          <iframe
+            src={`${mountain.mmEmbed01}?autoplay=1&loop=1&background=1`}
+            allow='autoplay; fullscreen'
+            allowfullscreen
+            title='temp'
+          />
         </div>
       </div>
       <div className='centered'>
