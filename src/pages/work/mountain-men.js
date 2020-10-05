@@ -1,19 +1,16 @@
 import React from 'react'
-//import { Link } from "gatsby"
 import Img from 'gatsby-image'
 import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
-//import SEO from "../components/seo"
 
 export default function MountainMen({ data }) {
   let mountain = data.contentfulMountainMen
-  //console.log(data)
 
   return (
     <Layout>
       <div className='centered'>
         <div className='vimeo-body-full'>
-          <iframe src={mountain.hero} allowfullscreen title='temp' />
+          <iframe src={mountain.hero} title='temp' />
         </div>
       </div>
       <div className='grid-2 centered'>
@@ -31,33 +28,39 @@ export default function MountainMen({ data }) {
         <div className='vimeo-body-full'>
           <iframe
             src={`${mountain.mmEmbed01}?autoplay=1&loop=1&background=1`}
-            allow='autoplay; fullscreen'
-            allowfullscreen
             title='temp'
           />
         </div>
       </div>
       <div className='centered'>
         <div className='vimeo-body-full'>
-          <iframe src={mountain.mmEmbed02} allowfullscreen title='temp' />
+          <iframe
+            src={`${mountain.mmEmbed02}?autoplay=1&loop=1&background=1`}
+            allowfullscreen
+            title='temp'
+          />
         </div>
       </div>
       <div className='grid-2 centered'>
         <div className='vimeo-body-full'>
           <iframe
-            src={mountain.mmEmbed03}
-            allowfullscreen
-            allow='autoplay'
+            src={`${mountain.mmEmbed03}?autoplay=1&loop=1&background=1`}
             title='temp'
           />
         </div>
         <div className='vimeo-body-full'>
-          <iframe src={mountain.mmEmbed04} allowfullscreen title='temp' />
+          <iframe
+            src={`${mountain.mmEmbed04}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
         </div>
       </div>
       <div className='centered'>
         <div className='vimeo-body-full'>
-          <iframe src={mountain.mmEmbed05} allowfullscreen title='temp' />
+          <iframe
+            src={`${mountain.mmEmbed05}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
         </div>
       </div>
     </Layout>
