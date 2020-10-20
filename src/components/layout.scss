@@ -182,6 +182,11 @@ section.home-hero {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
 }
+.grid-9 {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .homeSections {
   h2 {
