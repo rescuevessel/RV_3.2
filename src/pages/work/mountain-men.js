@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import WorkTitleSection from '../../components/workTitleSection'
 
 export default function MountainMen({ data }) {
   let mountain = data.contentfulMountainMen
@@ -15,15 +15,10 @@ export default function MountainMen({ data }) {
           <iframe src={mountain.hero} title='temp' />
         </div>
       </div>
-      <div className='grid-2 centered-work'>
-        <div className='work-title work-info'>
-          <h1>{mountain.title}</h1>
-          <div className='title-line'></div>
-        </div>
-        <div className='work-info'>
-          {documentToReactComponents(mountain.description1.json)}
-        </div>
-      </div>
+      <WorkTitleSection
+        title={mountain.title}
+        desc={mountain.description1.json}
+      />
       <div className='centered-work'>
         <Img fluid={mountain.ansel01.fluid} alt='' />
       </div>

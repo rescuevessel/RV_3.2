@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
+import WorkTitleSection from '../../components/workTitleSection'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function ShermansShowcase({ data }) {
@@ -18,15 +19,11 @@ export default function ShermansShowcase({ data }) {
         </div>
       </div>
       {/* Section 2 - Title / Description */}
-      <div className='grid-2 centered-work'>
-        <div className='work-title work-info'>
-          <h1>{sherman.title}</h1>
-          <div className='title-line'></div>
-        </div>
-        <div className='work-info'>
-          {documentToReactComponents(sherman.descriptionMulti.json)}
-        </div>
-      </div>
+      <WorkTitleSection
+        title={sherman.title}
+        desc={sherman.descriptionMulti.json}
+      />
+
       {/* Section 3 - TC 1 / TC 2 */}
       <div className='grid-2 centered-work'>
         <VimeoAutoplay link={sherman.titleCard02} />
