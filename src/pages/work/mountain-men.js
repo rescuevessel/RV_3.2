@@ -1,7 +1,9 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
+import Layout from '../../components/layout'
+import VimeoAutoplay from '../../components/vimeoAutoplay'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function MountainMen({ data }) {
   let mountain = data.contentfulMountainMen
@@ -14,8 +16,13 @@ export default function MountainMen({ data }) {
         </div>
       </div>
       <div className='grid-2 centered-work'>
-        <h1>{mountain.title}</h1>
-        <p>{mountain.description.description}</p>
+        <div className='work-title work-info'>
+          <h1>{mountain.title}</h1>
+          <div className='title-line'></div>
+        </div>
+        <div className='work-info'>
+          {documentToReactComponents(mountain.description1.json)}
+        </div>
       </div>
       <div className='centered-work'>
         <Img fluid={mountain.ansel01.fluid} alt='' />
@@ -25,43 +32,17 @@ export default function MountainMen({ data }) {
         <p>{mountain.mmDesc.mmDesc}</p>
       </div>
       <div className='centered-work'>
-        <div className='vimeo-body-full'>
-          <iframe
-            src={`${mountain.mmEmbed01}?autoplay=1&loop=1&background=1`}
-            title='temp'
-          />
-        </div>
+        <VimeoAutoplay link={mountain.mmEmbed01} />
       </div>
       <div className='centered-work'>
-        <div className='vimeo-body-full'>
-          <iframe
-            src={`${mountain.mmEmbed02}?autoplay=1&loop=1&background=1`}
-            allowfullscreen
-            title='temp'
-          />
-        </div>
+        <VimeoAutoplay link={mountain.mmEmbed02} />
       </div>
       <div className='grid-2 centered-work'>
-        <div className='vimeo-body-full'>
-          <iframe
-            src={`${mountain.mmEmbed03}?autoplay=1&loop=1&background=1`}
-            title='temp'
-          />
-        </div>
-        <div className='vimeo-body-full'>
-          <iframe
-            src={`${mountain.mmEmbed04}?autoplay=1&loop=1&background=1`}
-            title='temp'
-          />
-        </div>
+        <VimeoAutoplay link={mountain.mmEmbed03} />
+        <VimeoAutoplay link={mountain.mmEmbed04} />
       </div>
       <div className='centered-work'>
-        <div className='vimeo-body-full'>
-          <iframe
-            src={`${mountain.mmEmbed05}?autoplay=1&loop=1&background=1`}
-            title='temp'
-          />
-        </div>
+        <VimeoAutoplay link={mountain.mmEmbed05} />
       </div>
     </Layout>
   )
@@ -71,8 +52,8 @@ export const mm_query = graphql`
   query MM {
     contentfulMountainMen {
       title
-      description {
-        description
+      description1 {
+        json
       }
       mmDesc {
         mmDesc

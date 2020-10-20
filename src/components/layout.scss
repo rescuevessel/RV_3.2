@@ -73,28 +73,6 @@ p {
   max-width: 60px;
 }
 
-.vimeo-full {
-  //overflow: hidden;
-  /* 16:9 aspect ratio */
-  //padding-top: 56.25%;
-  //position: relative;
-  iframe {
-    border: 0;
-    max-width: 1200px;
-    width: 100%;
-  }
-}
-.vimeo-full2 {
-  padding-top: 56%;
-  overflow: hidden;
-  position: relative;
-
-  iframe {
-    border: 0;
-    max-width: 1200px;
-    width: 100%;
-  }
-}
 .work-info {
   padding: 2vh 0;
 }
@@ -108,6 +86,31 @@ p {
   height: 8px;
   background: black;
 }
+.vimeo-full {
+  //overflow: hidden;
+  /* 16:9 aspect ratio */
+  //padding-top: 56.25%;
+  //position: relative;
+  iframe {
+    border: 0;
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+.vimeo-body-square {
+  padding-top: 100%;
+  overflow: hidden;
+  position: relative;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+  }
+}
 
 .vimeo-body-full {
   overflow: hidden;
@@ -115,12 +118,13 @@ p {
   padding-top: 56.25%;
   position: relative;
   iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
     width: 100%;
+    border: 0;
   }
 }
 
