@@ -5,6 +5,7 @@
 }
 @font-face {
   font-family: SharpSans;
+  font-weight: 500;
   src: url('../fonts/Sharp Sans No1-SemiBold.otf') format('opentype');
 }
 @font-face {
@@ -47,7 +48,7 @@ h1 {
 
 h2 {
   font-family: SharpSans, monospace;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.4em;
   line-height: 1.2em;
 }
@@ -80,11 +81,32 @@ p {
   iframe {
     border: 0;
     max-width: 1200px;
-
-    //position: absolute;
-
     width: 100%;
   }
+}
+.vimeo-full2 {
+  padding-top: 56%;
+  overflow: hidden;
+  position: relative;
+
+  iframe {
+    border: 0;
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+.work-info {
+  padding: 2vh 0;
+}
+.work-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title-line {
+  width: 60px;
+  height: 8px;
+  background: black;
 }
 
 .vimeo-body-full {
@@ -106,6 +128,27 @@ p {
   max-width: 1200px;
   margin: 0 auto; // center in browser
   padding: 6vh 4vw;
+}
+
+.centered-work {
+  max-width: 1200px;
+  margin: 0 auto; // center in browser
+  padding: 0 4vw;
+  padding-bottom: 30px;
+
+  ul {
+    list-style-type: none;
+    list-style: none;
+    padding-top: 30px;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    p {
+      font-family: SharpSans !important;
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 1em;
+    }
+  }
 }
 
 section.home-hero {

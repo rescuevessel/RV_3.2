@@ -8,23 +8,23 @@ export default function MountainMen({ data }) {
 
   return (
     <Layout>
-      <div className='centered'>
+      <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe src={mountain.hero} title='temp' />
         </div>
       </div>
-      <div className='grid-2 centered'>
+      <div className='grid-2 centered-work'>
         <h1>{mountain.title}</h1>
         <p>{mountain.description.description}</p>
       </div>
-      <div className='centered'>
+      <div className='centered-work'>
         <Img fluid={mountain.ansel01.fluid} alt='' />
       </div>
-      <div className='grid-2 centered'>
+      <div className='grid-half centered-work'>
         <Img fluid={mountain.ansel02.fluid} alt='' />
         <p>{mountain.mmDesc.mmDesc}</p>
       </div>
-      <div className='centered'>
+      <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe
             src={`${mountain.mmEmbed01}?autoplay=1&loop=1&background=1`}
@@ -32,7 +32,7 @@ export default function MountainMen({ data }) {
           />
         </div>
       </div>
-      <div className='centered'>
+      <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe
             src={`${mountain.mmEmbed02}?autoplay=1&loop=1&background=1`}
@@ -41,7 +41,7 @@ export default function MountainMen({ data }) {
           />
         </div>
       </div>
-      <div className='grid-2 centered'>
+      <div className='grid-2 centered-work'>
         <div className='vimeo-body-full'>
           <iframe
             src={`${mountain.mmEmbed03}?autoplay=1&loop=1&background=1`}
@@ -55,7 +55,7 @@ export default function MountainMen({ data }) {
           />
         </div>
       </div>
-      <div className='centered'>
+      <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe
             src={`${mountain.mmEmbed05}?autoplay=1&loop=1&background=1`}
