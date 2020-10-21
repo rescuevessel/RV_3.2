@@ -18,13 +18,13 @@ $rescue-vessel-orange: #ff5812;
 }
 
 .rv-arrow-next {
-  cursor: url(../images/arrow_right.png) 30 50, pointer;
+  cursor: url(../images/arrow_right.png) 30 50, e-resize;
   right: 0px;
   z-index: 5;
 }
 
 .rv-arrow-prev {
-  cursor: url(../images/arrow_left.png) 0 0, pointer;
+  cursor: url(../images/arrow_left.png) 30 50, e-resize;
   z-index: 5;
 }
 
