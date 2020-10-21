@@ -33,10 +33,10 @@ const WorkPage = ({ data }) => {
           <Img fluid={work.mountainMenThumb.fluid} alt='' />
           <h2>{work.mountainMenTitle}</h2>
         </Link>
-        <div>
+        <Link to='/work/ae'>
           <Img fluid={work.aeThumb.fluid} alt='' />
           <h2>{work.aeTitle}</h2>
-        </div>
+        </Link>
       </div>
     </Layout>
   )
