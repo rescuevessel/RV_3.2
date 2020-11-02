@@ -24,6 +24,7 @@ $rescue-vessel-orange: #ff5812;
 
 * {
   margin: 0;
+  padding: 0;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
@@ -188,12 +189,29 @@ section.home-hero {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.homeSections {
+.home {
   h2 {
     padding: 8vh 0 4vh 0;
   }
   p {
     padding-bottom: 20px;
+  }
+}
+
+.home-ul {
+  text-decoration: none;
+  p {
+    font-family: SharpSans, monospace;
+    //font-weight: 300;
+    font-size: 0.9em;
+    padding-bottom: 0;
+  }
+  ul {
+    padding-bottom: 4vh;
+  }
+  a,
+  u {
+    text-decoration: none;
   }
 }
 
