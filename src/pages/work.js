@@ -9,13 +9,15 @@ const WorkPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className='centered grid-2 work'>
+      <div className='centered work'>
         <Link to='/work/shermans-showcase'>
           <div>
             <Img fluid={work.shermansShowcaseThumb.fluid} alt='' />
             <h2>{work.shermansShowcaseTitle}</h2>
           </div>
         </Link>
+      </div>
+      <div className='centered grid-2 work'>
         <Link to='/work/dekalb-market-hall'>
           <div>
             <Img fluid={work.dekalbMarketHallThumb.fluid} alt='' />
