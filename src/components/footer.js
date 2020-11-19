@@ -9,7 +9,30 @@ const Footer = () => {
     <footer>
       <div className='footer-columns centered'>
         <div>
-          <img src={logo} style={{ width: '70px' }} alt='Rescue Vessel Logo' />
+          <img
+            className='footer-logo'
+            src={logo}
+            style={{ width: '70px' }}
+            alt='Rescue Vessel Logo'
+          />
+          <ul className='menu-list'>
+            <li>
+              <a
+                className='navbar-item type-pitch'
+                href='https://www.google.com/maps/place/Brooklyn,+NY/@40.6452228,-74.0150371,12z/data=!3m1!4b1!4m5!3m4!1s0x89c24416947c2109:0x82765c7404007886!8m2!3d40.6781784!4d-73.9441579'
+              >
+                Brooklyn, NY
+              </a>
+            </li>
+            <li>
+              <a
+                className='navbar-item type-pitch'
+                href='https://earth.google.com/web/@0,0,-24018.82718741a,36750128.22569847d,35y,0h,0t,0r/data=KAE'
+              >
+                Planet Earth
+              </a>
+            </li>
+          </ul>
         </div>
         <div className='footer-wrapper'>
           <ul className='menu-list'>
@@ -46,22 +69,6 @@ const Footer = () => {
                 rel='noopener noreferrer'
               >
                 Vimeo
-              </a>
-            </li>
-            <li>
-              <a
-                className='navbar-item type-pitch'
-                href='https://www.google.com/maps/place/Brooklyn,+NY/@40.6452228,-74.0150371,12z/data=!3m1!4b1!4m5!3m4!1s0x89c24416947c2109:0x82765c7404007886!8m2!3d40.6781784!4d-73.9441579'
-              >
-                Brooklyn, NY
-              </a>
-            </li>
-            <li>
-              <a
-                className='navbar-item type-pitch'
-                href='https://earth.google.com/web/@0,0,-24018.82718741a,36750128.22569847d,35y,0h,0t,0r/data=KAE'
-              >
-                Planet Earth
               </a>
             </li>
           </ul>

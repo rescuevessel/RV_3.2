@@ -160,6 +160,12 @@ section.home-hero {
   padding: 0;
 }
 
+section.home-grey {
+  padding: 0;
+  padding-bottom: 4vh;
+  background-color: #f6f6f6;
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, auto));
@@ -175,7 +181,7 @@ section.home-hero {
 .grid-half {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 80px;
 }
 
 .grid-3 {
@@ -190,6 +196,7 @@ section.home-hero {
 }
 
 .home {
+  padding-top: 8vh;
   h2 {
     padding: 8vh 0 4vh 0;
   }
@@ -199,7 +206,6 @@ section.home-hero {
 }
 
 .home-ul {
-  text-decoration: none;
   p {
     font-family: SharpSans, monospace;
     //font-weight: 300;
@@ -207,7 +213,12 @@ section.home-hero {
     padding-bottom: 0;
   }
   ul {
-    padding-bottom: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+    padding-left: 30px;
+    border-left: solid 10px $rescue-vessel-orange;
   }
   a,
   u {
@@ -217,9 +228,9 @@ section.home-hero {
 
 .client-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, 250px);
   justify-items: center;
+  justify-content: space-between;
   img {
     max-width: 250px;
   }

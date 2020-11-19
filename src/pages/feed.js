@@ -8,10 +8,6 @@ import '../components/feed.scss'
 const FeedPage = ({ data }) => {
   const feed = data.contentfulFeed.feed3
 
-  const divStyle = {
-    width: '400px',
-  }
-
   return (
     <Layout>
       <div>
@@ -19,20 +15,34 @@ const FeedPage = ({ data }) => {
           <div className='feedContainer'>
             <h1>Feed me!</h1>
             {feed.map(images => {
+              let number = Math.floor(Math.random() * 300) + 1 //random value 0-800
+              number *= Math.floor(Math.random() * 2) === 1 ? 1 : -1
+              let numberH = number / 3 //include negative numbers
               if (images.description === '') {
                 return (
-                  <li className='feed-item' style={divStyle} key={images.id}>
-                    <Img fluid={images.fluid} alt='' width='600px' />
+                  <li
+                    className='feed-item'
+                    key={images.id}
+                    style={{
+                      marginLeft: number,
+                      marginTop: numberH,
+                    }}
+                  >
+                    <Img fluid={images.fluid} alt='' />
                   </li>
                 )
               } else {
                 return (
-                  <li className='feed-item' key={images.id}>
+                  <li
+                    className='feed-item'
+                    key={images.id}
+                    style={{ marginLeft: number, marginTop: numberH }}
+                  >
                     <iframe
                       frameBorder='0'
                       title={images.title}
                       src={images.description}
-                      width='600px'
+                      width='960px'
                       height='600px'
                     ></iframe>
                   </li>

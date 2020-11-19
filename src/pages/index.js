@@ -19,9 +19,8 @@ const IndexPage = ({ data }) => {
         <Img fluid={image} alt='' />
       </section>
 
-      <div className='centered grid-2 home'>
+      <div className='centered grid-half home'>
         <div>{documentToReactComponents(home.section01.json)}</div>
-
         <div>
           {documentToReactComponents(home.section01Body.json)}
           <Link to='/about'>
@@ -30,26 +29,30 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
 
-      <div className='centered grid-half home'>
-        <div>{documentToReactComponents(home.section02.json)}</div>
-        <div className='home-ul'>
-          {documentToReactComponents(home.section02Body.json)}
-          <Link to='/work'>
-            <button className='btn-1'>See our work</button>
-          </Link>
+      <section className='home-grey'>
+        <div className='centered grid-half home'>
+          <div>{documentToReactComponents(home.section02.json)}</div>
+          <div className='home-ul'>
+            {documentToReactComponents(home.section02Body.json)}
+            <Link to='/work'>
+              <button className='btn-1'>See our work</button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section className='centered grid-half home'>
         <div>{documentToReactComponents(home.section03.json)}</div>
         <div>{documentToReactComponents(home.section03Body.json)}</div>
       </section>
 
-      <section className='client-logos centered'>
-        {home.clientLogos.map(logo => (
-          <img src={logo.file.url} alt='' key={logo.id} />
-        ))}
-      </section>
+      <div className='client-logos-wrap'>
+        <section className='client-logos centered'>
+          {home.clientLogos.map(logo => (
+            <img src={logo.file.url} alt='' key={logo.id} />
+          ))}
+        </section>
+      </div>
     </Layout>
   )
 }

@@ -32,6 +32,9 @@ export default function DekalbMarketHall({ data }) {
         <div>{documentToReactComponents(dmh.description02.json)}</div>
       </div>
       <div className='centered-work'>
+        <Img fluid={dmh.neonSign03.fluid} alt='' />
+      </div>
+      <div className='centered-work'>
         <Img fluid={dmh.stageLogo.fluid} alt='' />
       </div>
       <div className='grid-9 centered-work'>
@@ -184,6 +187,11 @@ export const dmh_query = graphql`
         }
       }
       neonSign02 {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      neonSign03 {
         fluid {
           ...GatsbyContentfulFluid
         }

@@ -8,13 +8,13 @@ $rescue-vessel-orange: #ff5812;
   padding-right: 50px;
   li {
     &:first-child {
-      border-top: 1px dotted black;
+      border-top: 1px solid black;
     }
   }
   a {
     font-size: 0.7em;
     display: block;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px solid black;
     text-decoration: none;
     line-height: 2.25rem;
     width: 100%;
@@ -44,6 +44,10 @@ $rescue-vessel-orange: #ff5812;
     background-color: $rescue-vessel-orange;
   }
   input {
+    &:focus {
+      outline: solid 1px lightgrey;
+      //background-color: yellow;
+    }
     width: 15vw;
   }
 }
@@ -54,6 +58,10 @@ footer {
   margin-top: 10vh;
 }
 
+.footer-logo {
+  padding-bottom: 25px;
+}
+
 .footerRight {
   display: flex;
   flex-direction: column;
@@ -62,7 +70,7 @@ footer {
 
 .footer-columns {
   display: grid;
-  grid-template-columns: 80px 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 30px;
 }
 

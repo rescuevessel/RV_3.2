@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
-import logo from '../images/rv_icon.png'
+import logo from '../images/rv_icon_orange.png'
 import './nav.scss'
 
 const Nav = () => {

@@ -16,8 +16,12 @@ export default function AE({ data }) {
       </div>
       <WorkTitleSection title={ae.title} desc={ae.description01.json} />
       <div className='centered-work'>
+        <VimeoAutoplay link={ae.lineup_02} />
+      </div>
+      <div className='centered-work'>
         <div>{documentToReactComponents(ae.description02.json)}</div>
       </div>
+
       <div className='grid-2 centered-work'>
         <Img fluid={ae.ep_grid.fluid} />
         <VimeoAutoplay link={ae.endPage01} />
@@ -26,42 +30,33 @@ export default function AE({ data }) {
         <Img fluid={ae.lineup_grid.fluid} />
         <Img fluid={ae.lineup01.fluid} />
       </div>
-      <div className='centered-work'>
-        <VimeoAutoplay link={ae.lineup_02} />
-      </div>
+
       <div className='centered-work'>
         <Img fluid={ae.snipe01.fluid} />
       </div>
-      <div className='centered-work'>
+      <div className='grid-2 centered-work '>
         <div>{documentToReactComponents(ae.typeDesc.json)}</div>
+        <div>{documentToReactComponents(ae.typeDesc02.json)}</div>
       </div>
       <div className='centered-work'>
         <Img fluid={ae.typeSystem.fluid} />
       </div>
       <div className='centered-work'>
+        <VimeoAutoplay link={ae.untold} />
+      </div>
+      <div className='centered-work grid-half'>
         <div>{documentToReactComponents(ae.designPrinciplesDesc.json)}</div>
+        <div>
+          <Img fluid={ae.handcrafted02.fluid} />
+          <VimeoAutoplay link={ae.intentional01} />
+        </div>
       </div>
       <div className='centered-work'>
         <Img fluid={ae.handcrafted01.fluid} />
       </div>
       <div className='grid-half centered-work'>
-        <Img fluid={ae.handcrafted02.fluid} />
-        <div>{documentToReactComponents(ae.handcraftedDesc.json)}</div>
-      </div>
-      <div className='grid-2 centered-work'>
-        <VimeoAutoplay link={ae.handcrafted03} />
+        <VimeoAutoplay link={ae.wacoTc} />
         <Img fluid={ae.handcrafted04.fluid} />
-      </div>
-      <div className='grid-half centered-work'>
-        <div>{documentToReactComponents(ae.premiumDesc.json)}</div>
-        <Img fluid={ae.premium01.fluid} />
-      </div>
-      <div className='centered-work'>
-        <VimeoAutoplay link={ae.premium02} />
-      </div>
-      <div className='grid-half centered-work'>
-        <div>{documentToReactComponents(ae.intentionalDesc.json)}</div>
-        <VimeoAutoplay link={ae.intentional01} />
       </div>
       <div className='centered-work'>
         <VimeoAutoplay link={ae.intentional02} />
@@ -102,12 +97,16 @@ export const ae_query = graphql`
         }
       }
       lineup_02
+      untold
       snipe01 {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
       typeDesc {
+        json
+      }
+      typeDesc02 {
         json
       }
       typeSystem {
@@ -128,27 +127,12 @@ export const ae_query = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      handcraftedDesc {
-        json
-      }
-      handcrafted03
       handcrafted04 {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
-      premium01 {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      premiumDesc {
-        json
-      }
-      premium02
-      intentionalDesc {
-        json
-      }
+      wacoTc
       intentional01
       intentional02
       intentional03
