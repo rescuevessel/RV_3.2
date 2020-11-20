@@ -62,6 +62,9 @@ export default function DekalbMarketHall({ data }) {
         <Img fluid={dmh.phockingSoup.fluid} alt='' />
         <Img fluid={dmh.neonSign02.fluid} alt='' />
       </div>
+      <div className='centered credits'>
+        <div>{documentToReactComponents(dmh.credits.json)}</div>
+      </div>
     </Layout>
   )
 }
@@ -76,6 +79,9 @@ export const dmh_query = graphql`
       }
       title
       description {
+        json
+      }
+      credits {
         json
       }
       neonSign01 {
