@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
@@ -6,6 +6,15 @@ import { graphql } from 'gatsby'
 
 const WorkPage = ({ data }) => {
   let work = data.contentfulWorkPage
+
+  const [marcoHover, isMarcoHover] = useState(true)
+  const toggleMarco = () => isMarcoHover(!marcoHover)
+
+  let marcoThumb = marcoHover ? (
+    <Img fluid={work.marcoThumb.fluid} alt='' />
+  ) : (
+    <Img fluid={work.marcoRollover.fluid} alt='' />
+  )
 
   return (
     <Layout>
@@ -24,9 +33,14 @@ const WorkPage = ({ data }) => {
           </div>
         </Link>
 
-        <Link to='/work/marco'>
+        <Link
+          onMouseEnter={toggleMarco}
+          onFocus={toggleMarco}
+          onMouseLeave={toggleMarco}
+          to='/work/marco'
+        >
           <div>
-            <Img fluid={work.marcoThumb.fluid} alt='' />
+            {marcoThumb}
             <h2>{work.marcoTitle}</h2>
           </div>
         </Link>
@@ -40,6 +54,12 @@ const WorkPage = ({ data }) => {
           <Img fluid={work.aeThumb.fluid} alt='' />
           <h2>{work.aeTitle}</h2>
         </Link>
+        <div className=''>
+          <div>
+            <h1>Feeling a little wild?</h1>
+            <button className='btn-1'>Roll the dice</button>
+          </div>
+        </div>
       </div>
     </Layout>
   )
@@ -63,6 +83,11 @@ export const WorkQuery = graphql`
       }
       marcoTitle
       marcoThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      marcoRollover {
         fluid {
           ...GatsbyContentfulFluid
         }
