@@ -9,21 +9,21 @@ const WorkPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className='centered work'>
-        <Link to='/work/shermans-showcase'>
+      <div className='grid-work centered'>
+        <Link className='hero' to='/work/shermans-showcase'>
           <div>
             <Img fluid={work.shermansShowcaseThumb.fluid} alt='' />
             <h2>{work.shermansShowcaseTitle}</h2>
           </div>
         </Link>
-      </div>
-      <div className='centered grid-2 work'>
+
         <Link to='/work/dekalb-market-hall'>
           <div>
             <Img fluid={work.dekalbMarketHallThumb.fluid} alt='' />
             <h2>{work.dekalbMarketHallTitle}</h2>
           </div>
         </Link>
+
         <Link to='/work/marco'>
           <div>
             <Img fluid={work.marcoThumb.fluid} alt='' />
@@ -35,6 +35,7 @@ const WorkPage = ({ data }) => {
           <Img fluid={work.mountainMenThumb.fluid} alt='' />
           <h2>{work.mountainMenTitle}</h2>
         </Link>
+
         <Link to='/work/ae'>
           <Img fluid={work.aeThumb.fluid} alt='' />
           <h2>{work.aeTitle}</h2>
