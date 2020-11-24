@@ -54,10 +54,12 @@ const WorkPage = ({ data }) => {
           <Img fluid={work.aeThumb.fluid} alt='' />
           <h2>{work.aeTitle}</h2>
         </Link>
-        <div className=''>
+        <div className='work-blurb'>
           <div>
-            <h1>Feeling a little wild?</h1>
-            <button className='btn-1'>Roll the dice</button>
+            <h1>Want to see more work randomly?</h1>
+            <Link to='/feed'>
+              <button className='btn-1'>Yes, absolutely</button>
+            </Link>
           </div>
         </div>
       </div>

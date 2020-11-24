@@ -41,18 +41,17 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section className='centered grid-half type'>
-        <div>{documentToReactComponents(home.section03.json)}</div>
-        <div>{documentToReactComponents(home.section03Body.json)}</div>
-      </section>
-
-      <div className='client-logos-wrap'>
-        <section className='client-logos centered'>
+      <section className='centered type'>
+        <div className='grid-half'>
+          <div>{documentToReactComponents(home.section03.json)}</div>
+          <div>{documentToReactComponents(home.section03Body.json)}</div>
+        </div>
+        <div className='client-logos centered'>
           {home.clientLogos.map(logo => (
             <img src={logo.file.url} alt='' key={logo.id} />
           ))}
-        </section>
-      </div>
+        </div>
+      </section>
     </Layout>
   )
 }

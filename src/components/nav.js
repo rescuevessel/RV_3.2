@@ -29,22 +29,22 @@ const Nav = () => {
             <div className='line2'></div>
           </button>
           <div className={`${mobileActive} mobile-nav`}>
-            <Link className='m-navbar-li' to='/about'>
-              About
-            </Link>
             <Link className='m-navbar-li' to='/work'>
               Work
+            </Link>
+            <Link className='m-navbar-li' to='/about'>
+              About
             </Link>
             <Link className='m-navbar-li' to='/feed'>
               Feed
             </Link>
           </div>
-          <div className='desk-nav'>
-            <Link className='navbar-li' to='/about'>
-              About
-            </Link>
+          <div className='desk-nav underline'>
             <Link className='navbar-li' to='/work'>
               Work
+            </Link>
+            <Link className='navbar-li' to='/about'>
+              About
             </Link>
             <Link className='navbar-li' to='/feed'>
               Feed

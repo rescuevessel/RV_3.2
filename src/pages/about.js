@@ -55,7 +55,7 @@ const AboutPage = ({ data }) => {
         {/* Collaboration is King */}
         <div className='centered grid-half type'>
           <div>{documentToReactComponents(about.section04Left.json)}</div>
-          <div className='grid-half home about-list'>
+          <div className='grid-half home about-list underline'>
             {documentToReactComponents(about.section04Right.json)}
           </div>
         </div>
@@ -70,18 +70,22 @@ const AboutPage = ({ data }) => {
             <div className='team-info'>{parse(team.description)}</div>
           </div>
         ))}
-      </section>
-
-      {/* Interested in joining? */}
-      <section className='home-grey'>
-        <div className='centered grid-half type'>
+        <div>
           <div>{documentToReactComponents(about.section05Left.json)}</div>
           <div>{documentToReactComponents(about.section05Right.json)}</div>
         </div>
       </section>
 
+      {/* Interested in joining? */}
+      {/* <section className='home-grey'>
+        <div className='centered grid-half type'>
+          <div>{documentToReactComponents(about.section05Left.json)}</div>
+          <div>{documentToReactComponents(about.section05Right.json)}</div>
+        </div>
+      </section> */}
+
       <div className='centered grid-half'>
-        <div className='type'>
+        <div className='address'>
           {documentToReactComponents(about.section03Left.json)}
         </div>
         <Img fluid={about.aboutImage04.fluid} alt='' />

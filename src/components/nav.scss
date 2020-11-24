@@ -26,6 +26,17 @@ $rescue-vessel-orange: #ff5812;
   margin: 0 12px;
 }
 
+.underline {
+  a {
+    &:hover {
+      padding-bottom: 3px;
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      width: fit-content;
+    }
+  }
+}
+
 // mobile
 
 .mobile-nav {
