@@ -1,16 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import Slider from "react-slick"
-import "./RVslider.scss"
-import "../fonts/font-awesome.css"
+import React from 'react'
+import PropTypes from 'prop-types'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
+import './RVslider.scss'
+import '../fonts/font-awesome.css'
 
 const RVslider = ({ children }) => {
   function RVnextArrow(props) {
     const { onClick } = props
     return (
-      <button className="rv-arrow rv-arrow-next" onClick={onClick}>
+      <button className='rv-arrow rv-arrow-next' onClick={onClick}>
         Next
       </button>
     )
@@ -19,7 +19,7 @@ const RVslider = ({ children }) => {
   function RVprevArrow(props) {
     const { onClick } = props
     return (
-      <button className="rv-arrow rv-arrow-prev" onClick={onClick}>
+      <button className='rv-arrow rv-arrow-prev' onClick={onClick}>
         Previous
       </button>
     )
@@ -31,6 +31,9 @@ const RVslider = ({ children }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+
+    autoplaySpeed: 5000,
     nextArrow: <RVnextArrow />,
     prevArrow: <RVprevArrow />,
   }

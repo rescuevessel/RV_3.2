@@ -2,11 +2,15 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import RVslider from '../components/RVslider'
+import VimeoAutoplay from '../components/vimeoAutoplay'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
+  const slider = data.contentfulHomePage.homeImageSlider
+  console.log(slider[0].description)
 
   return (
     <Layout>
@@ -16,7 +20,13 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className='home-hero'>
-        <Img fluid={image} alt='' />
+        <RVslider>
+          {slider.map(images => (
+            <VimeoAutoplay link={images.description} />
+            // <Img fluid={images.fluid} key={images.id} width='100%' />
+          ))}
+        </RVslider>
+        {/* <Img fluid={image} alt='' /> */}
       </section>
 
       <div className='centered grid-half type'>
@@ -63,6 +73,10 @@ export const indexquery = graphql`
     contentfulHomePage {
       title
       subtitle
+      homeImageSlider {
+        id
+        description
+      }
       homeHeroImage {
         fluid {
           ...GatsbyContentfulFluid
@@ -95,3 +109,13 @@ export const indexquery = graphql`
     }
   }
 `
+
+/* 
+
+<RVslider>
+          {slider.map(images => (
+            <Img fluid={images.fluid} key={images.id} width='100%' />
+          ))}
+        </RVslider>
+
+*/
