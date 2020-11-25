@@ -63,7 +63,7 @@ export default function ShermansShowcase({ data }) {
       {/* Section 7 
       
           Subway Ad / Description */}
-      <div className='grid-half centered-work'>
+      <div className='grid-half centered-work type'>
         <Img fluid={sherman.subwayAd.fluid} alt='' />
         <div>{documentToReactComponents(sherman.descriptionMulti02.json)}</div>
       </div>

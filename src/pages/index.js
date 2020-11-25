@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <section className='centered grid-2'>
+      <section className='centered grid-half'>
         <h1>{home.title}</h1>
         <h2>{home.subtitle}</h2>
       </section>

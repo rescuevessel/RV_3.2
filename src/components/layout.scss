@@ -114,6 +114,12 @@ p {
   padding: 6vh 6vw;
 }
 
+.space-between {
+  display: grid;
+  grid-template-columns: 1fr;
+  //justify-content: space-between;
+}
+
 .underline {
   a {
     &:hover {
@@ -138,7 +144,7 @@ p {
 .grid-half {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 80px;
+  grid-gap: 30px;
 }
 
 .grid-3 {
@@ -216,7 +222,7 @@ home-hero {
 }
 
 .home-grey {
-  //padding: 0;
+  margin: 4vh 0;
   //padding-bottom: 4vh;
   background-color: #f6f6f6;
 }
@@ -279,7 +285,7 @@ home-hero {
   max-width: 1200px;
   margin: 0 auto; // center in browser
   padding: 0 4vw;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 
   ul {
     list-style-type: none;
@@ -301,6 +307,7 @@ home-hero {
 // About Page Styles
 
 .team {
+  padding: 4vh 0;
   h2 {
     padding: 1rem 0 0 0;
   }
@@ -342,9 +349,10 @@ home-hero {
 }
 
 .type {
-  //padding-top: 8vh;
+  //padding: 4vh 0 !important;
+  gap: 80px !important;
   h2 {
-    padding-bottom: 4vh;
+    padding: 4vh 0;
   }
   p {
     padding-bottom: 20px;

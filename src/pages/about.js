@@ -62,34 +62,25 @@ const AboutPage = ({ data }) => {
       </section>
 
       {/* Team */}
-      <section className='centered grid-3 team'>
-        {about.team.map(team => (
-          <div>
-            <Img fluid={team.fluid} alt='' key={team.id} />
-            <h2>{team.title}</h2>
-            <div className='team-info'>{parse(team.description)}</div>
+      <section className='centered'>
+        {documentToReactComponents(about.teamTitle.json)}
+        <div className='grid-3 team'>
+          {about.team.map(team => (
+            <div key={team.id}>
+              <Img fluid={team.fluid} />
+              <h2>{team.title}</h2>
+              <div className='team-info'>{parse(team.description)}</div>
+            </div>
+          ))}
+          <div className='space-between'>
+            <div className='title-line'></div>
+            <div>
+              {documentToReactComponents(about.section05Left.json)}
+              {documentToReactComponents(about.section05Right.json)}
+            </div>
           </div>
-        ))}
-        <div>
-          <div>{documentToReactComponents(about.section05Left.json)}</div>
-          <div>{documentToReactComponents(about.section05Right.json)}</div>
         </div>
       </section>
-
-      {/* Interested in joining? */}
-      {/* <section className='home-grey'>
-        <div className='centered grid-half type'>
-          <div>{documentToReactComponents(about.section05Left.json)}</div>
-          <div>{documentToReactComponents(about.section05Right.json)}</div>
-        </div>
-      </section> */}
-
-      <div className='centered grid-half'>
-        <div className='address'>
-          {documentToReactComponents(about.section03Left.json)}
-        </div>
-        <Img fluid={about.aboutImage04.fluid} alt='' />
-      </div>
     </Layout>
   )
 }
@@ -133,6 +124,9 @@ export const aboutquery = graphql`
         json
       }
       section05Right {
+        json
+      }
+      teamTitle {
         json
       }
       team {

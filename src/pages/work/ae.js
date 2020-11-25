@@ -18,7 +18,7 @@ export default function AE({ data }) {
       <div className='centered-work'>
         <VimeoAutoplay link={ae.lineup_02} />
       </div>
-      <div className='centered-work grid-thirds'>
+      <div className='centered-work grid-thirds type'>
         <div>{documentToReactComponents(ae.description02.json)}</div>
         <div></div>
       </div>
@@ -33,7 +33,7 @@ export default function AE({ data }) {
       <div className='centered-work'>
         <Img fluid={ae.snipe01.fluid} />
       </div>
-      <div className='grid-2 centered-work '>
+      <div className='grid-2 centered-work type'>
         <div>{documentToReactComponents(ae.typeDesc.json)}</div>
         <div>{documentToReactComponents(ae.typeDesc02.json)}</div>
       </div>
@@ -43,7 +43,7 @@ export default function AE({ data }) {
       <div className='centered-work'>
         <VimeoAutoplay link={ae.untold} />
       </div>
-      <div className='centered-work grid-half'>
+      <div className='centered-work grid-half type'>
         <div>{documentToReactComponents(ae.designPrinciplesDesc.json)}</div>
         <div className='grid-row'>
           <Img fluid={ae.handcrafted02.fluid} />
