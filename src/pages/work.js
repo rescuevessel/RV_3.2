@@ -1,59 +1,52 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+//import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import WorkThumb from '../components/workThumb'
 
 const WorkPage = ({ data }) => {
   let work = data.contentfulWorkPage
 
-  const [marcoHover, isMarcoHover] = useState(true)
-  const toggleMarco = () => isMarcoHover(!marcoHover)
-
-  let marcoThumb = marcoHover ? (
-    <Img fluid={work.marcoThumb.fluid} alt='' />
-  ) : (
-    <Img fluid={work.marcoRollover.fluid} alt='' />
-  )
-
   return (
     <Layout>
       <div className='grid-work centered'>
-        <Link className='hero' to='/work/shermans-showcase'>
-          <div>
-            <Img fluid={work.shermansShowcaseThumb.fluid} alt='' />
-            <h2>{work.shermansShowcaseTitle}</h2>
-          </div>
-        </Link>
+        <WorkThumb // Shermans Showcase
+          className='hero'
+          thumb={work.shermansShowcaseThumb.fluid}
+          rollover={work.shermansShowcaseRollover.fluid}
+          title={work.shermansShowcaseTitle}
+          link='/work/shermans-showcase'
+        />
 
-        <Link to='/work/dekalb-market-hall'>
-          <div>
-            <Img fluid={work.dekalbMarketHallThumb.fluid} alt='' />
-            <h2>{work.dekalbMarketHallTitle}</h2>
-          </div>
-        </Link>
+        <WorkThumb // Dekalb Market Hall
+          thumb={work.dekalbMarketHallThumb.fluid}
+          rollover={work.dekalbMarketHallRollover.fluid}
+          title={work.dekalbMarketHallTitle}
+          link='/work/dekalb-market-hall'
+        />
 
-        <Link
-          onMouseEnter={toggleMarco}
-          onFocus={toggleMarco}
-          onMouseLeave={toggleMarco}
-          to='/work/marco'
-        >
-          <div>
-            {marcoThumb}
-            <h2>{work.marcoTitle}</h2>
-          </div>
-        </Link>
+        <WorkThumb // Marco
+          thumb={work.marcoThumb.fluid}
+          rollover={work.marcoRollover.fluid}
+          title={work.marcoTitle}
+          link='/work/marco'
+        />
 
-        <Link to='/work/mountain-men'>
-          <Img fluid={work.mountainMenThumb.fluid} alt='' />
-          <h2>{work.mountainMenTitle}</h2>
-        </Link>
+        <WorkThumb // Mountain Men
+          thumb={work.mountainMenThumb.fluid}
+          rollover={work.mountainMenRollover.fluid}
+          title={work.mountainMenTitle}
+          link='/work/mountain-men'
+        />
 
-        <Link to='/work/ae'>
-          <Img fluid={work.aeThumb.fluid} alt='' />
-          <h2>{work.aeTitle}</h2>
-        </Link>
+        <WorkThumb // A&E
+          thumb={work.aeThumb.fluid}
+          rollover={work.aeRollover.fluid}
+          title={work.aeTitle}
+          link='/work/ae'
+        />
+
         <div className='work-blurb'>
           <div>
             <h1>Want to see more work randomly?</h1>
@@ -77,8 +70,18 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      shermansShowcaseRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       dekalbMarketHallTitle
       dekalbMarketHallThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      dekalbMarketHallRollover {
         fluid {
           ...GatsbyContentfulFluid
         }
@@ -106,8 +109,18 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      aeRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       mountainMenTitle
       mountainMenThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      mountainMenRollover {
         fluid {
           ...GatsbyContentfulFluid
         }

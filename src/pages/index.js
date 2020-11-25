@@ -2,9 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import RVslider from '../components/RVslider'
-import VimeoAutoplay from '../components/vimeoAutoplay'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+//import RVslider from '../components/RVslider'
+//import VimeoAutoplay from '../components/vimeoAutoplay'
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHomePage
@@ -20,13 +20,13 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className='home-hero'>
-        <RVslider>
+        {/* <RVslider>
           {slider.map(images => (
             <VimeoAutoplay link={images.description} />
             // <Img fluid={images.fluid} key={images.id} width='100%' />
           ))}
-        </RVslider>
-        {/* <Img fluid={image} alt='' /> */}
+        </RVslider> */}
+        <Img fluid={image} alt='' />
       </section>
 
       <div className='centered grid-half type'>
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
       <section className='home-grey'>
         <div className='centered grid-half type'>
           <div>{documentToReactComponents(home.section02.json)}</div>
-          <div className='home-ul'>
+          <div className='home-ul underline'>
             {documentToReactComponents(home.section02Body.json)}
             <Link to='/work'>
               <button className='btn-1'>See our work</button>

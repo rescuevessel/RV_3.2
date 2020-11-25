@@ -114,6 +114,17 @@ p {
   padding: 6vh 6vw;
 }
 
+.underline {
+  a {
+    &:hover {
+      padding-bottom: 3px;
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      width: fit-content;
+    }
+  }
+}
+
 // ----------------------------------------------------------------------
 
 // Grids
