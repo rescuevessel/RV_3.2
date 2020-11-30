@@ -19,9 +19,9 @@ const FeedPage = ({ data }) => {
           <div className='feedContainer'>
             <ul className='feed-ul'>
               {feed.map(images => {
-                let number = Math.floor(Math.random() * 300) + 1 //random value 0-800
-                number *= Math.floor(Math.random() * 2) === 1 ? 1 : -1
-                let numberH = number / 3 //include negative numbers
+                // let number = Math.floor(Math.random() * 300) + 1 //random value 0-800
+                // number *= Math.floor(Math.random() * 2) === 1 ? 1 : -1
+                // let numberH = number / 3 //include negative numbers
                 if (images.description === '') {
                   return (
                     <li

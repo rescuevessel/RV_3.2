@@ -6,10 +6,23 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import '../components/layout.scss'
 import RVslider from '../components/RVslider'
 import parse from 'html-react-parser'
+import { INLINES } from '@contentful/rich-text-types'
 
 const AboutPage = ({ data }) => {
   const about = data.contentfulAboutPage
   const slider = data.contentfulAboutPage.aboutImageSlider
+
+  const options = {
+    renderNode: {
+      [INLINES.HYPERLINK]: node => {
+        return (
+          <a href={node.data.uri} target='_blank' rel='noreferrer'>
+            {node.content[0].value}
+          </a>
+        )
+      },
+    },
+  }
 
   return (
     <Layout>
@@ -56,7 +69,7 @@ const AboutPage = ({ data }) => {
         <div className='centered grid-half type'>
           <div>{documentToReactComponents(about.section04Left.json)}</div>
           <div className='grid-half home about-list underline'>
-            {documentToReactComponents(about.section04Right.json)}
+            {documentToReactComponents(about.section04Right.json, options)}
           </div>
         </div>
       </section>

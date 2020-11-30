@@ -9,11 +9,11 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 const IndexPage = ({ data }) => {
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
-  const slider = data.contentfulHomePage.homeImageSlider
-  console.log(slider[0].description)
+  //const slider = data.contentfulHomePage.homeImageSlider
 
   return (
     <Layout>
+      {/* We're here to help. */}
       <section className='centered grid-half'>
         <h1>{home.title}</h1>
         <h2>{home.subtitle}</h2>
@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
         </RVslider> */}
         <Img fluid={image} alt='' />
       </section>
-
+      {/* Meet your new collaborators */}
       <div className='centered grid-half type'>
         <div>{documentToReactComponents(home.section01.json)}</div>
         <div>
@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
           </Link>
         </div>
       </div>
-
+      {/* Design, Branding & Motion */}
       <section className='home-grey'>
         <div className='centered grid-half type'>
           <div>{documentToReactComponents(home.section02.json)}</div>

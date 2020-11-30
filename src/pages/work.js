@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-//import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import WorkThumb from '../components/workThumb'
@@ -32,6 +31,13 @@ const WorkPage = ({ data }) => {
           title={work.marcoTitle}
           link='/work/marco'
         />
+        <WorkThumb // Shermans Showcase
+          className='hero'
+          thumb={work.themovieshowThumb.fluid}
+          rollover={work.theMovieShowRollover.fluid}
+          title={work.themovieshowTitle}
+          link='/work/the-movie-show'
+        />
 
         <WorkThumb // Mountain Men
           thumb={work.mountainMenThumb.fluid}
@@ -48,12 +54,10 @@ const WorkPage = ({ data }) => {
         />
 
         <div className='work-blurb'>
-          <div>
-            <h1>Want to see more work randomly?</h1>
-            <Link to='/feed'>
-              <button className='btn-1'>Yes, absolutely</button>
-            </Link>
-          </div>
+          <h1>Want to see more work randomly?</h1>
+          <Link to='/feed'>
+            <button className='btn-1'>Yes, absolutely</button>
+          </Link>
         </div>
       </div>
     </Layout>
@@ -97,8 +101,13 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      ns8Title
-      ns8Thumb {
+      themovieshowTitle
+      theMovieShowRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      themovieshowThumb {
         fluid {
           ...GatsbyContentfulFluid
         }

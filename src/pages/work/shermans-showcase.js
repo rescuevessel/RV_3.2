@@ -86,13 +86,7 @@ export default function ShermansShowcase({ data }) {
           <iframe src={sherman.spot02} title='temp' />
         </div>
       </div>
-      {/* Section 11
-      
-          TC 03 / EP 02 */}
-      <div className='grid-2 centered-work'>
-        <VimeoAutoplay link={sherman.titleCard03} />
-        <VimeoAutoplay link={sherman.endPage02} />
-      </div>
+
       <div className='centered-work'>
         <VimeoAutoplay link={sherman.endPage02} />
       </div>
@@ -107,7 +101,6 @@ export const ss_query = graphql`
       hero
       titleCard01
       titleCard02
-      titleCard03
       stingSocial01
       stingSocial02
       spot01

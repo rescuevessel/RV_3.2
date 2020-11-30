@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './footer.scss'
 import logo from '../images/rv_icon_orange.png'
+import Mailchimp from 'react-mailchimp-form'
 
 const Footer = () => {
   return (
@@ -38,12 +39,34 @@ const Footer = () => {
         <div className='footer-column'>
           <div className='newsletterSignUpWrapper'>
             <h2 className='type-ssno'>Our quarterly newsletter</h2>
-            <input
+            <Mailchimp
+              action='https://rescuevessel.us13.list-manage.com/subscribe/post?u=b971537573d38b8a0d8e4ad30&amp;id=d93eebd82f'
+              fields={[
+                {
+                  name: 'EMAIL',
+                  placeholder: 'Your email',
+                  type: 'email',
+                  required: true,
+                  className: 'input emailInput',
+                },
+              ]}
+              messages={{
+                sending: 'Sending...',
+                success: 'Thank you for subscribing!',
+                error: 'An unexpected internal error has occurred.',
+                empty: 'You must write an e-mail.',
+                duplicate: "You're already subscribed!",
+                button: 'Subscribe',
+              }}
+              className='input emailInput'
+            />
+            {/* <input
+              action='https://rescuevessel.us13.list-manage.com/subscribe/post?u=b971537573d38b8a0d8e4ad30&amp;id=d93eebd82f'
               className='input emailInput'
               type='text'
               placeholder='Your Email'
             />
-            <button className='button emailSubmitBtn btn-1'>Submit</button>
+            <button className='button emailSubmitBtn btn-1'>Submit</button> */}
           </div>
           <ul className='menu-list'>
             <li>
