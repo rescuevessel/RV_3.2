@@ -28,7 +28,10 @@ const Nav = () => {
             <div className='line1'></div>
             <div className='line2'></div>
           </button>
-          <div className={`${mobileActive} mobile-nav`}>
+          <div
+            className={`${mobileActive} mobile-nav`}
+            style={{ display: showMobile ? 'flex' : 'none' }}
+          >
             <Link className='m-navbar-li' to='/work'>
               Work
             </Link>

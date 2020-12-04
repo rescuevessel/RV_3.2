@@ -20,14 +20,14 @@ export default function DekalbMarketHall({ data }) {
       <div className='centered-work'>
         <Img fluid={dmh.pattern.fluid} alt='' />
       </div>
-      <div className='grid-half centered-work'>
+      <div className='grid-2 centered-work'>
         <Img fluid={dmh.pizzaMan.fluid} alt='' />
         <Img fluid={dmh.deathBeforeDecaf.fluid} alt='' />
       </div>
       <div className='centered-work'>
         <Img fluid={dmh.tees.fluid} alt='' />
       </div>
-      <div className='grid-half centered-work type'>
+      <div className='grid-2 centered-work type'>
         <Img fluid={dmh.paperBag01.fluid} alt='' />
         <div>{documentToReactComponents(dmh.description02.json)}</div>
       </div>
@@ -51,14 +51,14 @@ export default function DekalbMarketHall({ data }) {
       <div className='centered-work'>
         <Img fluid={dmh.paperBag02.fluid} alt='' />
       </div>
-      <div className='grid-half centered-work'>
+      <div className='grid-2 centered-work'>
         <Img fluid={dmh.toteBag01.fluid} alt='' />
         <Img fluid={dmh.ledSign01.fluid} alt='' />
       </div>
       <div className='centered-work'>
         <Img fluid={dmh.wheatPaste01.fluid} alt='' />
       </div>
-      <div className='grid-half centered-work'>
+      <div className='grid-2 centered-work'>
         <Img fluid={dmh.phockingSoup.fluid} alt='' />
         <Img fluid={dmh.neonSign02.fluid} alt='' />
       </div>

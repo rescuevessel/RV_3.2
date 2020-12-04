@@ -42,7 +42,7 @@ const AboutPage = ({ data }) => {
         <section>{documentToReactComponents(about.section01.json)}</section>
       </div>
 
-      <section className='centered grid-half'>
+      <section className='centered grid-2'>
         <Img fluid={about.aboutImage01.fluid} alt='' />
         <Img fluid={about.aboutImage02.fluid} alt='' />
       </section>
@@ -50,7 +50,7 @@ const AboutPage = ({ data }) => {
         <div className='block'></div>
       </section>
 
-      <section className='centered grid-half '>
+      <section className='centered grid-2 '>
         <div className='about-list' style={{ paddingRight: '30px' }}>
           {documentToReactComponents(about.section02Left.json)}
         </div>
@@ -66,9 +66,9 @@ const AboutPage = ({ data }) => {
 
       <section className='home-grey'>
         {/* Collaboration is King */}
-        <div className='centered grid-half type'>
+        <div className='centered grid-2 type'>
           <div>{documentToReactComponents(about.section04Left.json)}</div>
-          <div className='grid-half home about-list underline'>
+          <div className='grid-2 home about-list underline'>
             {documentToReactComponents(about.section04Right.json, options)}
           </div>
         </div>

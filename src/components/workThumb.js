@@ -14,17 +14,14 @@ const WorkThumb = props => {
   )
 
   return (
-    <Link
-      className={props.className}
-      onMouseEnter={toggle}
-      onMouseLeave={toggle}
-      to={props.link}
-    >
-      <div>
-        {thumbOption}
-        <h2>{props.title}</h2>
-      </div>
-    </Link>
+    <div className={`underline ${props.className}`}>
+      <Link onMouseEnter={toggle} onMouseLeave={toggle} to={props.link}>
+        <div>
+          {thumbOption}
+          <h2>{props.title}</h2>
+        </div>
+      </Link>
+    </div>
   )
 }
 

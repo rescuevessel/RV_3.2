@@ -43,7 +43,7 @@ export default function AE({ data }) {
       <div className='centered-work'>
         <VimeoAutoplay link={ae.untold} />
       </div>
-      <div className='centered-work grid-half type'>
+      <div className='centered-work grid-2 type'>
         <div>{documentToReactComponents(ae.designPrinciplesDesc.json)}</div>
         <div className='grid-row'>
           <Img fluid={ae.handcrafted02.fluid} />
@@ -53,7 +53,7 @@ export default function AE({ data }) {
       <div className='centered-work'>
         <Img fluid={ae.handcrafted01.fluid} />
       </div>
-      <div className='grid-half centered-work'>
+      <div className='grid-2 centered-work'>
         <VimeoAutoplay link={ae.wacoTc} />
         <Img fluid={ae.handcrafted04.fluid} />
       </div>

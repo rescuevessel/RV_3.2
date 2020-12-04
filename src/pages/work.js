@@ -17,7 +17,12 @@ const WorkPage = ({ data }) => {
           title={work.shermansShowcaseTitle}
           link='/work/shermans-showcase'
         />
-
+        <WorkThumb // Marco
+          thumb={work.marcoThumb.fluid}
+          rollover={work.marcoRollover.fluid}
+          title={work.marcoTitle}
+          link='/work/marco'
+        />
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
@@ -25,12 +30,6 @@ const WorkPage = ({ data }) => {
           link='/work/dekalb-market-hall'
         />
 
-        <WorkThumb // Marco
-          thumb={work.marcoThumb.fluid}
-          rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
-          link='/work/marco'
-        />
         <WorkThumb // Shermans Showcase
           className='hero'
           thumb={work.themovieshowThumb.fluid}

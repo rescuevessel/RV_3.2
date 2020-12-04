@@ -40,7 +40,6 @@ $rescue-vessel-orange: #ff5812;
 body {
   width: 100%;
   font-size: 24px;
-
   a {
     text-decoration: none;
     color: black;
@@ -137,13 +136,7 @@ p {
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-  grid-gap: 30px;
-}
-
-.grid-half {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 30px;
 }
 
@@ -233,11 +226,13 @@ home-hero {
 
 .grid-work {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 30px;
-  a {
+  .underline {
     border-bottom: 2px solid black;
     margin-bottom: 20px;
+  }
+  a {
     &:hover {
       text-decoration: none;
     }
@@ -384,6 +379,50 @@ home-hero {
   }
 }
 
-.address ul {
-  padding: 6vh 0;
+@media screen and (max-width: 768px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+
+  .grid-work {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .title-line {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+
+  .grid-work {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .title-line {
+    margin-top: 60px;
+  }
 }

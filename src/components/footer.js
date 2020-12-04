@@ -68,25 +68,25 @@ const Footer = () => {
             />
             <button className='button emailSubmitBtn btn-1'>Submit</button> */}
           </div>
-          <ul className='menu-list'>
+          <ul className='menu-list type-pitch'>
             <li>
-              <Link className='navbar-item type-pitch' to='/work'>
+              <Link className='navbar-item ' to='/work'>
                 Work
               </Link>
             </li>
             <li>
-              <Link to='/about' className='navbar-item type-pitch'>
+              <Link to='/about' className='navbar-item'>
                 About
               </Link>
             </li>
             <li>
-              <Link className='navbar-item type-pitch' to='/feed'>
+              <Link className='navbar-item' to='/feed'>
                 Feed
               </Link>
             </li>
             <li>
               <a
-                className='navbar-item type-pitch'
+                className='navbar-item'
                 href='https://www.instagram.com/rescuevessel/'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -96,7 +96,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                className='navbar-item type-pitch'
+                className='navbar-item'
                 href='https://vimeo.com/rescuevessel'
                 target='_blank'
                 rel='noopener noreferrer'

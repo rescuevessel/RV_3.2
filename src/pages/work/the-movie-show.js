@@ -24,7 +24,7 @@ export default function TheMovieShow({ data }) {
         <VimeoAutoplay link={tms.hotTakes} />
       </div>
       {/* Section 3 - TC 1 / TC 2 */}
-      <div className='grid-half centered-work type'>
+      <div className='grid-2 centered-work type'>
         <VimeoAutoplay link={tms.button01} />
         <div>{documentToReactComponents(tms.descriptionMulti02.json)}</div>
       </div>
@@ -39,7 +39,7 @@ export default function TheMovieShow({ data }) {
         </div>
       </div>
 
-      <div className='grid-half centered-work type'>
+      <div className='grid-2 centered-work type'>
         <Img fluid={tms.keyArt.fluid} alt='' />
         <div>{documentToReactComponents(tms.logoDevelopment.json)}</div>
       </div>

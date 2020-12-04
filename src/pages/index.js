@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       {/* We're here to help. */}
-      <section className='centered grid-half'>
+      <section className='centered grid-2'>
         <h1>{home.title}</h1>
         <h2>{home.subtitle}</h2>
       </section>
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
         <Img fluid={image} alt='' />
       </section>
       {/* Meet your new collaborators */}
-      <div className='centered grid-half type'>
+      <div className='centered grid-2 type'>
         <div>{documentToReactComponents(home.section01.json)}</div>
         <div>
           {documentToReactComponents(home.section01Body.json)}
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
       </div>
       {/* Design, Branding & Motion */}
       <section className='home-grey'>
-        <div className='centered grid-half type'>
+        <div className='centered grid-2 type'>
           <div>{documentToReactComponents(home.section02.json)}</div>
           <div className='home-ul underline'>
             {documentToReactComponents(home.section02Body.json)}
@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className='centered type'>
-        <div className='grid-half'>
+        <div className='grid-2'>
           <div>{documentToReactComponents(home.section03.json)}</div>
           <div>{documentToReactComponents(home.section03Body.json)}</div>
         </div>

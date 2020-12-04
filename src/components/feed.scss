@@ -7,18 +7,12 @@ $rescue-vessel-orange: #ff5812;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  li {
-    //display: flex;
-    list-style: none;
-    padding: 30px 0;
-    //align-items: center;
-    //justify-content: center;
-  }
 }
 .feed-ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 100%;
 }
 .feed-item {
   border: none;
@@ -26,5 +20,20 @@ $rescue-vessel-orange: #ff5812;
   width: 800px;
   min-height: 400px;
   margin: 0 auto;
+  padding: 20px 0;
   //padding-left: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .feed-item {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    //padding-left: 50px;
+    overflow: hidden;
+    iframe {
+      width: 100%;
+      height: 400px;
+    }
+  }
 }

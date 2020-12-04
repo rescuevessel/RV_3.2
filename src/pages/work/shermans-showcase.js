@@ -8,7 +8,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function ShermansShowcase({ data }) {
   let sherman = data.contentfulShermansShowcase
-  console.log(sherman)
 
   return (
     <Layout>
@@ -63,7 +62,7 @@ export default function ShermansShowcase({ data }) {
       {/* Section 7 
       
           Subway Ad / Description */}
-      <div className='grid-half centered-work type'>
+      <div className='grid-2 centered-work type'>
         <Img fluid={sherman.subwayAd.fluid} alt='' />
         <div>{documentToReactComponents(sherman.descriptionMulti02.json)}</div>
       </div>

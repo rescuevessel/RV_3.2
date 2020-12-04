@@ -22,7 +22,7 @@ export default function MountainMen({ data }) {
       <div className='centered-work'>
         <Img fluid={mountain.ansel01.fluid} alt='' />
       </div>
-      <div className='grid-half centered-work type'>
+      <div className='grid-2 centered-work type'>
         <Img fluid={mountain.ansel02.fluid} alt='' />
         <p>{mountain.mmDesc.mmDesc}</p>
       </div>

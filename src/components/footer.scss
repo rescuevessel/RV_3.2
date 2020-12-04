@@ -70,7 +70,7 @@ footer {
   margin: 0 auto; // center in browser
   padding: 0 6vw 6vh 6vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-column-gap: 30px;
 }
 
@@ -111,6 +111,9 @@ footer {
   border-bottom-right-radius: 0;
   margin-right: -10px;
   width: auto;
+  input {
+    width: 20vw;
+  }
 }
 
 .emailSubmitBtn {
@@ -152,6 +155,26 @@ footer {
     &::after {
       opacity: 1;
       transition: all 0.3s;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-columns {
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: 30px;
+  }
+  .footer-column {
+    padding-bottom: 60px;
+  }
+  .emailInput {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -10px;
+    width: auto;
+    input {
+      width: 40vw;
     }
   }
 }
