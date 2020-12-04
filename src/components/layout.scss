@@ -210,10 +210,6 @@ p {
   }
 }
 
-home-hero {
-  padding: 0;
-}
-
 .home-grey {
   margin: 4vh 0;
   //padding-bottom: 4vh;
@@ -403,7 +399,13 @@ home-hero {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1em;
+  }
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
