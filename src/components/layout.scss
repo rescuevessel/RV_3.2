@@ -376,6 +376,12 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1em;
+  }
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
@@ -400,12 +406,6 @@ p {
 }
 
 @media screen and (max-width: 375px) {
-  h1 {
-    font-size: 2em;
-  }
-  h2 {
-    font-size: 1em;
-  }
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
