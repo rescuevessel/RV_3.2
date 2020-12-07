@@ -54,7 +54,7 @@ const AboutPage = ({ data }) => {
         <div className='about-list' style={{ paddingRight: '30px' }}>
           {documentToReactComponents(about.section02Left.json)}
         </div>
-        <div className='work-title'>
+        <div className='about-help'>
           <div className='title-line'></div>
           <div>{documentToReactComponents(about.section02Right.json)}</div>
         </div>

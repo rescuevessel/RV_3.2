@@ -52,6 +52,7 @@ body {
 h1 {
   font-family: SharpSans;
   font-size: 3em;
+  //font-size: 6vw;
 }
 
 h2 {
@@ -116,6 +117,9 @@ p {
 .space-between {
   display: grid;
   grid-template-columns: 1fr;
+  h2 {
+    padding-top: 60px !important;
+  }
   //justify-content: space-between;
 }
 
@@ -142,7 +146,7 @@ p {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 30px;
 }
 .grid-9 {
@@ -204,7 +208,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   justify-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   img {
     max-width: 250px;
   }
@@ -360,6 +364,10 @@ p {
   //flex-direction: row;
 }
 
+.about-help h2 {
+  padding-top: 60px;
+}
+
 .credits {
   h2 {
     border-bottom: 1px solid black;
@@ -383,9 +391,14 @@ p {
     font-size: 1em;
   }
   .grid-2 {
-    display: grid;
     grid-template-columns: 1fr;
     grid-gap: 30px;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-thirds {
+    grid-template-columns: 1fr;
   }
 
   .grid-work {
@@ -409,7 +422,16 @@ p {
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 30px;
+    //grid-gap: 30px;
+  }
+
+  .grid-thirds {
+    display: grid;
+    grid-template-columns: 1fr;
+    //grid-gap: 30px;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .grid-work {
@@ -426,5 +448,12 @@ p {
 
   .title-line {
     margin-top: 60px;
+  }
+
+  .client-logos {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    justify-content: space-around;
   }
 }

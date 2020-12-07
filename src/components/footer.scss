@@ -79,11 +79,8 @@ footer {
   display: block;
 }
 
-.copyright {
-  display: flex;
-  margin-top: 4rem;
-  text-align: left;
-  //font-size: .8vw;
+.mobile-copyright {
+  display: none;
 }
 
 .address {
@@ -167,6 +164,12 @@ footer {
   }
   .footer-column {
     padding-bottom: 60px;
+  }
+  .mobile-copyright {
+    display: inline-block;
+  }
+  .copyright {
+    display: none;
   }
   .emailInput {
     border-top-right-radius: 0;

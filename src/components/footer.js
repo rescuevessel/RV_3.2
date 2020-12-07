@@ -31,7 +31,7 @@ const Footer = () => {
             <p>Suite 4L-7</p>
             <p>Brooklyn, NY 11215</p>
           </div>
-          <div className='address type-pitch'>
+          <div className='type-pitch copyright'>
             <p>Copyright @ 2020 Rescue Vessel</p>
           </div>
         </div>
@@ -60,13 +60,6 @@ const Footer = () => {
               }}
               className='input emailInput'
             />
-            {/* <input
-              action='https://rescuevessel.us13.list-manage.com/subscribe/post?u=b971537573d38b8a0d8e4ad30&amp;id=d93eebd82f'
-              className='input emailInput'
-              type='text'
-              placeholder='Your Email'
-            />
-            <button className='button emailSubmitBtn btn-1'>Submit</button> */}
           </div>
           <ul className='menu-list type-pitch'>
             <li>
@@ -105,6 +98,9 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+          <div className='type-pitch mobile-copyright'>
+            <p>Copyright @ 2020 Rescue Vessel</p>
+          </div>
         </div>
       </div>
     </footer>
@@ -112,8 +108,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-//import moment from 'moment-timezone'
-
-//<span className='type-pitch currentTime'>{moment().tz('America/New_York').format('hh:mm:ss A z')}</span>
-//<span className='type-pitch copyright'>Copyright &copy; {new Date().getFullYear()} Rescue Vessel</span>
