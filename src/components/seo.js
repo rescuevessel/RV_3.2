@@ -9,16 +9,12 @@ ReactGA.pageview('/')
 ReactGA.pageview('/about')
 ReactGA.pageview('/work')
 ReactGA.pageview('/feed')
-
-// <!-- Global site tag (gtag.js) - Google Analytics -->
-// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81279213-1"></script>
-// <script>
-//   window.dataLayer = window.dataLayer || [];
-//   function gtag(){dataLayer.push(arguments);}
-//   gtag('js', new Date());
-
-//   gtag('config', 'UA-81279213-1');
-// </script>
+ReactGA.pageview('/work/shermans-showcase')
+ReactGA.pageview('/work/marco')
+ReactGA.pageview('/work/dekalb-market-hall')
+ReactGA.pageview('/work/the-movie-show')
+ReactGA.pageview('/work/mountain-men')
+ReactGA.pageview('/work/ae')
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
