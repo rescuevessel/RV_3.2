@@ -57,7 +57,19 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    ></Helmet>
+    >
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81279213-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-81279213-1');
+        </script>
+
+
+    </Helmet>
   )
 }
 
