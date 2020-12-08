@@ -2,6 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-81279213-1')
+ReactGA.pageview(window.location.pathname)
+
+// <!-- Global site tag (gtag.js) - Google Analytics -->
+// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81279213-1"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'UA-81279213-1');
+// </script>
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -57,19 +71,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81279213-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-81279213-1');
-        </script>
-
-
-    </Helmet>
+    ></Helmet>
   )
 }
 
