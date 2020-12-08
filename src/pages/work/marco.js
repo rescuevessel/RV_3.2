@@ -33,6 +33,10 @@ export default function Marco({ data }) {
         <Img fluid={marco.iconSet.fluid} alt='' />
       </div>
       <div className='centered-work'>
+        <Img fluid={marco.books.fluid} alt='' />
+      </div>
+
+      <div className='centered-work'>
         <Img fluid={marco.typeSystem.fluid} alt='' />
       </div>
       <div className='centered-work'>
@@ -75,6 +79,11 @@ export const marco_query = graphql`
         }
       }
       phones02 {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      books {
         fluid {
           ...GatsbyContentfulFluid
         }

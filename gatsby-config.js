@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Rescue Vessel 3.2`,
     description: `We're here to help.`,
-    author: `@gatsbyjs`,
+    author: `@rescuevessel`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -49,8 +49,5 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

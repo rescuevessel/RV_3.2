@@ -4,11 +4,12 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 //import RVslider from '../components/RVslider'
-//import VimeoAutoplay from '../components/vimeoAutoplay'
+import VimeoAutoplay from '../components/vimeoAutoplay'
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
+  console.log(home.homeHeroImage.description)
   //const slider = data.contentfulHomePage.homeImageSlider
 
   return (
@@ -26,6 +27,7 @@ const IndexPage = ({ data }) => {
             // <Img fluid={images.fluid} key={images.id} width='100%' />
           ))}
         </RVslider> */}
+        <VimeoAutoplay link={home.homeHeroImage.description} />
         <Img fluid={image} alt='' />
       </section>
       {/* Meet your new collaborators */}
@@ -81,6 +83,7 @@ export const indexquery = graphql`
         fluid {
           ...GatsbyContentfulFluid
         }
+        description
       }
       section01 {
         json
