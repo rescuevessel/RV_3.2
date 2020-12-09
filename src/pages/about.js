@@ -26,9 +26,9 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <section className='centered'>
+      {/* <section className='centered'>
         <h1>{about.title}</h1>
-      </section>
+      </section> */}
 
       <section className='centered'>
         <RVslider>
@@ -86,11 +86,11 @@ const AboutPage = ({ data }) => {
             </div>
           ))}
           <div className='space-between'>
-            <div className='title-line'></div>
             <div>
               {documentToReactComponents(about.section05Left.json)}
               {documentToReactComponents(about.section05Right.json)}
             </div>
+            {/* <div className='title-line'></div> */}
           </div>
         </div>
       </section>
