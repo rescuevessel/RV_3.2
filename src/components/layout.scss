@@ -121,7 +121,6 @@ p {
   h2 {
     padding-top: 60px !important;
   }
-  grid-column: 3 / 4;
 }
 
 .underline {
@@ -149,9 +148,6 @@ p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 30px;
-  &::last-child {
-    display: none;
-  }
 }
 .grid-9 {
   display: grid;
