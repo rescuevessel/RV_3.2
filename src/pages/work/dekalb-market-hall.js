@@ -4,6 +4,9 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import WorkTitleSection from '../../components/workTitleSection'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.track('Visited DMH')
 
 export default function DekalbMarketHall({ data }) {
   let dmh = data.contentfulDekalbMarketHall

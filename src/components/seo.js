@@ -6,7 +6,6 @@ import ReactGA from 'react-ga'
 import mixpanel from 'mixpanel-browser'
 
 mixpanel.init('2431abc4b243b95f0f2983ba8a75dff2')
-mixpanel.track('Tracking after mixpanel.init')
 
 ReactGA.initialize('UA-81279213-1')
 ReactGA.pageview('/')

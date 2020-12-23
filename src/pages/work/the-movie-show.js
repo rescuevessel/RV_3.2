@@ -5,6 +5,9 @@ import Layout from '../../components/layout'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
 import WorkTitleSection from '../../components/workTitleSection'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.track('Visited The Movie Show')
 
 export default function TheMovieShow({ data }) {
   let tms = data.contentfulTheMovieShow

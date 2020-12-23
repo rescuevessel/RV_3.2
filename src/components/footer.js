@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import './footer.scss'
 import logo from '../images/rv_icon_orange.png'
 import Mailchimp from 'react-mailchimp-form'
+import mixpanel from 'mixpanel-browser'
 
-const Footer = () => {
+function Footer() {
+  useEffect(() => {
+    mixpanel.track_links('.emailLink', 'Clicked Footer Email', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.emailInput button', 'Clicked Footer Subscribe', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.navbar-item', 'Clicked Footer Nav Item', {
+      referrer: document.referrer,
+    })
+  }, [])
   return (
     <footer>
       <div className='centered'>
@@ -68,7 +80,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to='/about' className='navbar-item'>
+              <Link className='navbar-item' to='/about'>
                 About
               </Link>
             </li>

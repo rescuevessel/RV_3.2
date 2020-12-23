@@ -4,6 +4,9 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
 import WorkTitleSection from '../../components/workTitleSection'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.track('Visited Mountain Men')
 
 export default function MountainMen({ data }) {
   let mountain = data.contentfulMountainMen

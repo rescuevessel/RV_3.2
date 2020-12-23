@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-//import RVslider from '../components/RVslider'
 import VimeoAutoplay from '../components/vimeoAutoplay'
+import mixpanel from 'mixpanel-browser'
 
-const IndexPage = ({ data }) => {
+function IndexPage({ data }) {
+  useEffect(() => {
+    mixpanel.track_links('.mp-home-about', 'Clicked Home About Us', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.mp-home-wecan a', 'Clicked Home We Can', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.mp-home-work', 'Clicked Home See Our Work', {
+      referrer: document.referrer,
+    })
+  }, [])
+
   const home = data.contentfulHomePage
   const image = data.contentfulHomePage.homeHeroImage.fluid
   console.log(home.homeHeroImage.description)
-  //const slider = data.contentfulHomePage.homeImageSlider
 
   return (
     <Layout>
@@ -21,12 +32,6 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className='home-hero'>
-        {/* <RVslider>
-          {slider.map(images => (
-            <VimeoAutoplay link={images.description} />
-            // <Img fluid={images.fluid} key={images.id} width='100%' />
-          ))}
-        </RVslider> */}
         <VimeoAutoplay link={home.homeHeroImage.description} />
         <Img fluid={image} alt='' />
       </section>
@@ -35,7 +40,7 @@ const IndexPage = ({ data }) => {
         <div>{documentToReactComponents(home.section01.json)}</div>
         <div>
           {documentToReactComponents(home.section01Body.json)}
-          <Link to='/about'>
+          <Link className='mp-home-about' to='/about'>
             <button className='btn-1'>About us</button>
           </Link>
         </div>
@@ -44,9 +49,11 @@ const IndexPage = ({ data }) => {
       <section className='home-grey'>
         <div className='centered grid-2 type'>
           <div>{documentToReactComponents(home.section02.json)}</div>
-          <div className='home-ul underline'>
-            {documentToReactComponents(home.section02Body.json)}
-            <Link to='/work'>
+          <div>
+            <div className='mp-home-wecan home-ul underline'>
+              {documentToReactComponents(home.section02Body.json)}
+            </div>
+            <Link className='mp-home-work' to='/work'>
               <button className='btn-1'>See our work</button>
             </Link>
           </div>

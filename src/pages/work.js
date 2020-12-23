@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import WorkThumb from '../components/workThumb'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.track('Made it to Work page')
 
 const WorkPage = ({ data }) => {
+  useEffect(() => {
+    mixpanel.track_links('.feed-button', 'Clicked Random button', {
+      referrer: document.referrer,
+    })
+  }, [])
+
   let work = data.contentfulWorkPage
 
   return (
@@ -54,7 +63,7 @@ const WorkPage = ({ data }) => {
 
         <div className='work-blurb'>
           <h1>Want to see more work randomly?</h1>
-          <Link to='/feed'>
+          <Link className='feed-button' to='/feed'>
             <button className='btn-1'>Yes, absolutely</button>
           </Link>
         </div>

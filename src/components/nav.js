@@ -1,9 +1,21 @@
 import { Link } from 'gatsby'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../images/rv_icon_orange.png'
 import './nav.scss'
+import mixpanel from 'mixpanel-browser'
 
-const Nav = () => {
+function Nav() {
+  useEffect(() => {
+    mixpanel.track_links('.mp-work', 'Clicked Nav Work', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.mp-about', 'Clicked Nav About', {
+      referrer: document.referrer,
+    })
+    mixpanel.track_links('.mp-feed', 'Clicked Nav Feed', {
+      referrer: document.referrer,
+    })
+  }, [])
   const [showMobile, setShowMobile] = useState(false)
   const toggleMobile = () => setShowMobile(!showMobile)
 
@@ -32,24 +44,24 @@ const Nav = () => {
             className={`${mobileActive} mobile-nav`}
             style={{ display: showMobile ? 'flex' : 'none' }}
           >
-            <Link className='m-navbar-li' to='/work'>
+            <Link className='mp-work m-navbar-li' to='/work'>
               Work
             </Link>
-            <Link className='m-navbar-li' to='/about'>
+            <Link className='mp-about m-navbar-li' to='/about'>
               About
             </Link>
-            <Link className='m-navbar-li' to='/feed'>
+            <Link className='mp-feed m-navbar-li' to='/feed'>
               Feed
             </Link>
           </div>
           <div className='desk-nav underline'>
-            <Link className='navbar-li' to='/work'>
+            <Link className='mp-work navbar-li' to='/work'>
               Work
             </Link>
-            <Link className='navbar-li' to='/about'>
+            <Link className='mp-about navbar-li' to='/about'>
               About
             </Link>
-            <Link className='navbar-li' to='/feed'>
+            <Link className='mp-feed navbar-li' to='/feed'>
               Feed
             </Link>
           </div>

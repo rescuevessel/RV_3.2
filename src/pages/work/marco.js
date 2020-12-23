@@ -2,8 +2,10 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
-//import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import WorkTitleSection from '../../components/workTitleSection'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.track('Visited Marco')
 
 export default function Marco({ data }) {
   let marco = data.contentfulMarco
