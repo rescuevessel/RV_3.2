@@ -51,7 +51,9 @@ function Footer() {
         <div className='footer-column'>
           <div className='newsletterSignUpWrapper'>
             <h2 className='type-ssno'>Our quarterly newsletter</h2>
+
             <Mailchimp
+              className='input'
               action='https://rescuevessel.us13.list-manage.com/subscribe/post?u=b971537573d38b8a0d8e4ad30&amp;id=d93eebd82f'
               fields={[
                 {
@@ -70,7 +72,6 @@ function Footer() {
                 duplicate: "You're already subscribed!",
                 button: 'Subscribe',
               }}
-              className='input emailInput'
             />
           </div>
           <ul className='menu-list type-pitch'>
@@ -120,3 +121,30 @@ function Footer() {
 }
 
 export default Footer
+
+/*
+
+
+    
+
+
+
+
+
+     <div id="mc_embed_signup">
+     <form action="https://rescuevessel.us13.list-manage.com/subscribe/post?u=b971537573d38b8a0d8e4ad30&amp;id=d93eebd82f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+         <div id="mc_embed_signup_scroll">
+       
+       <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+         
+         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b971537573d38b8a0d8e4ad30_d93eebd82f" tabindex="-1" value=""></div>
+         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+         </div>
+     </form>
+     </div>
+     
+     <!--End mc_embed_signup-->
+
+
+
+ */
