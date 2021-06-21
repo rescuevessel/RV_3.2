@@ -3,7 +3,10 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import WorkThumb from '../components/workThumb'
+import WorkThumbLottie from '../components/workThumbLottie'
 import mixpanel from 'mixpanel-browser'
+
+import dataIntegration from '../lottie/segmentationWide.json'
 
 mixpanel.track('Made it to Work page')
 
@@ -19,6 +22,12 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <div className='grid-work centered'>
+        <WorkThumbLottie // Mixpanel
+          className='hero'
+          thumb={dataIntegration}
+          title={work.mixpanel}
+          link='/work/mixpanel'
+        />
         <WorkThumb // Shermans Showcase
           className='hero'
           thumb={work.shermansShowcaseThumb.fluid}
@@ -76,6 +85,7 @@ export default WorkPage
 export const WorkQuery = graphql`
   query WorkQuery {
     contentfulWorkPage {
+      mixpanel
       shermansShowcaseTitle
       shermansShowcaseThumb {
         fluid {
