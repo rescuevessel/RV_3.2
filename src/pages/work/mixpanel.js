@@ -56,6 +56,7 @@ export default function Mixpanel({ data }) {
       <div className='centered-work'>
         <LottieRV animationData={securityWide} />
       </div>
+
       <div className='grid-2 centered-work'>
         <LottieRV animationData={interactiveReports} />
         <LottieRV animationData={teamDashboards} />

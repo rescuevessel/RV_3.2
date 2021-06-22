@@ -24,8 +24,9 @@ const WorkPage = ({ data }) => {
       <div className='grid-work centered'>
         <WorkThumbLottie // Mixpanel
           className='hero'
-          thumb={dataIntegration}
-          title={work.mixpanel}
+          lottie={dataIntegration}
+          thumb={work.mixpanelThumb.fluid}
+          title={work.mixpanelTitle}
           link='/work/mixpanel'
         />
         <WorkThumb // Shermans Showcase
@@ -85,7 +86,12 @@ export default WorkPage
 export const WorkQuery = graphql`
   query WorkQuery {
     contentfulWorkPage {
-      mixpanel
+      mixpanelTitle
+      mixpanelThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       shermansShowcaseTitle
       shermansShowcaseThumb {
         fluid {

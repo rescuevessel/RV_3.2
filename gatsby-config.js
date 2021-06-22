@@ -8,10 +8,50 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-lottie',
+            options: {
+              // Whether or not to generate static SVG placeholders.
+              // If this is false, an empty div will render until
+              // the lottie script starts the animation.
+              generatePlaceholders: true,
+
+              // lottie-web is loaded from CDN to start the animations.
+              // This controls which version of the script is loaded.
+              lottieVersion: '5.7.1',
+
+              // The renderer to use (html, canvas, or svg). The static
+              // placeholder will always be an SVG despite this value.
+              // See the lottie-web docs: https://github.com/airbnb/lottie-web#html
+              renderer: 'svg',
+
+              // Whether or not to loop the animation.
+              // See the lottie-web docs: https://github.com/airbnb/lottie-web#html
+              loop: true,
+
+              // Whether or not to autoplay the animation on load.
+              // See the lottie-web docs: https://github.com/airbnb/lottie-web#html
+              autoplay: true,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lottie`,
+        path: `${__dirname}/src/lottieTest`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,12 +65,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [],
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `i5mxz0zh67lx`,
@@ -38,16 +72,5 @@ module.exports = {
         accessToken: '1kR_mZyBhpsxpr769RRBkfTeYjsFf42ZjPyz334ZEkI',
       },
     },
-    {
-      resolve: `gatsby-source-dropbox`,
-      options: {
-        accessToken: `9OB_98L2OKEAAAAAAABqFmrGZRoQJVmxLYeuozKKEbf4pBK_jr0HtD5cAB8sIQPI`,
-        extensions: ['.pdf', '.jpg', '.png', '.gif', '.md'],
-        path: '',
-        recursive: false,
-        createFolderNodes: false,
-      },
-    },
-    'gatsby-transformer-remark',
   ],
 }

@@ -84,37 +84,3 @@ export const feed2query = graphql`
     }
   }
 `
-/*
-<Img fluid={images.fluid} key={images.id} width='100%' />
-{data.allDropboxNode.edges.map(({ node }, index) => {
-              let num = Math.floor(Math.random() * 800) + 1 //random value 0-800
-              num *= Math.floor(Math.random() * 2) === 1 ? 1 : -1 //include negative numbers
-
-              if (node.localFile.extension === 'md') {
-                const iframe = node.localFile.childMarkdownRemark.frontmatter
-                //console.log(iframe)
-                return (
-                  <li className='feed-item' style={{ marginLeft: num }}>
-                    <iframe
-                      key={index}
-                      frameBorder='0'
-                      title={iframe.templateKey}
-                      src={iframe.content}
-                      width='600px'
-                      height='600px'
-                    ></iframe>
-                  </li>
-                )
-              } else {
-                return (
-                  <li className='feed-item' style={{ marginLeft: num }}>
-                    <img
-                      src={node.localFile.publicURL}
-                      alt={'feed images'}
-                      key={index}
-                    />
-                  </li>
-                )
-              }
-            })}
-*/
