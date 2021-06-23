@@ -14,6 +14,7 @@ import interactiveReports from '../../lottie/interactiveReports.json'
 import dataManagement from '../../lottie/dataManagementWhite.json'
 import dataIntegration from '../../lottie/dataIntegrationWhite.json'
 import segmentationWide from '../../lottie/segmentationWide.json'
+import bg from '../../images/segmentationFrame.svg'
 
 mixpanel.track('Visited Mixpanel')
 
@@ -24,7 +25,7 @@ export default function Mixpanel({ data }) {
     <Layout>
       {/* Section 1 - Hero */}
       <div className='centered-work'>
-        <LottieRV animationData={segmentationWide} />
+        <LottieRV bg={bg} animationData={segmentationWide} />
       </div>
       {/* Section 2 - Title / Description */}
       <WorkTitleSection title={mxp.title} desc={mxp.description.json} />

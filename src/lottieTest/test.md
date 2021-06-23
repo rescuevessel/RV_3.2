@@ -6,4 +6,4 @@ questions: Fuck you.
 
 Hi here is a cool animation:
 
-![alt text](scalable.json)
+![Scalable Infrastructure Lottie](scalable.json)
