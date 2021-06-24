@@ -345,12 +345,13 @@ p {
 
 .type {
   //padding: 4vh 0 !important;
-  gap: 80px !important;
+  //gap: 80px !important;
   h2 {
-    padding: 4vh 0;
+    padding: 4vh 20px;
   }
   p {
     padding-bottom: 20px;
+    padding-left: 20px;
   }
 }
 

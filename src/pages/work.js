@@ -3,7 +3,10 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import WorkThumb from '../components/workThumb'
+import WorkThumbLottie from '../components/workThumbLottie'
 import mixpanel from 'mixpanel-browser'
+
+import dataIntegration from '../lottie/segmentationWide.json'
 
 mixpanel.track('Made it to Work page')
 
@@ -15,23 +18,26 @@ const WorkPage = ({ data }) => {
   }, [])
 
   let work = data.contentfulWorkPage
+  console.log(work.mixpanelThumb.fluid)
+  console.log(work.shermansShowcaseRollover.fluid)
 
   return (
     <Layout>
       <div className='grid-work centered'>
-        <WorkThumb // Shermans Showcase
+        <WorkThumbLottie // Mixpanel
           className='hero'
+          lottie={dataIntegration}
+          title={work.mixpanelTitle}
+          link='/work/mixpanel'
+        />
+
+        <WorkThumb // Shermans Showcase
           thumb={work.shermansShowcaseThumb.fluid}
           rollover={work.shermansShowcaseRollover.fluid}
           title={work.shermansShowcaseTitle}
           link='/work/shermans-showcase'
         />
-        <WorkThumb // Marco
-          thumb={work.marcoThumb.fluid}
-          rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
-          link='/work/marco'
-        />
+
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
@@ -60,6 +66,13 @@ const WorkPage = ({ data }) => {
           title={work.aeTitle}
           link='/work/ae'
         />
+        <WorkThumb // Marco
+          className='hero'
+          thumb={work.marcoThumb.fluid}
+          rollover={work.marcoRollover.fluid}
+          title={work.marcoTitle}
+          link='/work/marco'
+        />
 
         <div className='work-blurb'>
           <h1>Want to see more work randomly?</h1>
@@ -76,6 +89,12 @@ export default WorkPage
 export const WorkQuery = graphql`
   query WorkQuery {
     contentfulWorkPage {
+      mixpanelTitle
+      mixpanelThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       shermansShowcaseTitle
       shermansShowcaseThumb {
         fluid {

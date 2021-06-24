@@ -4,14 +4,25 @@ module.exports = {
     description: `We're here to help.`,
     author: `@rescuevessel`,
   },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-transformer-remark`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lottie`,
+        path: `${__dirname}/src/lottieTest`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,12 +36,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [],
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `i5mxz0zh67lx`,
@@ -38,16 +43,5 @@ module.exports = {
         accessToken: '1kR_mZyBhpsxpr769RRBkfTeYjsFf42ZjPyz334ZEkI',
       },
     },
-    {
-      resolve: `gatsby-source-dropbox`,
-      options: {
-        accessToken: `9OB_98L2OKEAAAAAAABqFmrGZRoQJVmxLYeuozKKEbf4pBK_jr0HtD5cAB8sIQPI`,
-        extensions: ['.pdf', '.jpg', '.png', '.gif', '.md'],
-        path: '',
-        recursive: false,
-        createFolderNodes: false,
-      },
-    },
-    'gatsby-transformer-remark',
   ],
 }
