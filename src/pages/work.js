@@ -18,6 +18,8 @@ const WorkPage = ({ data }) => {
   }, [])
 
   let work = data.contentfulWorkPage
+  console.log(work.mixpanelThumb.fluid)
+  console.log(work.shermansShowcaseRollover.fluid)
 
   return (
     <Layout>
@@ -25,23 +27,17 @@ const WorkPage = ({ data }) => {
         <WorkThumbLottie // Mixpanel
           className='hero'
           lottie={dataIntegration}
-          thumb={work.mixpanelThumb.fluid}
           title={work.mixpanelTitle}
           link='/work/mixpanel'
         />
+
         <WorkThumb // Shermans Showcase
-          className='hero'
           thumb={work.shermansShowcaseThumb.fluid}
           rollover={work.shermansShowcaseRollover.fluid}
           title={work.shermansShowcaseTitle}
           link='/work/shermans-showcase'
         />
-        <WorkThumb // Marco
-          thumb={work.marcoThumb.fluid}
-          rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
-          link='/work/marco'
-        />
+
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
@@ -69,6 +65,13 @@ const WorkPage = ({ data }) => {
           rollover={work.aeRollover.fluid}
           title={work.aeTitle}
           link='/work/ae'
+        />
+        <WorkThumb // Marco
+          className='hero'
+          thumb={work.marcoThumb.fluid}
+          rollover={work.marcoRollover.fluid}
+          title={work.marcoTitle}
+          link='/work/marco'
         />
 
         <div className='work-blurb'>
