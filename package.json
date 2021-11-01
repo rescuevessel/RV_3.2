@@ -26,7 +26,6 @@
     "joi": "^17.4.2",
     "lottie-to-svg": "^1.1.0",
     "mixpanel-browser": "^2.40.0",
-    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -36,11 +35,12 @@
     "react-mailchimp-form": "^1.0.2",
     "react-scripts": "^3.4.3",
     "react-slick": "^0.27.11",
+    "sass": "^1.43.4",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "prettier": "2.0.5",
-    "sass-loader": "^10.0.1",
+    "sass-loader": "^10.2.0",
     "webpack": "^4.46.0"
   },
   "keywords": [
