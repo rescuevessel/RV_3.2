@@ -29,26 +29,26 @@ export default function Mixpanel({ data }) {
       </div>
       {/* Section 2 - Title / Description */}
       <WorkTitleSection title={mxp.title} desc={mxp.description.json} />
-      {/* Section 3 - TC 1 / TC 2 */}
+      {/* Section 3 - Sales Video */}
       <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe src={mxp.salesVideo} title='temp' />
         </div>
       </div>
-      {/* Section 4 - Spot 1 */}
+      {/* Section 4 - Build better products */}
       <div className='centered-work grid-thirds type'>
         <div>{documentToReactComponents(mxp.videoDesc.json)}</div>
       </div>
-
+      {/* Section 5 - Site context */}
       <div className='centered-work'>
         <VimeoAutoplay link={mxp.siteContextVimeo} />
       </div>
-      {/* Section 7  */}
+      {/* Section 6 - Animating with code */}
       <div className='grid-2 centered-work type'>
         <LottieRV animationData={ScalableLottie} />
         <div>{documentToReactComponents(mxp.codeDesc.json)}</div>
       </div>
-      {/* Section 8 - Looping EP 03 */}
+      {/* Section 7 - Code animation dump */}
 
       <div className='grid-2 centered-work'>
         <LottieRV animationData={dataManagement} />

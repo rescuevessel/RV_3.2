@@ -10,7 +10,8 @@ const WorkThumb = props => {
         <div>
           <LottieRV bg={bg} animationData={props.lottie} />
 
-          <h2>{props.title}</h2>
+          <h2>{props.client}</h2>
+          <h3>{props.title}</h3>
         </div>
       </Link>
     </div>

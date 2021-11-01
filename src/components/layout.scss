@@ -62,6 +62,13 @@ h2 {
   line-height: 1.2em;
 }
 
+h3 {
+  font-family: SharpSans, monospace;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
 p {
   font-family: PitchMedium, monospace;
   color: #333;
@@ -238,7 +245,11 @@ p {
     }
   }
   h2 {
-    padding: 15px 0;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  h3 {
+    padding-bottom: 20px;
   }
   .hero {
     grid-column: 1 / 3;

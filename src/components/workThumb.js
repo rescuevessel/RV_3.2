@@ -18,7 +18,8 @@ const WorkThumb = props => {
       <Link onMouseEnter={toggle} onMouseLeave={toggle} to={props.link}>
         <div>
           {thumbOption}
-          <h2>{props.title}</h2>
+          <h2>{props.client}</h2>
+          <h3>{props.title}</h3>
         </div>
       </Link>
     </div>

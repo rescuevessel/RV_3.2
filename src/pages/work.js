@@ -24,17 +24,41 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <div className='grid-work centered'>
-        <WorkThumbLottie // Mixpanel
+        <WorkThumb // Shermans Showcase
           className='hero'
+          thumb={work.conversionThumb.fluid}
+          rollover={work.conversionRollover.fluid}
+          title={work.conversionTitle}
+          client={work.conversionClient}
+          link='/work/conversion'
+        />
+        <WorkThumb // Shermans Showcase
+          thumb={work.themovieshowThumb.fluid}
+          rollover={work.theMovieShowRollover.fluid}
+          title={work.themovieshowTitle}
+          client={work.theMovieShowClient}
+          link='/work/the-movie-show'
+        />
+        <WorkThumbLottie // Mixpanel
           lottie={dataIntegration}
           title={work.mixpanelTitle}
+          client={work.mixpanelClient}
           link='/work/mixpanel'
+        />
+        <WorkThumb // Marco
+          className='hero'
+          thumb={work.marcoThumb.fluid}
+          rollover={work.marcoRollover.fluid}
+          title={work.marcoTitle}
+          client={work.marcoClient}
+          link='/work/marco'
         />
 
         <WorkThumb // Shermans Showcase
           thumb={work.shermansShowcaseThumb.fluid}
           rollover={work.shermansShowcaseRollover.fluid}
           title={work.shermansShowcaseTitle}
+          client={work.shermansShowcaseClient}
           link='/work/shermans-showcase'
         />
 
@@ -42,36 +66,25 @@ const WorkPage = ({ data }) => {
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
           title={work.dekalbMarketHallTitle}
+          client={work.dekalbMarketHallClient}
           link='/work/dekalb-market-hall'
         />
 
-        <WorkThumb // Shermans Showcase
-          className='hero'
-          thumb={work.themovieshowThumb.fluid}
-          rollover={work.theMovieShowRollover.fluid}
-          title={work.themovieshowTitle}
-          link='/work/the-movie-show'
-        />
-
-        <WorkThumb // Mountain Men
+        {/* <WorkThumb // Mountain Men
           thumb={work.mountainMenThumb.fluid}
           rollover={work.mountainMenRollover.fluid}
           title={work.mountainMenTitle}
+          client={work.mountainMenClient}
           link='/work/mountain-men'
-        />
+        /> */}
 
         <WorkThumb // A&E
+          className='hero'
           thumb={work.aeThumb.fluid}
           rollover={work.aeRollover.fluid}
           title={work.aeTitle}
+          client={work.aeClient}
           link='/work/ae'
-        />
-        <WorkThumb // Marco
-          className='hero'
-          thumb={work.marcoThumb.fluid}
-          rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
-          link='/work/marco'
         />
 
         <div className='work-blurb'>
@@ -90,12 +103,14 @@ export const WorkQuery = graphql`
   query WorkQuery {
     contentfulWorkPage {
       mixpanelTitle
+      mixpanelClient
       mixpanelThumb {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
       shermansShowcaseTitle
+      shermansShowcaseClient
       shermansShowcaseThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -107,6 +122,7 @@ export const WorkQuery = graphql`
         }
       }
       dekalbMarketHallTitle
+      dekalbMarketHallClient
       dekalbMarketHallThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -118,6 +134,7 @@ export const WorkQuery = graphql`
         }
       }
       marcoTitle
+      marcoClient
       marcoThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -129,6 +146,7 @@ export const WorkQuery = graphql`
         }
       }
       themovieshowTitle
+      theMovieShowClient
       theMovieShowRollover {
         fluid {
           ...GatsbyContentfulFluid
@@ -140,6 +158,7 @@ export const WorkQuery = graphql`
         }
       }
       aeTitle
+      aeClient
       aeThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -151,12 +170,25 @@ export const WorkQuery = graphql`
         }
       }
       mountainMenTitle
+      mountainMenClient
       mountainMenThumb {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
       mountainMenRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      conversionTitle
+      conversionClient
+      conversionThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      conversionRollover {
         fluid {
           ...GatsbyContentfulFluid
         }
