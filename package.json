@@ -23,6 +23,7 @@
     "gatsby-transformer-remark": "^2.10.0",
     "gatsby-transformer-sharp": "^2.5.13",
     "html-react-parser": "^0.14.1",
+    "joi": "^17.4.2",
     "lottie-to-svg": "^1.1.0",
     "mixpanel-browser": "^2.40.0",
     "node-sass": "^4.14.1",
