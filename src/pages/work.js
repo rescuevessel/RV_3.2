@@ -27,7 +27,7 @@ const WorkPage = ({ data }) => {
         <WorkThumbLottie // Mixpanel
           className='hero'
           lottie={dataIntegration}
-          title={work.mixpanelTitle}
+          title={work.mixpanelClient}
           link='/work/mixpanel'
         />
 
@@ -41,7 +41,7 @@ const WorkPage = ({ data }) => {
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
-          title={work.dekalbMarketHallTitle}
+          title={work.dekalbMarketHallClient}
           link='/work/dekalb-market-hall'
         />
 
@@ -63,14 +63,14 @@ const WorkPage = ({ data }) => {
         <WorkThumb // A&E
           thumb={work.aeThumb.fluid}
           rollover={work.aeRollover.fluid}
-          title={work.aeTitle}
+          title={work.aeClient}
           link='/work/ae'
         />
         <WorkThumb // Marco
           className='hero'
           thumb={work.marcoThumb.fluid}
           rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
+          title={work.marcoClient}
           link='/work/marco'
         />
 
@@ -90,12 +90,14 @@ export const WorkQuery = graphql`
   query WorkQuery {
     contentfulWorkPage {
       mixpanelTitle
+      mixpanelClient
       mixpanelThumb {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
       shermansShowcaseTitle
+      shermansShowcaseClient
       shermansShowcaseThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -107,6 +109,7 @@ export const WorkQuery = graphql`
         }
       }
       dekalbMarketHallTitle
+      dekalbMarketHallClient
       dekalbMarketHallThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -118,6 +121,7 @@ export const WorkQuery = graphql`
         }
       }
       marcoTitle
+      marcoClient
       marcoThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -140,6 +144,7 @@ export const WorkQuery = graphql`
         }
       }
       aeTitle
+      aeClient
       aeThumb {
         fluid {
           ...GatsbyContentfulFluid
@@ -151,6 +156,7 @@ export const WorkQuery = graphql`
         }
       }
       mountainMenTitle
+      mountainMenClient
       mountainMenThumb {
         fluid {
           ...GatsbyContentfulFluid
