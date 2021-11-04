@@ -183,6 +183,10 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  h3 {
+    font-size: 1.4em;
+    padding-top: 10px;
+  }
 }
 .title-line {
   width: 60px;

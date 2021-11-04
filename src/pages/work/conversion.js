@@ -9,6 +9,7 @@ mixpanel.track('Visited Conversion')
 
 export default function Conversion({ data }) {
   let conv = data.contentfulConversion
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -17,7 +18,11 @@ export default function Conversion({ data }) {
           <iframe src={conv.hero} title='temp' />
         </div>
       </div>
-      <WorkTitleSection title={conv.title} desc={conv.description.json} />
+      <WorkTitleSection
+        client={work.conversionClient}
+        title={work.conversionTitle}
+        desc={conv.description.json}
+      />
       <div className='centered-work'>
         <Img fluid={conv.conversion01.fluid} alt='' />
       </div>
@@ -38,6 +43,10 @@ export default function Conversion({ data }) {
 
 export const conv_query = graphql`
   query CONV {
+    contentfulWorkPage {
+      conversionTitle
+      conversionClient
+    }
     contentfulConversion {
       title
       description {

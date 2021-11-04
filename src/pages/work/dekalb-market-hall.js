@@ -10,13 +10,18 @@ mixpanel.track('Visited DMH')
 
 export default function DekalbMarketHall({ data }) {
   let dmh = data.contentfulDekalbMarketHall
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
       <div className='centered-work'>
         <Img fluid={dmh.hero.fluid} alt='' />
       </div>
-      <WorkTitleSection title={dmh.title} desc={dmh.description.json} />
+      <WorkTitleSection
+        title={work.dekalbMarketHallTitle}
+        client={work.dekalbMarketHallClient}
+        desc={dmh.description.json}
+      />
       <div className='centered-work'>
         <Img fluid={dmh.neonSign01.fluid} alt='' />
       </div>
@@ -74,6 +79,10 @@ export default function DekalbMarketHall({ data }) {
 
 export const dmh_query = graphql`
   query DMH {
+    contentfulWorkPage {
+      dekalbMarketHallClient
+      dekalbMarketHallTitle
+    }
     contentfulDekalbMarketHall {
       hero {
         fluid {

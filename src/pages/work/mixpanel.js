@@ -20,6 +20,7 @@ mixpanel.track('Visited Mixpanel')
 
 export default function Mixpanel({ data }) {
   let mxp = data.contentfulMixpanel
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -28,7 +29,11 @@ export default function Mixpanel({ data }) {
         <LottieRV bg={bg} animationData={segmentationWide} />
       </div>
       {/* Section 2 - Title / Description */}
-      <WorkTitleSection title={mxp.title} desc={mxp.description.json} />
+      <WorkTitleSection
+        title={work.mixpanelTitle}
+        client={work.mixpanelClient}
+        desc={mxp.description.json}
+      />
       {/* Section 3 - Sales Video */}
       <div className='centered-work'>
         <div className='vimeo-body-full'>
@@ -68,6 +73,10 @@ export default function Mixpanel({ data }) {
 
 export const mxp_query = graphql`
   query MXP {
+    contentfulWorkPage {
+      mixpanelTitle
+      mixpanelClient
+    }
     contentfulMixpanel {
       title
       hero {

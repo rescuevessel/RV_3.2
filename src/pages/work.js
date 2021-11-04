@@ -45,13 +45,22 @@ const WorkPage = ({ data }) => {
           client={work.mixpanelClient}
           link='/work/mixpanel'
         />
-        <WorkThumb // Marco
+        {/* <WorkThumb // Marco
           className='hero'
           thumb={work.marcoThumb.fluid}
           rollover={work.marcoRollover.fluid}
           title={work.marcoTitle}
           client={work.marcoClient}
           link='/work/marco'
+        /> */}
+
+        <WorkThumb // Shermans Showcase
+          className='hero'
+          thumb={work.popCultureThumb.fluid}
+          rollover={work.popCultureThumb.fluid}
+          title={work.popCultureTitle}
+          client={work.popCultureClient}
+          link='/work/pop-culture-toolkit'
         />
 
         <WorkThumb // Shermans Showcase
@@ -129,6 +138,13 @@ export const WorkQuery = graphql`
         }
       }
       dekalbMarketHallRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      popCultureClient
+      popCultureTitle
+      popCultureThumb {
         fluid {
           ...GatsbyContentfulFluid
         }

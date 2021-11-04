@@ -11,6 +11,7 @@ mixpanel.track("Visited Sherman's Showcase")
 
 export default function ShermansShowcase({ data }) {
   let sherman = data.contentfulShermansShowcase
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -22,7 +23,8 @@ export default function ShermansShowcase({ data }) {
       </div>
       {/* Section 2 - Title / Description */}
       <WorkTitleSection
-        title={sherman.title}
+        title={work.shermansShowcaseTitle}
+        client={work.shermansShowcaseClient}
         desc={sherman.descriptionMulti.json}
       />
 
@@ -98,8 +100,11 @@ export default function ShermansShowcase({ data }) {
 
 export const ss_query = graphql`
   query SS {
+    contentfulWorkPage {
+      shermansShowcaseClient
+      shermansShowcaseTitle
+    }
     contentfulShermansShowcase {
-      title
       hero
       titleCard01
       titleCard02

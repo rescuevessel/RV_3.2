@@ -5,7 +5,10 @@ const WorkTitleSection = props => {
   return (
     <div className='grid-2 centered-work'>
       <div className='work-title work-info'>
-        <h1>{props.title}</h1>
+        <div>
+          <h1>{props.client}</h1>
+          <h3>{props.title}</h3>
+        </div>
         <div className='title-line'></div>
       </div>
       <div className='work-info'>{documentToReactComponents(props.desc)}</div>

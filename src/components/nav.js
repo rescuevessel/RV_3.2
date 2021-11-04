@@ -6,6 +6,9 @@ import mixpanel from 'mixpanel-browser'
 
 function Nav() {
   useEffect(() => {
+    mixpanel.track_links('.mp-reel', 'Clicked Nav Reel', {
+      referrer: document.referrer,
+    })
     mixpanel.track_links('.mp-work', 'Clicked Nav Work', {
       referrer: document.referrer,
     })
@@ -44,6 +47,9 @@ function Nav() {
             className={`${mobileActive} mobile-nav`}
             style={{ display: showMobile ? 'flex' : 'none' }}
           >
+            <Link className='mp-reel m-navbar-li' to='/reel'>
+              Reel
+            </Link>
             <Link className='mp-work m-navbar-li' to='/work'>
               Work
             </Link>
@@ -55,6 +61,9 @@ function Nav() {
             </Link>
           </div>
           <div className='desk-nav underline'>
+            <Link className='mp-reel navbar-li' to='/reel'>
+              Reel
+            </Link>
             <Link className='mp-work navbar-li' to='/work'>
               Work
             </Link>

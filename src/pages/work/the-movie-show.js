@@ -11,7 +11,7 @@ mixpanel.track('Visited The Movie Show')
 
 export default function TheMovieShow({ data }) {
   let tms = data.contentfulTheMovieShow
-  console.log(tms)
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -20,7 +20,11 @@ export default function TheMovieShow({ data }) {
         <VimeoAutoplay link={tms.hero} />
       </div>
       {/* Section 2 - Title / Description */}
-      <WorkTitleSection title={tms.title} desc={tms.descriptionMulti.json} />
+      <WorkTitleSection
+        title={work.themovieshowTitle}
+        client={work.theMovieShowClient}
+        desc={tms.descriptionMulti.json}
+      />
 
       {/* Section 4 - Spot 1 */}
       <div className='centered-work'>
@@ -60,6 +64,10 @@ export default function TheMovieShow({ data }) {
 
 export const tms_query = graphql`
   query TMS {
+    contentfulWorkPage {
+      theMovieShowClient
+      themovieshowTitle
+    }
     contentfulTheMovieShow {
       hero
       title
