@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
 import WorkTitleSection from '../../components/workTitleSection'
 import mixpanel from 'mixpanel-browser'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 mixpanel.track('Visited Pop Culture Toolkit')
 
@@ -41,6 +42,9 @@ export default function PopCultureToolkit({ data }) {
         <VimeoAutoplay link={pc.vimeoAuto03} />
         <VimeoAutoplay link={pc.vimeoAuto04} />
       </div>
+      <div className='centered-work grid-thirds type'>
+        <div>{documentToReactComponents(pc.desc02.json)}</div>
+      </div>
       {/* Section 10  Full Embed Tuskegee */}
       <div className='centered-work'>
         <div className='vimeo-body-full'>
@@ -73,6 +77,9 @@ export const PC_query = graphql`
       vimeoEmbed01
       vimeoEmbed02
       desc {
+        json
+      }
+      desc02 {
         json
       }
       bold {

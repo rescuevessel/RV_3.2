@@ -178,6 +178,10 @@ p {
 
 .work-info {
   padding: 2vh 0;
+  p {
+    text-align: justify;
+    text-justify: kashida;
+  }
 }
 .work-title {
   display: flex;
