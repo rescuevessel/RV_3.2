@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import WorkTitleSection from '../components/workTitleSection'
+// import WorkTitleSection from '../components/workTitleSection'
 import mixpanel from 'mixpanel-browser'
 
 mixpanel.track('Visited Reel')
@@ -17,11 +17,6 @@ export default function Reel({ data }) {
           <iframe src={reel.vimeoEmbed} title='temp' />
         </div>
       </div>
-      <WorkTitleSection
-        title={reel.title}
-        client={reel.client}
-        desc={reel.desc.json}
-      />
     </Layout>
   )
 }

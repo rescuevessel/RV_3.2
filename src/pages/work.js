@@ -24,7 +24,7 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <div className='grid-work centered'>
-        <WorkThumb // Shermans Showcase
+        <WorkThumb // Mixpanel Conversion
           className='hero'
           thumb={work.conversionThumb.fluid}
           rollover={work.conversionRollover.fluid}
@@ -32,45 +32,13 @@ const WorkPage = ({ data }) => {
           client={work.conversionClient}
           link='/work/conversion'
         />
-        <WorkThumb // Shermans Showcase
+        <WorkThumb // The Movie Show
           thumb={work.themovieshowThumb.fluid}
           rollover={work.theMovieShowRollover.fluid}
           title={work.themovieshowTitle}
           client={work.theMovieShowClient}
           link='/work/the-movie-show'
         />
-        <WorkThumbLottie // Mixpanel
-          lottie={dataIntegration}
-          title={work.mixpanelTitle}
-          client={work.mixpanelClient}
-          link='/work/mixpanel'
-        />
-        {/* <WorkThumb // Marco
-          className='hero'
-          thumb={work.marcoThumb.fluid}
-          rollover={work.marcoRollover.fluid}
-          title={work.marcoTitle}
-          client={work.marcoClient}
-          link='/work/marco'
-        /> */}
-
-        <WorkThumb // Shermans Showcase
-          className='hero'
-          thumb={work.popCultureThumb.fluid}
-          rollover={work.popCultureThumb.fluid}
-          title={work.popCultureTitle}
-          client={work.popCultureClient}
-          link='/work/pop-culture-toolkit'
-        />
-
-        <WorkThumb // Shermans Showcase
-          thumb={work.shermansShowcaseThumb.fluid}
-          rollover={work.shermansShowcaseRollover.fluid}
-          title={work.shermansShowcaseTitle}
-          client={work.shermansShowcaseClient}
-          link='/work/shermans-showcase'
-        />
-
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
           rollover={work.dekalbMarketHallRollover.fluid}
@@ -79,14 +47,27 @@ const WorkPage = ({ data }) => {
           link='/work/dekalb-market-hall'
         />
 
-        {/* <WorkThumb // Mountain Men
-          thumb={work.mountainMenThumb.fluid}
-          rollover={work.mountainMenRollover.fluid}
-          title={work.mountainMenTitle}
-          client={work.mountainMenClient}
-          link='/work/mountain-men'
-        /> */}
-
+        <WorkThumb // Pop Culture Toolkit
+          className='hero'
+          thumb={work.popCultureThumb.fluid}
+          rollover={work.popCultureRollover.fluid}
+          title={work.popCultureTitle}
+          client={work.popCultureClient}
+          link='/work/pop-culture-toolkit'
+        />
+        <WorkThumbLottie // Mixpanel Web Animations
+          lottie={dataIntegration}
+          title={work.mixpanelTitle}
+          client={work.mixpanelClient}
+          link='/work/mixpanel'
+        />
+        <WorkThumb // Shermans Showcase
+          thumb={work.shermansShowcaseThumb.fluid}
+          rollover={work.shermansShowcaseRollover.fluid}
+          title={work.shermansShowcaseTitle}
+          client={work.shermansShowcaseClient}
+          link='/work/shermans-showcase'
+        />
         <WorkThumb // A&E
           className='hero'
           thumb={work.aeThumb.fluid}
@@ -149,6 +130,11 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      popCultureRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       marcoTitle
       marcoClient
       marcoThumb {
@@ -200,12 +186,12 @@ export const WorkQuery = graphql`
       conversionTitle
       conversionClient
       conversionThumb {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversionRollover {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
