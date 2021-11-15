@@ -2,7 +2,7 @@
   "name": "rescue-vessel",
   "private": true,
   "description": "We're here to help.",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "author": "David O'Brien <dave@rescuevessel.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",

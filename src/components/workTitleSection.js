@@ -11,7 +11,9 @@ const WorkTitleSection = props => {
         </div>
         <div className='title-line'></div>
       </div>
-      <div className='work-info'>{documentToReactComponents(props.desc)}</div>
+      <div className='work-info full'>
+        {documentToReactComponents(props.desc)}
+      </div>
     </div>
   )
 }

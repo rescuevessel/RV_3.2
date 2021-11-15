@@ -42,7 +42,7 @@ export default function PopCultureToolkit({ data }) {
         <VimeoAutoplay link={pc.vimeoAuto03} />
         <VimeoAutoplay link={pc.vimeoAuto04} />
       </div>
-      <div className='centered-work grid-thirds type'>
+      <div className='centered-work grid-thirds type full'>
         <div>{documentToReactComponents(pc.desc02.json)}</div>
       </div>
       {/* Section 10  Full Embed Tuskegee */}

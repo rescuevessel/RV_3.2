@@ -85,7 +85,7 @@ const AboutPage = ({ data }) => {
               <div className='team-info'>{parse(team.description)}</div>
             </div>
           ))}
-          <div className='space-between'>
+          <div className='space-between full'>
             <div>
               {documentToReactComponents(about.section05Left.json)}
               {documentToReactComponents(about.section05Right.json)}

@@ -35,7 +35,7 @@ export default function DekalbMarketHall({ data }) {
       <div className='centered-work'>
         <Img fluid={dmh.tees.fluid} alt='' />
       </div>
-      <div className='grid-2 centered-work type'>
+      <div className='grid-2 centered-work type full'>
         <Img fluid={dmh.paperBag01.fluid} alt='' />
         <div>{documentToReactComponents(dmh.description02.json)}</div>
       </div>

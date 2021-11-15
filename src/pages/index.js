@@ -36,7 +36,7 @@ function IndexPage({ data }) {
         <Img fluid={image} alt='' />
       </section>
       {/* Meet your new collaborators */}
-      <div className='centered grid-2 type'>
+      <div className='centered grid-2 type full'>
         <div>{documentToReactComponents(home.section01.json)}</div>
         <div>
           {documentToReactComponents(home.section01Body.json)}
@@ -47,7 +47,7 @@ function IndexPage({ data }) {
       </div>
       {/* Design, Branding & Motion */}
       <section className='home-grey'>
-        <div className='centered grid-2 type'>
+        <div className='centered grid-2 type full'>
           <div>{documentToReactComponents(home.section02.json)}</div>
           <div>
             <div className='mp-home-wecan home-ul underline'>
@@ -61,7 +61,7 @@ function IndexPage({ data }) {
       </section>
 
       <section className='centered type'>
-        <div className='grid-2'>
+        <div className='grid-2 full'>
           <div>{documentToReactComponents(home.section03.json)}</div>
           <div>{documentToReactComponents(home.section03Body.json)}</div>
         </div>

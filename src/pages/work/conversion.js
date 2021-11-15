@@ -13,7 +13,7 @@ export default function Conversion({ data }) {
 
   return (
     <Layout>
-      <div className='centered-work'>
+      <div className='centered-work full'>
         <div className='vimeo-body-full'>
           <iframe src={conv.hero} title='temp' />
         </div>
@@ -54,32 +54,32 @@ export const conv_query = graphql`
       }
       hero
       conversion01 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversion02 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversion03 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversion04 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversion05 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }
       conversion06 {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }
       }

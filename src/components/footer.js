@@ -44,7 +44,7 @@ function Footer() {
             <p>Brooklyn, NY 11215</p>
           </div>
           <div className='type-pitch copyright'>
-            <p>Copyright @ 2020 Rescue Vessel</p>
+            <p>Copyright @ {new Date().getFullYear()} Rescue Vessel</p>
           </div>
         </div>
 
@@ -112,7 +112,7 @@ function Footer() {
             </li>
           </ul>
           <div className='type-pitch mobile-copyright'>
-            <p>Copyright @ 2020 Rescue Vessel</p>
+            <p>Copyright @ 2021 Rescue Vessel</p>
           </div>
         </div>
       </div>

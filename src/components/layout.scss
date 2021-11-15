@@ -77,6 +77,12 @@ p {
   line-height: 1.5;
   margin: 8px 0;
 }
+.full {
+  p {
+    text-align: justify;
+    text-justify: kashida;
+  }
+}
 
 .btn-1 {
   font-family: SharpSans, monospace;
@@ -178,10 +184,6 @@ p {
 
 .work-info {
   padding: 2vh 0;
-  p {
-    text-align: justify;
-    text-justify: kashida;
-  }
 }
 .work-title {
   display: flex;
@@ -369,6 +371,8 @@ p {
     padding: 4vh 20px;
   }
   p {
+    text-align: justify;
+    text-justify: kashida;
     padding-bottom: 20px;
     padding-left: 20px;
   }
