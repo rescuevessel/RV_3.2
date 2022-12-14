@@ -31,7 +31,7 @@ export default function BrokenPalate({ data }) {
         <Img fluid={bp.loungeMan.fluid} alt='' />
       </div>
       <div className='grid-2 centered-work'>
-        <Img fluid={bp.spilledCoffee.fluid} alt='' />
+        <Img fluid={bp.carrotMan.fluid} alt='' />
         <Img fluid={bp.spilledCoffee.fluid} alt='' />
       </div>
       <div className='centered-work'>
@@ -134,6 +134,11 @@ export const bp_query = graphql`
         }
       }
       pizzaChiller {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      carrotMan {
         fluid {
           ...GatsbyContentfulFluid
         }
