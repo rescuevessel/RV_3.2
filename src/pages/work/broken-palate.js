@@ -82,6 +82,9 @@ export default function BrokenPalate({ data }) {
         <Img fluid={bp.beatnicks.fluid} alt='' />
         <Img fluid={bp.shoppingLady.fluid} alt='' />
       </div>
+      <div className='centered credits'>
+        <div>{documentToReactComponents(bp.credits.json)}</div>
+      </div>
     </Layout>
   )
 }
@@ -106,6 +109,9 @@ export const bp_query = graphql`
         json
       }
       description03 {
+        json
+      }
+      credits {
         json
       }
       monogram {

@@ -80,60 +80,6 @@ export default function Upward({ data }) {
       <div className='centered-work'>
         <Img fluid={upward.marketingMockupStreet.fluid} alt='' />
       </div>
-      {/* <div className='grid-2 centered-work'>
-        <Img fluid={upward.monogram.fluid} alt='' />
-        <Img fluid={upward.turkeyHead.fluid} alt='' />
-      </div>
-      
-     
-      <div className='centered-work'>
-        <VimeoAutoplay link={upward.videoBumpers} />
-      </div>
-      <div className='centered type full'>
-        <div>{documentToReactComponents(upward.description02.json)}</div>
-      </div>
-      <div className='centered-work'>
-        <Img fluid={upward.deconstructedwordmark.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
-        <Img fluid={upward.rollerSkater.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.burgerMan.fluid} alt='' />
-        <Img fluid={upward.cubanoMan.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.brokenEgg.fluid} alt='' />
-        <Img fluid={upward.onionTears.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
-        <Img fluid={upward.spilledWine.fluid} alt='' />
-      </div>
-      <div className='centered-work grid-thirds type full'>
-        <div>{documentToReactComponents(upward.description03.json)}</div>
-      </div>
-      <div className='centered-work'>
-        <Img fluid={upward.cocktailGals.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.artichokeLady.fluid} alt='' />
-        <Img fluid={upward.playlistLady.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.runningMan.fluid} alt='' />
-        <Img fluid={upward.cakeEater.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
-        <Img fluid={upward.foodCollage.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.pizzaChiller.fluid} alt='' />
-        <Img fluid={upward.burgerSofa.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={upward.beatnicks.fluid} alt='' />
-        <Img fluid={upward.shoppingLady.fluid} alt='' />
-      </div> */}
     </Layout>
   )
 }
