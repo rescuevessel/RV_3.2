@@ -6,7 +6,6 @@ import WorkTitleSection from '../../components/workTitleSection'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import mixpanel from 'mixpanel-browser'
 import VimeoAutoplay from '../../components/vimeoAutoplay'
-
 import ScalableLottie from '../../lottie/scalable.json'
 import securityWide from '../../lottie/securityWide.json'
 import teamDashboards from '../../lottie/teamDashboards.json'
