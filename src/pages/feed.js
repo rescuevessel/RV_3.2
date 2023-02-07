@@ -7,13 +7,14 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const FeedPage = ({ data }) => {
   const feed = data.contentfulFeed.feed3
-  const title = data.contentfulFeed.title
+  // const title = data.contentfulFeed.title
+  const header = data.contentfulFeed.header
 
   return (
     <Layout>
       <div>
         <section className='centered grid-2'>
-          {documentToReactComponents(title.json)}
+          {documentToReactComponents(header.json)}
         </section>
         <section className='centered'>
           <div className='feedContainer'>
@@ -71,7 +72,8 @@ export default FeedPage
 export const feed2query = graphql`
   query feed2query {
     contentfulFeed {
-      title {
+      title
+      header {
         json
       }
       feed3 {
