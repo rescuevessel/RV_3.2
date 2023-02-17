@@ -9,6 +9,7 @@ import mixpanel from 'mixpanel-browser'
 import LottieRV from '../../components/lottieRV'
 import UpwardHero from '../../lottie/upwardHeroAnimation.json'
 import bg from '../../images/upwardHeroBG.svg'
+import Parent from '../../images/Parent_Screens.svg'
 
 mixpanel.track('Visited Upward')
 
@@ -42,7 +43,8 @@ export default function Upward({ data }) {
         <VimeoAutoplay link={upward.loadingAnimation} />
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.parentScreens.fluid} alt='' />
+        <img src={Parent} alt='svg of Upward parents screens' />
+        {/* <Img fluid={upward.parentScreens.fluid} alt='' /> */}
       </div>
       <div className='centered-work'>
         <Img fluid={upward.iconSet.fluid} alt='' />
