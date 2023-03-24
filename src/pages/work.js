@@ -68,8 +68,15 @@ const WorkPage = ({ data }) => {
           client={work.shermansShowcaseClient}
           link='/work/shermans-showcase'
         />
+        <WorkThumb // Broken Palata
+          thumb={work.bpThumb.fluid}
+          rollover={work.bpRollover.fluid}
+          title={work.bpClient}
+          client={work.bpTitle}
+          link='/work/broken-palate'
+        />
         <WorkThumb // A&E
-          className='hero'
+          // className='hero'
           thumb={work.aeThumb.fluid}
           rollover={work.aeRollover.fluid}
           title={work.aeTitle}
@@ -95,6 +102,18 @@ export const WorkQuery = graphql`
       mixpanelTitle
       mixpanelClient
       mixpanelThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      bpClient
+      bpTitle
+      bpRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      bpThumb {
         fluid {
           ...GatsbyContentfulFluid
         }
