@@ -4,14 +4,13 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 // import VimeoAutoplay from '../../components/vimeoAutoplay'
 import WorkTitleSection from '../../components/workTitleSection'
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import mixpanel from 'mixpanel-browser'
 
 mixpanel.track('Visited Gem')
 
 export default function Gem({ data }) {
   let gem = data.contentfulGem
-  // let work = data.contentfulWorkPage
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -22,35 +21,58 @@ export default function Gem({ data }) {
       </div>
 
       <WorkTitleSection
-        title={gem.title}
-        client={gem.title}
+        title={work.gemType}
+        client={work.gemTitle}
         desc={gem.descriptionMulti.json}
       />
 
       <div className='centered-work'>
         <Img fluid={gem.gemFrame01.fluid} alt='' />
       </div>
+      <div className='grid-4 centered-work'>
+        <div className='vimeo-body-square'>
+          <iframe
+            src={`${gem.vimUrl01}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
+        </div>
+        <div className='vimeo-body-square'>
+          <iframe
+            src={`${gem.vimUrl02}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
+        </div>
+        <div className='vimeo-body-square'>
+          <iframe
+            src={`${gem.vimUrl03}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
+        </div>
+        <div className='vimeo-body-square'>
+          <iframe
+            src={`${gem.vimUrl04}?autoplay=1&loop=1&background=1`}
+            title='temp'
+          />
+        </div>
+      </div>
       <div className='centered-work'>
         <Img fluid={gem.gemFrame02.fluid} alt='' />
       </div>
-      <div className='centered-work'>
+      <div className='grid-2 centered-work'>
         <Img fluid={gem.gemFrame03.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
         <Img fluid={gem.gemFrame04.fluid} alt='' />
       </div>
-      <div className='centered-work'>
+
+      <div className='grid-2 centered-work'>
         <Img fluid={gem.gemFrame05.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
         <Img fluid={gem.gemFrame06.fluid} alt='' />
       </div>
-      <div className='centered-work'>
+
+      <div className='grid-2 centered-work'>
         <Img fluid={gem.gemFrame07.fluid} alt='' />
-      </div>
-      <div className='centered-work'>
         <Img fluid={gem.gemFrame08.fluid} alt='' />
       </div>
+
       {/* <div className='centered-work'>
         <div className='vimeo-body-full'>
           <iframe src={sherman.hero} title='temp' />
@@ -126,6 +148,10 @@ export default function Gem({ data }) {
 
 export const gem_query = graphql`
   query Gem {
+    contentfulWorkPage {
+      gemTitle
+      gemType
+    }
     contentfulGem {
       hero
       title
@@ -172,6 +198,10 @@ export const gem_query = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      vimUrl01
+      vimUrl02
+      vimUrl03
+      vimUrl04
     }
   }
 `
