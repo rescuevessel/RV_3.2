@@ -24,8 +24,16 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <div className='grid-work centered'>
-        <WorkThumb // Mixpanel Conversion
+        <WorkThumb // Gem
           className='hero'
+          thumb={work.gemThumb.fluid}
+          rollover={work.gemRollover.fluid}
+          title={work.gemType}
+          client={work.gemTitle}
+          link='/work/gem'
+        />
+        <WorkThumb // Mixpanel Conversion
+          // className='hero'
           thumb={work.conversionThumb.fluid}
           rollover={work.conversionRollover.fluid}
           title={work.conversionTitle}
@@ -48,12 +56,19 @@ const WorkPage = ({ data }) => {
         />
 
         <WorkThumb // Pop Culture Toolkit
-          className='hero'
           thumb={work.popCultureThumb.fluid}
           rollover={work.popCultureRollover.fluid}
           title={work.popCultureTitle}
           client={work.popCultureClient}
           link='/work/pop-culture-toolkit'
+        />
+        <WorkThumb // Broken Palate
+          className='hero'
+          thumb={work.bpThumb.fluid}
+          rollover={work.bpRollover.fluid}
+          title={work.bpClient}
+          client={work.bpTitle}
+          link='/work/broken-palate'
         />
         <WorkThumbLottie // Mixpanel Web Animations
           lottie={dataIntegration}
@@ -68,13 +83,7 @@ const WorkPage = ({ data }) => {
           client={work.shermansShowcaseClient}
           link='/work/shermans-showcase'
         />
-        <WorkThumb // Broken Palata
-          thumb={work.bpThumb.fluid}
-          rollover={work.bpRollover.fluid}
-          title={work.bpClient}
-          client={work.bpTitle}
-          link='/work/broken-palate'
-        />
+
         <WorkThumb // A&E
           // className='hero'
           thumb={work.aeThumb.fluid}
@@ -210,6 +219,18 @@ export const WorkQuery = graphql`
         }
       }
       conversionRollover {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      gemTitle
+      gemType
+      gemThumb {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      gemRollover {
         fluid(quality: 100) {
           ...GatsbyContentfulFluid
         }

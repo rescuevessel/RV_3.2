@@ -29,7 +29,7 @@ export default function Gem({ data }) {
       <div className='centered-work'>
         <Img fluid={gem.gemFrame01.fluid} alt='' />
       </div>
-      <div className='grid-4 centered-work'>
+      <div className='grid-2 centered-work'>
         <div className='vimeo-body-square'>
           <iframe
             src={`${gem.vimUrl01}?autoplay=1&loop=1&background=1`}
@@ -42,6 +42,15 @@ export default function Gem({ data }) {
             title='temp'
           />
         </div>
+      </div>
+      <div className='centered-work'>
+        <Img fluid={gem.gemFrame02.fluid} alt='' />
+      </div>
+      <div className='grid-2 centered-work'>
+        <Img fluid={gem.gemFrame03.fluid} alt='' />
+        <Img fluid={gem.gemFrame04.fluid} alt='' />
+      </div>
+      <div className='grid-2 centered-work'>
         <div className='vimeo-body-square'>
           <iframe
             src={`${gem.vimUrl03}?autoplay=1&loop=1&background=1`}
@@ -55,14 +64,6 @@ export default function Gem({ data }) {
           />
         </div>
       </div>
-      <div className='centered-work'>
-        <Img fluid={gem.gemFrame02.fluid} alt='' />
-      </div>
-      <div className='grid-2 centered-work'>
-        <Img fluid={gem.gemFrame03.fluid} alt='' />
-        <Img fluid={gem.gemFrame04.fluid} alt='' />
-      </div>
-
       <div className='grid-2 centered-work'>
         <Img fluid={gem.gemFrame05.fluid} alt='' />
         <Img fluid={gem.gemFrame06.fluid} alt='' />
