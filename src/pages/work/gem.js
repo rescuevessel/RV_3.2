@@ -206,7 +206,3 @@ export const gem_query = graphql`
     }
   }
 `
-// contentfulWorkPage {
-//   shermansShowcaseClient
-//   shermansShowcaseTitle
-// }

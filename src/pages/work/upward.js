@@ -8,8 +8,19 @@ import WorkTitleSection from '../../components/workTitleSection'
 import mixpanel from 'mixpanel-browser'
 import LottieRV from '../../components/lottieRV'
 import UpwardHero from '../../lottie/upwardHeroAnimation.json'
+import LoadingMockup from '../../lottie/upwardLoadingMockup.json'
+import RefreshMockup from '../../lottie/upwardRefreshMockup.json'
 import bg from '../../images/upwardHeroBG.svg'
 import Parent from '../../images/Parent_Screens.svg'
+import Families from '../../images/Color_Families.svg'
+import Palette from '../../images/Color_Palette.svg'
+import IconSet from '../../images/Icon_Set.svg'
+import Icon from '../../images/Icon.svg'
+import Illustration01 from '../../images/Illustration_01.svg'
+import Illustration02 from '../../images/Illustration_02.svg'
+import Illustration03 from '../../images/Illustration_03.svg'
+import Illustration04 from '../../images/Illustration_04.svg'
+import Tagline from '../../images/Tagline_01.svg'
 
 mixpanel.track('Visited Upward')
 
@@ -27,11 +38,12 @@ export default function Upward({ data }) {
         client={work.upwardClient}
         desc={upward.description.json}
       />
+
       <div className='centered-work'>
         <VimeoAutoplay link={upward.logoAnimation} />
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.icon.fluid} alt='' />
+        <img src={Icon} alt='svg of Upward icon' />
       </div>
       <div className='centered-work'>
         <Img fluid={upward.phoneMockup.fluid} alt='' />
@@ -40,37 +52,36 @@ export default function Upward({ data }) {
         <Img fluid={upward.marketingMockupSubway.fluid} alt='' />
       </div>
       <div className='centered-work'>
-        <VimeoAutoplay link={upward.loadingAnimation} />
+        <LottieRV bg={bg} animationData={LoadingMockup} autoplay />
       </div>
       <div className='centered-work'>
         <img src={Parent} alt='svg of Upward parents screens' />
-        {/* <Img fluid={upward.parentScreens.fluid} alt='' /> */}
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.iconSet.fluid} alt='' />
+        <img src={IconSet} alt='svg of Upward color palette' />
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.tagline.fluid} alt='' />
+        <img src={Tagline} alt='svg of Upward tagline mockup' />
       </div>
       <div className='centered type full'>
         <div>{documentToReactComponents(upward.description02.json)}</div>
       </div>
       <div className='grid-2 centered-work'>
-        <Img fluid={upward.illustrationPurple.fluid} alt='' />
-        <Img fluid={upward.illustrationGreen.fluid} alt='' />
+        <img src={Illustration01} alt='svg of Upward illustration in purple' />
+        <img src={Illustration02} alt='svg of Upward illustration in greeb' />
       </div>
       <div className='centered-work'>
-        <VimeoAutoplay link={upward.refreshAnimation} />
+        <LottieRV bg={bg} animationData={RefreshMockup} autoplay />
       </div>
       <div className='grid-2 centered-work'>
-        <Img fluid={upward.illustrationRed.fluid} alt='' />
-        <Img fluid={upward.illustrationBlue.fluid} alt='' />
+        <img src={Illustration03} alt='svg of Upward illustration in red' />
+        <img src={Illustration04} alt='svg of Upward illustration in blue' />
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.colorFamilies.fluid} alt='' />
+        <img src={Families} alt='svg of Upward color families' />
       </div>
       <div className='centered-work'>
-        <Img fluid={upward.colorPalette.fluid} alt='' />
+        <img src={Palette} alt='svg of Upward color palette' />
       </div>
       <div className='centered-work'>
         <Img fluid={upward.marketingMockupBusStop.fluid} alt='' />
@@ -100,46 +111,6 @@ export const upward_query = graphql`
       description02 {
         json
       }
-      colorFamilies {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      colorPalette {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      icon {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      iconSet {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      illustrationBlue {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      illustrationGreen {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      illustrationPurple {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      illustrationRed {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
       marketingMockupBusStop {
         fluid {
           ...GatsbyContentfulFluid
@@ -151,11 +122,6 @@ export const upward_query = graphql`
         }
       }
       marketingMockupSubway {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      parentScreens {
         fluid {
           ...GatsbyContentfulFluid
         }
@@ -175,14 +141,7 @@ export const upward_query = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      tagline {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      loadingAnimation
       logoAnimation
-      refreshAnimation
       title
     }
   }

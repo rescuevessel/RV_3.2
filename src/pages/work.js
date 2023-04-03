@@ -92,6 +92,14 @@ const WorkPage = ({ data }) => {
           client={work.aeClient}
           link='/work/ae'
         />
+        <WorkThumb // A&E
+          // className='hero'
+          thumb={work.upwardThumb.fluid}
+          rollover={work.upwardRollover.fluid}
+          title={work.upwardTitle}
+          client={work.upwardClient}
+          link='/work/upward'
+        />
 
         <div className='work-blurb'>
           <h1>Want to see more work randomly?</h1>
@@ -232,6 +240,18 @@ export const WorkQuery = graphql`
       }
       gemRollover {
         fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      upwardTitle
+      upwardClient
+      upwardThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      upwardRollover {
+        fluid {
           ...GatsbyContentfulFluid
         }
       }
