@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import WorkThumb from '../components/workThumb'
 import WorkThumbLottie from '../components/workThumbLottie'
 import mixpanel from 'mixpanel-browser'
-
+import upwardLogo from '../lottie/upwardHeroAnimation.json'
 import dataIntegration from '../lottie/segmentationWide.json'
 
 mixpanel.track('Made it to Work page')
@@ -32,20 +32,28 @@ const WorkPage = ({ data }) => {
           client={work.gemTitle}
           link='/work/gem'
         />
-        <WorkThumb // Mixpanel Conversion
+        {/* <WorkThumb // Upward
           // className='hero'
-          thumb={work.conversionThumb.fluid}
-          rollover={work.conversionRollover.fluid}
-          title={work.conversionTitle}
-          client={work.conversionClient}
-          link='/work/conversion'
+          thumb={work.upwardThumb.fluid}
+          rollover={work.upwardRollover.fluid}
+          title={work.upwardTitle}
+          client={work.upwardClient}
+          link='/work/upward'
+        /> */}
+        <WorkThumbLottie // Upward
+          // className='hero'
+          lottie={upwardLogo}
+          // rollover={work.upwardRollover.fluid}
+          title={work.upwardTitle}
+          client={work.upwardClient}
+          link='/work/upward'
         />
-        <WorkThumb // The Movie Show
-          thumb={work.themovieshowThumb.fluid}
-          rollover={work.theMovieShowRollover.fluid}
-          title={work.themovieshowTitle}
-          client={work.theMovieShowClient}
-          link='/work/the-movie-show'
+        <WorkThumb // Pop Culture Toolkit
+          thumb={work.popCultureThumb.fluid}
+          rollover={work.popCultureRollover.fluid}
+          title={work.popCultureTitle}
+          client={work.popCultureClient}
+          link='/work/pop-culture-toolkit'
         />
         <WorkThumb // Dekalb Market Hall
           thumb={work.dekalbMarketHallThumb.fluid}
@@ -55,13 +63,15 @@ const WorkPage = ({ data }) => {
           link='/work/dekalb-market-hall'
         />
 
-        <WorkThumb // Pop Culture Toolkit
-          thumb={work.popCultureThumb.fluid}
-          rollover={work.popCultureRollover.fluid}
-          title={work.popCultureTitle}
-          client={work.popCultureClient}
-          link='/work/pop-culture-toolkit'
+        <WorkThumb // Mixpanel Conversion
+          // className='hero'
+          thumb={work.conversionThumb.fluid}
+          rollover={work.conversionRollover.fluid}
+          title={work.conversionTitle}
+          client={work.conversionClient}
+          link='/work/conversion'
         />
+
         <WorkThumb // Broken Palate
           className='hero'
           thumb={work.bpThumb.fluid}
@@ -83,6 +93,13 @@ const WorkPage = ({ data }) => {
           client={work.shermansShowcaseClient}
           link='/work/shermans-showcase'
         />
+        <WorkThumb // The Movie Show
+          thumb={work.themovieshowThumb.fluid}
+          rollover={work.theMovieShowRollover.fluid}
+          title={work.themovieshowTitle}
+          client={work.theMovieShowClient}
+          link='/work/the-movie-show'
+        />
 
         <WorkThumb // A&E
           // className='hero'
@@ -91,14 +108,6 @@ const WorkPage = ({ data }) => {
           title={work.aeTitle}
           client={work.aeClient}
           link='/work/ae'
-        />
-        <WorkThumb // A&E
-          // className='hero'
-          thumb={work.upwardThumb.fluid}
-          rollover={work.upwardRollover.fluid}
-          title={work.upwardTitle}
-          client={work.upwardClient}
-          link='/work/upward'
         />
 
         <div className='work-blurb'>
