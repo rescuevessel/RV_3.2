@@ -6,23 +6,23 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import '../components/layout.scss'
 import RVslider from '../components/RVslider'
 import parse from 'html-react-parser'
-import { INLINES } from '@contentful/rich-text-types'
+//import { INLINES } from '@contentful/rich-text-types'
 
 const AboutPage = ({ data }) => {
   const about = data.contentfulAboutPage
   const slider = data.contentfulAboutPage.aboutImageSlider
 
-  const options = {
-    renderNode: {
-      [INLINES.HYPERLINK]: node => {
-        return (
-          <a href={node.data.uri} target='_blank' rel='noreferrer'>
-            {node.content[0].value}
-          </a>
-        )
-      },
-    },
-  }
+  // const options = {
+  //   renderNode: {
+  //     [INLINES.HYPERLINK]: node => {
+  //       return (
+  //         <a href={node.data.uri} target='_blank' rel='noreferrer'>
+  //           {node.content[0].value}
+  //         </a>
+  //       )
+  //     },
+  //   },
+  // }
 
   return (
     <Layout>
@@ -46,16 +46,16 @@ const AboutPage = ({ data }) => {
         <Img fluid={about.aboutImage01.fluid} alt='' />
         <Img fluid={about.aboutImage02.fluid} alt='' />
       </section>
-      <section className='home-grey'>
+      {/* <section className='home-grey'>
         <div className='block'></div>
-      </section>
+      </section> */}
 
       <section className='centered grid-2 '>
         <div className='about-list' style={{ paddingRight: '30px' }}>
           {documentToReactComponents(about.section02Left.json)}
         </div>
-        <div className='about-help'>
-          <div className='title-line'></div>
+        <div className='about-list'>
+          {/* <div className='title-line'></div> */}
           <div>{documentToReactComponents(about.section02Right.json)}</div>
         </div>
       </section>
@@ -63,16 +63,15 @@ const AboutPage = ({ data }) => {
       <section className='centered'>
         <Img fluid={about.aboutImage03.fluid} alt='' />
       </section>
-
-      <section className='home-grey'>
-        {/* Collaboration is King */}
+      {/* Collaboration is King */}
+      {/* <section className='home-grey'>
         <div className='centered grid-2 type'>
           <div>{documentToReactComponents(about.section04Left.json)}</div>
           <div className='grid-2 home about-list underline'>
             {documentToReactComponents(about.section04Right.json, options)}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team */}
       <section className='centered'>

@@ -244,8 +244,6 @@ img {
   }
 }
 
-
-
 .home-grey {
   margin: 4vh 0;
   //padding-bottom: 4vh;
@@ -367,15 +365,23 @@ img {
 }
 
 .about-list {
+  h2,
+  p {
+    font-size: 1.2em;
+  }
   p {
     font-family: SharpSans, monospace;
-    font-size: 0.9em;
+
     padding-bottom: 0;
     line-height: 1;
   }
 
   h1 {
     padding-bottom: 4vh;
+  }
+
+  ul {
+    padding-bottom: 40px;
   }
 }
 
