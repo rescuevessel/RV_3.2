@@ -46,32 +46,34 @@ export default function MountainMen({ data }) {
   )
 }
 
-export const mm_query = graphql`
-  query MM {
-    contentfulMountainMen {
-      title
-      description1 {
-        json
-      }
-      mmDesc {
-        mmDesc
-      }
-      hero
-      mmEmbed01
-      mmEmbed02
-      mmEmbed03
-      mmEmbed04
-      mmEmbed05
-      ansel01 {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      ansel02 {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-    }
-  }
-`
+// export const
+//mm_query =
+//graphql`
+//   query MM {
+//     contentfulMountainMen {
+//       title
+//       description1 {
+//         json
+//       }
+//       mmDesc {
+//         mmDesc
+//       }
+//       hero
+//       mmEmbed01
+//       mmEmbed02
+//       mmEmbed03
+//       mmEmbed04
+//       mmEmbed05
+//       ansel01 {
+//         fluid {
+//           ...GatsbyContentfulFluid
+//         }
+//       }
+//       ansel02 {
+//         fluid {
+//           ...GatsbyContentfulFluid
+//         }
+//       }
+//     }
+//   }
+// `

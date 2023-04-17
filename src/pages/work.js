@@ -32,14 +32,7 @@ const WorkPage = ({ data }) => {
           client={work.gemTitle}
           link='/work/gem'
         />
-        {/* <WorkThumb // Upward
-          // className='hero'
-          thumb={work.upwardThumb.fluid}
-          rollover={work.upwardRollover.fluid}
-          title={work.upwardTitle}
-          client={work.upwardClient}
-          link='/work/upward'
-        /> */}
+
         <WorkThumbLottie // Upward
           // className='hero'
           lottie={upwardLogo}
@@ -180,18 +173,7 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      marcoTitle
-      marcoClient
-      marcoThumb {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      marcoRollover {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
+
       themovieshowTitle
       theMovieShowClient
       theMovieShowRollover {
@@ -216,18 +198,7 @@ export const WorkQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      mountainMenTitle
-      mountainMenClient
-      mountainMenThumb {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      mountainMenRollover {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
+
       conversionTitle
       conversionClient
       conversionThumb {

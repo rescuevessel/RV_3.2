@@ -22,7 +22,7 @@ import Illustration03 from '../../images/Illustration_03.svg'
 import Illustration04 from '../../images/Illustration_04.svg'
 import Tagline from '../../images/Tagline_01.svg'
 
-mixpanel.track('Visited Upward')
+mixpanel.track('Visited Upward2')
 
 export default function Upward({ data }) {
   let upward = data.contentfulUpward

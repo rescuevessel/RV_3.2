@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
+//import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import VimeoAutoplay from '../components/vimeoAutoplay'
+//import VimeoAutoplay from '../components/vimeoAutoplay'
 import mixpanel from 'mixpanel-browser'
+import WorkThumb from '../components/workThumb'
+import WorkThumbLottie from '../components/workThumbLottie'
+import upwardLogo from '../lottie/upwardHeroAnimation.json'
 
 function IndexPage({ data }) {
   useEffect(() => {
@@ -19,9 +22,18 @@ function IndexPage({ data }) {
     })
   }, [])
 
+  const renderOptions = {
+    renderText: text => {
+      return text.split('\n').reduce((children, textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment]
+      }, [])
+    },
+  }
+
   const home = data.contentfulHomePage
-  const image = data.contentfulHomePage.homeHeroImage.fluid
-  console.log(home.homeHeroImage.description)
+  //const image = data.contentfulHomePage.homeHeroImage.fluid
+  //console.log(home.homeHeroImage.description)
+  let work = data.contentfulWorkPage
 
   return (
     <Layout>
@@ -31,12 +43,49 @@ function IndexPage({ data }) {
         <h2>{home.subtitle}</h2>
       </section>
 
-      <section className='home-hero'>
+      {/* <section className='home-hero'>
         <VimeoAutoplay link={home.homeHeroImage.description} />
         <Img fluid={image} alt='' />
-      </section>
+      </section> */}
+
+      <div className='grid-work centered'>
+        <WorkThumb // Reel
+          className='hero'
+          thumb={work.reelThumb.fluid}
+          rollover={work.reelThumb.fluid}
+          title={work.reelSubtitle}
+          client={work.reelTitle}
+          link='/reel'
+        />
+
+        <WorkThumbLottie // Upward
+          // className='hero'
+          lottie={upwardLogo}
+          // rollover={work.upwardRollover.fluid}
+          title={work.upwardTitle}
+          client={work.upwardClient}
+          link='/work/upward'
+        />
+        <WorkThumb // Gem
+          // className='hero'
+          thumb={work.gemThumb.fluid}
+          rollover={work.gemRollover.fluid}
+          title={work.gemType}
+          client={work.gemTitle}
+          link='/work/gem'
+        />
+
+        <WorkThumb // Mixpanel Conversion
+          className='hero'
+          thumb={work.conversionThumb.fluid}
+          rollover={work.conversionRollover.fluid}
+          title={work.conversionTitle}
+          client={work.conversionClient}
+          link='/work/conversion'
+        />
+      </div>
       {/* Meet your new collaborators */}
-      <div className='centered grid-2 type full'>
+      {/* <div className='centered grid-2 type full'>
         <div>{documentToReactComponents(home.section01.json)}</div>
         <div>
           {documentToReactComponents(home.section01Body.json)}
@@ -44,9 +93,9 @@ function IndexPage({ data }) {
             <button className='btn-1'>About us</button>
           </Link>
         </div>
-      </div>
+      </div> */}
       {/* Design, Branding & Motion */}
-      <section className='home-grey'>
+      {/* <section className='home-grey'>
         <div className='centered grid-2 type full'>
           <div>{documentToReactComponents(home.section02.json)}</div>
           <div>
@@ -58,12 +107,14 @@ function IndexPage({ data }) {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='centered type'>
         <div className='grid-2 full'>
           <div>{documentToReactComponents(home.section03.json)}</div>
-          <div>{documentToReactComponents(home.section03Body.json)}</div>
+          <div>
+            {documentToReactComponents(home.section03Body.json, renderOptions)}
+          </div>
         </div>
         <div className='client-logos centered'>
           {home.clientLogos.map(logo => (
@@ -79,13 +130,54 @@ export default IndexPage
 
 export const indexquery = graphql`
   query indexquery {
+    contentfulWorkPage {
+      reelSubtitle
+      reelTitle
+      reelThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      gemTitle
+      gemType
+      gemThumb {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      gemRollover {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      upwardTitle
+      upwardClient
+      upwardThumb {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      upwardRollover {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      conversionTitle
+      conversionClient
+      conversionThumb {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+      conversionRollover {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid
+        }
+      }
+    }
     contentfulHomePage {
       title
       subtitle
-      homeImageSlider {
-        id
-        description
-      }
       homeHeroImage {
         fluid {
           ...GatsbyContentfulFluid
@@ -119,13 +211,3 @@ export const indexquery = graphql`
     }
   }
 `
-
-/* 
-
-<RVslider>
-          {slider.map(images => (
-            <Img fluid={images.fluid} key={images.id} width='100%' />
-          ))}
-        </RVslider>
-
-*/
