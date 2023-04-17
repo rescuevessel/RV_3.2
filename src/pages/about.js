@@ -38,9 +38,9 @@ const AboutPage = ({ data }) => {
         </RVslider>
       </section>
 
-      <div className='centered type grid-thirds'>
+      {/* <div className='centered type grid-thirds'>
         <section>{documentToReactComponents(about.section01.json)}</section>
-      </div>
+      </div> */}
 
       <section className='centered grid-2'>
         <Img fluid={about.aboutImage01.fluid} alt='' />
